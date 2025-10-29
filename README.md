@@ -1,6 +1,6 @@
 # 3D-Printed Trapezoidal Flume Calibration and Sensitivity Analysis  
-**Author:** A.J. [Agricultural Water Quality Program, CSU]  
-**Collaborators:** Dr. Daniel White (Hydraulics Lab), Dr. Perry Cabot, Dr. Erik Wardle  
+**Author:** AJ Brown and Emmanuel Deleon [Agricultural Water Quality Program, CSU]  
+**Collaborators:** Daniel White (Hydraulics Lab), Perry Cabot, Erik Wardle 
 **Project Year:** 2025-2026  
 
 ---
