@@ -107,6 +107,42 @@ flume_sensitivity_analysis/
 
 
 ---
+## Running the Flume Analysis Script
+
+This script fits power-law equations to each tested flume, adds additive uncertainty error bars, and overlays the manufacturer equation.
+
+### Requirements
+Make sure you are in your **Anaconda environment** that includes:
+`numpy`, `pandas`, and `matplotlib`.
+
+### Example Usage
+
+1. Open the **Anaconda Prompt** and navigate to your project root:
+   ```bash
+   cd "C:\Users\ansle\OneDrive\Documents\GitHub\3d-flume-uncertainty-analysis\code"
+   ```
+
+2. Run the analysis script:
+
+   ```bash
+   python flume-analysis.py "../data/flume_data.csv" --out "../output/flume_stage_discharge_with_errors.png"
+   ```
+
+3. The output plot will be saved to:
+
+   ```
+   C:\Users\ansle\OneDrive\Documents\GitHub\3d-flume-uncertainty-analysis\output\flume_stage_discharge_with_errors.png
+   ```
+
+### Notes
+
+* Horizontal error bars represent ±0.005 ft (point gauge accuracy).
+* Vertical error bars combine magnetic flow meter (±0.02 % of reading) and infiltration (±0.02 cfs) uncertainties.
+* Fitted equations and R² values are annotated directly on the plot.
+* Manufacturer equation plotted: **Q = 1.55 × H²·⁵⁸ (cfs)**.
+
+
+---
 
 ## Expected Outputs  
 
