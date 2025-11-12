@@ -1,6 +1,6 @@
 # 3D-Printed Trapezoidal Flume Calibration and Sensitivity Analysis  
 **Author:** AJ Brown and Emmanuel Deleon [Agricultural Water Quality Program, CSU]  
-**Collaborators:** Daniel White (Hydraulics Lab), Perry Cabot, Erik Wardle 
+**Collaborators:** Daniel White (CSU Hydraulics Lab), Perry Cabot, Erik Wardle 
 **Project Year:** 2025-2026  
 
 ---
@@ -125,7 +125,21 @@ Make sure you are in your **Anaconda environment** that includes:
 2. Run the analysis script:
 
    ```bash
-   python flume-analysis.py "../data/flume_data.csv" --out "../output/flume_stage_discharge_with_errors.png"
+   # 1) Basic plot (points with error bars + fits + manufacturer line)
+   python main.py --plot-basic
+
+   # 2) Plot with shaded measurement-uncertainty bands
+   python main.py --plot-band
+
+   # 3) Run both
+   python main.py --all
+
+   # Optional arguments:
+   # specify a CSV and output names
+   python main.py --plot-basic --csv "../data/flume_data.csv" --out-basic "../output/basic.png"
+
+   # band plot options
+   python main.py --plot-band --csv "../data/flume_data.csv" --out-band "../output/band.png" --manuf-band --no-errorbars --alpha 0.22
    ```
 
 3. The output plot will be saved to:
