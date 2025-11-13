@@ -170,6 +170,7 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
                                  flume_names = c("1" = "3D Printed 1",
                                                  "2" = "3D Printed 2",
                                                  "3" = "Fiberglass")) {
+  
   ribbon_kind <- match.arg(ribbon_kind)
   stopifnot(all(c("Q_obs","H_obs","F","J") %in% names(dat)))
   
@@ -178,11 +179,11 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
   Fidx <- as.integer(dat$F)
   J    <- as.integer(dat$J)
   
-  # global grid so all lines span full x-range
+  # global grid (smooth coverage across x-range)
   Hgrid <- seq(min(H), max(H), length.out = 200)
   logH  <- log(Hgrid)
   
-  # posterior draw subset
+  # subset posterior draws
   Sfull <- nrow(post$a)
   S     <- min(ndraws, Sfull)
   sel   <- if (S < Sfull) sample.int(Sfull, S) else seq_len(S)
@@ -195,45 +196,51 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
   
   flumes_present <- sort(unique(Fidx))
   
-  # convenience: central interval endpoints and z-critical for prob
+  # central interval endpoints and z for prob
   p_lo  <- (1 - prob)/2
   p_hi  <- 1 - p_lo
   zcrit <- qnorm((1 + prob)/2)
   
-  # ribbons for Q_true across H
+  # ---------- Smooth ribbons for Q_true ----------
+  # No per-point random noise; everything is built from smooth functions
   rib_list <- lapply(flumes_present, function(j){
+    # posterior of mu(H) on the grid
     log_mu <- outer(b_draw[, j], logH, `*`) +
       matrix(log(a_draw[, j]), nrow=S, ncol=length(Hgrid))
     mu_mat <- exp(log_mu)
     
-    if (ribbon_kind == "predictive") {
-      sd_mat <- sqrt( (cv_draw^2) * (mu_mat^2) + (sq_draw[, j]^2) + (sp_draw[, j]^2) )
-      z_s    <- matrix(rnorm(S), nrow=S, ncol=length(Hgrid))
-      y_mat  <- mu_mat + z_s * sd_mat
-      lo <- apply(y_mat,  2, quantile, probs = p_lo)
-      hi <- apply(y_mat,  2, quantile, probs = p_hi)
+    mu_med <- apply(mu_mat, 2, median)
+    mu_lo  <- apply(mu_mat, 2, quantile, p_lo)
+    mu_hi  <- apply(mu_mat, 2, quantile, p_hi)
+    
+    if (ribbon_kind == "parameter") {
+      Q_lo <- mu_lo
+      Q_hi <- mu_hi
     } else if (ribbon_kind == "process") {
-      sd_mat <- matrix(sp_draw[, j], nrow=S, ncol=length(Hgrid))
-      z_s    <- matrix(rnorm(S), nrow=S, ncol=length(Hgrid))
-      y_mat  <- mu_mat + z_s * sd_mat
-      lo <- apply(y_mat,  2, quantile, probs = p_lo)
-      hi <- apply(y_mat,  2, quantile, probs = p_hi)
-    } else { # parameter
-      lo <- apply(mu_mat, 2, quantile, probs = p_lo)
-      hi <- apply(mu_mat, 2, quantile, probs = p_hi)
+      # add smooth process width using the median sigma_proc
+      sp_med <- median(sp_draw[, j])
+      Q_lo <- mu_med - zcrit * sp_med
+      Q_hi <- mu_med + zcrit * sp_med
+    } else { # predictive: include measurement + process on top of mu_med
+      cv_med  <- median(cv_draw)
+      sq_med  <- median(sq_draw[, j])
+      sp_med  <- median(sp_draw[, j])
+      sd_pred <- sqrt((cv_med * mu_med)^2 + sq_med^2 + sp_med^2)
+      Q_lo <- mu_med - zcrit * sd_pred
+      Q_hi <- mu_med + zcrit * sd_pred
     }
     
     data.frame(
       flume = j,
       H     = Hgrid,
-      Q_lo  = lo,
-      Q_hi  = hi,
-      Q_med = apply(mu_mat, 2, median)
+      Q_lo  = Q_lo,
+      Q_hi  = Q_hi,
+      Q_med = mu_med
     )
   })
   ribbon_df <- do.call(rbind, rib_list)
   
-  # Q_true intervals at observed H (from posterior samples)
+  # ---------- Q_true intervals at observed H ----------
   Qtrue_draws <- post$Q_true[sel, , drop=FALSE]
   Qtrue_df <- data.frame(
     H    = H,
@@ -244,7 +251,7 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
     ptype = "Q_true"
   )
   
-  # Q_obs error bars using zcrit that corresponds to prob
+  # ---------- Q_obs points (optional error bars controlled by prob) ----------
   cv_med   <- median(post$cv_Q)
   sq_med_j <- apply(post$sigma_Q_add, 2, median)
   sp_med_j <- apply(post$sigma_proc,   2, median)
@@ -257,76 +264,92 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
     ptype = "Q_obs"
   )
   
-  # manufacturer curve
+  # ---------- Manufacturer curve ----------
   manuf_df <- NULL
   if (!is.null(show_manufacturer)) {
-    if (!all(c("a_m","b_m") %in% names(show_manufacturer)))
-      stop("show_manufacturer must have columns a_m and b_m (and optional flume).")
     if ("flume" %in% names(show_manufacturer)) {
       tmp <- subset(show_manufacturer, flume %in% flumes_present)
-      mlist <- lapply(tmp$flume, function(j){
+      manuf_df <- do.call(rbind, lapply(tmp$flume, function(j){
         a_m <- tmp$a_m[tmp$flume == j][1]; b_m <- tmp$b_m[tmp$flume == j][1]
         data.frame(flume = j, H = Hgrid, Qm = a_m * Hgrid^b_m)
-      })
-      manuf_df <- do.call(rbind, mlist)
+      }))
     } else {
       manuf_df <- data.frame(H = Hgrid,
                              Qm = show_manufacturer$a_m[1] * Hgrid^(show_manufacturer$b_m[1]))
     }
   }
   
-  # colors and shapes
-  color_map <- c("1" = "#1f77b4", "2" = "#ff7f0e", "3" = "#2ca02c")
+  # ---------- aesthetics ----------
+  color_map <- c("1"="#1f77b4","2"="#ff7f0e","3"="#2ca02c")
   color_map <- color_map[intersect(names(color_map), as.character(flumes_present))]
-  ptype_shapes <- c("Q_true" = 19, "Q_obs" = 21)
   
+  # We’ll keep a separate “Points” legend using shape only, with custom keys
+  # Q_true: filled with black outline; Q_obs: white fill with colored outline (legend shows generic)
+  shape_map <- c("Q_true" = 21, "Q_obs" = 21)
+  
+  library(ggplot2)
   ggplot() +
+    # ribbons and median curve
     geom_ribbon(data = ribbon_df,
                 aes(H, ymin = Q_lo, ymax = Q_hi, fill = factor(flume)),
                 alpha = 0.25, color = NA, show.legend = FALSE) +
     geom_line(data = ribbon_df,
               aes(H, Q_med, color = factor(flume)), linewidth = 1.2) +
     
-    # Q_true intervals and points
+    # Q_true: filled with flume color, black outline
     geom_linerange(data = Qtrue_df,
                    aes(H, ymin = Q_lo, ymax = Q_hi, color = factor(flume)),
-                   linewidth = 2.0, alpha = 0.5, show.legend = FALSE) +
+                   linewidth = 1.6, alpha = 0.6, show.legend = FALSE) +
     geom_point(data = Qtrue_df,
-               aes(H, Q, color = factor(flume), shape = ptype),
-               size = 3.5, stroke = 0.6) +
+               aes(H, Q, fill = factor(flume), shape = ptype),
+               size = 3.6, stroke = 0.9, color = "black") +
     
-    # Q_obs intervals (optional) and points
+    # Q_obs: white fill, flume-colored outline
     { if (show_qobs_errors)
       geom_linerange(data = Qobs_df,
                      aes(H, ymin = Q_lo, ymax = Q_hi, color = factor(flume)),
-                     linewidth = 0.8, alpha = 0.45, show.legend = FALSE) } +
+                     linewidth = 0.9, alpha = 0.45, show.legend = FALSE) } +
     geom_point(data = Qobs_df,
                aes(H, Q, color = factor(flume), shape = ptype),
-               size = 2, stroke = 2, fill = "white") +
+               fill = "white", size = 2.0, stroke = 1.2) +
     
-    # manufacturer curve
+    # manufacturer equation
     { if (!is.null(manuf_df))
       geom_line(data = manuf_df,
                 aes(H, Qm, linetype = "Manufacturer equation"),
                 linewidth = 1.0, color = "black") } +
     
+    # scales and guides
     scale_color_manual(values = color_map,
                        name = "Flume",
                        labels = flume_names[names(color_map)]) +
-    scale_fill_manual(values = scales::alpha(color_map, 0.25), guide = "none") +
-    scale_shape_manual(values = ptype_shapes,
+    scale_fill_manual(values = color_map, guide = "none") +
+    scale_shape_manual(values = shape_map,
                        name = "Points",
                        breaks = c("Q_true","Q_obs"),
                        labels = c("Estimated True Flow","Measured Flow")) +
     scale_linetype_manual(values = c("Manufacturer equation" = "dotted"), name = "") +
-    guides(color   = guide_legend(order = 1),
-           shape   = guide_legend(order = 2),
-           linetype= guide_legend(order = 3)) +
+    guides(
+      color   = guide_legend(order = 1),
+      shape   = guide_legend(
+        order = 2,
+        override.aes = list(
+          # two keys, in order of breaks: Q_true then Q_obs
+          shape = c(21, 21),
+          size  = c(3.6, 3.0),
+          stroke= c(0.9, 1.2),
+          color = c("black", "black"),  # outline in legend
+          fill  = c("grey60", "white")  # filled vs open for legend clarity
+        )
+      ),
+      linetype= guide_legend(order = 3)
+    ) +
     labs(x = "Stage (ft)", y = "Flow rate (cfs)") +
     theme_bw(base_size = 13) +
     theme(legend.position = "right",
           panel.grid.minor = element_blank())
 }
+
 
 
 
@@ -340,17 +363,164 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
 # Optional manufacturer coefficients by flume index (edit as needed)
 # Equation: Q = a_m * H^b_m
 manuf <- data.frame(
-  flume = c(1),
   a_m   = c(1.55),
   b_m   = c(2.58)
 )
 
-g <- plot_flume_posterior(post3, dat, prob = 0.95, ndraws = 4000,
-                          show_manufacturer = manuf, show_qobs_errors = F)
-print(g)
-# save the plot
-ggsave("../output/flume_posterior_curves.jpg", g, width = 8, height = 5.5, dpi = 300)
+# Generate the plot
+g <- plot_flume_posterior(
+  post  = post3,              # posterior samples from ulam
+  dat   = dat,                # data list used for the model
+  prob  = 0.95,               # credible interval probability
+  ndraws = 4000,              # number of posterior draws used
+  show_manufacturer = manuf,  # add manufacturer equation line
+  ribbon_kind = "parameter",  # options: "parameter", "process", or "predictive"
+  show_qobs_errors = FALSE,   # measurement error bars for Q_obs off (recommended)
+  flume_names = c("1" = "3D Printed 1",
+                  "2" = "3D Printed 2",
+                  "3" = "Fiberglass")
+)
 
+# Print to screen
+print(g)
+
+# Save a high-resolution version
+ggsave("../output/flume_posterior_curves_final.jpg", g,
+       width = 8, height = 5.5, dpi = 600)
+
+
+# Generative predictions output
+# Generate posterior summaries of Q(H) on a grid for each flume
+# post  : extract.samples(ulam_fit)
+# depths: numeric vector of H (ft) at which to report results
+# prob  : central interval mass (e.g., 0.95)
+# kind  : "parameter" (default), "process", or "predictive"
+# manuf : data.frame with either global a_m,b_m columns, or per-flume (flume,a_m,b_m)
+# flume_names: named character vector mapping "1","2","3",... -> labels to use
+generate_flume_table <- function(post, depths = seq(0.1, 0.8, by = 0.1),
+                                 prob = 0.95,
+                                 kind = c("parameter", "process", "predictive"),
+                                 ndraws = 4000,
+                                 manuf = NULL,
+                                 flume_names = c("1"="3D Printed 1","2"="3D Printed 2","3"="Fiberglass"),
+                                 digits = 3) {
+  
+  kind <- match.arg(kind)
+  stopifnot(is.matrix(post$a), is.matrix(post$b))
+  
+  # subset draws
+  Sfull <- nrow(post$a)
+  S     <- min(ndraws, Sfull)
+  sel   <- if (S < Sfull) sample.int(Sfull, S) else seq_len(S)
+  
+  a  <- post$a[sel, , drop=FALSE]              # S x J
+  b  <- post$b[sel, , drop=FALSE]              # S x J
+  sp <- post$sigma_proc[sel, , drop=FALSE]     # S x J
+  cv <- as.numeric(post$cv_Q[sel])             # S
+  sq <- post$sigma_Q_add[sel, , drop=FALSE]    # S x J
+  
+  J <- ncol(a)
+  H <- depths
+  G <- length(H)
+  p_lo <- (1 - prob)/2
+  p_hi <- 1 - p_lo
+  
+  # compute per-flume summaries
+  out_list <- lapply(seq_len(J), function(j){
+    # S x G mu draws
+    mu_mat <- exp( outer(b[,j], log(H), `*`) + matrix(log(a[,j]), nrow=S, ncol=G) )
+    
+    if (kind == "parameter") {
+      lo <- apply(mu_mat, 2, quantile, p_lo)
+      md <- apply(mu_mat, 2, median)
+      hi <- apply(mu_mat, 2, quantile, p_hi)
+    } else if (kind == "process") {
+      # add process noise with draw-specific sigma_proc (smooth summary via simulation)
+      yrep <- mu_mat + matrix(rnorm(S*G), nrow=S, ncol=G) * matrix(sp[,j], nrow=S, ncol=G)
+      lo <- apply(yrep, 2, quantile, p_lo)
+      md <- apply(mu_mat, 2, median)  # center is mu
+      hi <- apply(yrep, 2, quantile, p_hi)
+    } else { # predictive: add process + measurement
+      sd_pred <- sqrt( (cv^2) %o% (rep(1,G)) * (mu_mat^2) + (sq[,j]^2) %o% rep(1,G) + (sp[,j]^2) %o% rep(1,G) )
+      yrep <- mu_mat + matrix(rnorm(S*G), nrow=S, ncol=G) * sd_pred
+      lo <- apply(yrep, 2, quantile, p_lo)
+      md <- apply(mu_mat, 2, median)
+      hi <- apply(yrep, 2, quantile, p_hi)
+    }
+    
+    data.frame(Depth_ft = H,
+               flume = names(flume_names)[j],
+               median = md, lo = lo, hi = hi)
+  })
+  
+  df_long <- do.call(rbind, out_list)
+  
+  # wide table with one set of columns per flume
+  # value columns as "median [lo, hi]" strings for quick reporting
+  library(dplyr); library(tidyr)
+  df_fmt <- df_long %>%
+    mutate(label = paste0(sprintf(paste0("%.",digits,"f"), median),
+                          " [", sprintf(paste0("%.",digits,"f"), lo),
+                          ", ", sprintf(paste0("%.",digits,"f"), hi), "]"),
+           Flume = flume_names[flume]) %>%
+    select(Depth_ft, Flume, label) %>%
+    pivot_wider(names_from = Flume, values_from = label) %>%
+    arrange(Depth_ft)
+  
+  # manufacturer column
+  if (!is.null(manuf)) {
+    if (all(c("a_m","b_m") %in% names(manuf)) && !("flume" %in% names(manuf))) {
+      df_fmt$`Manufacturer Eq.` <- sprintf(paste0("%.",digits,"f"),
+                                           manuf$a_m[1] * H^(manuf$b_m[1]))
+    } else if (all(c("flume","a_m","b_m") %in% names(manuf))) {
+      # if provided per flume, add a column per flume with "Manu." suffix
+      for (j in seq_len(J)) {
+        if (as.character(j) %in% manuf$flume) {
+          a_m <- manuf$a_m[manuf$flume == j][1]
+          b_m <- manuf$b_m[manuf$flume == j][1]
+          colname <- paste0(flume_names[as.character(j)], " (Manu.)")
+          df_fmt[[colname]] <- sprintf(paste0("%.",digits,"f"), a_m * H^(b_m))
+        }
+      }
+    }
+  }
+  
+  # also return a numeric version with separate median/lo/hi columns per flume (for CSV/analysis)
+  df_num <- df_long %>%
+    mutate(Flume = flume_names[flume]) %>%
+    select(Depth_ft, Flume, median, lo, hi) %>%
+    pivot_wider(names_from = Flume,
+                values_from = c(median, lo, hi),
+                names_sep = "_") %>%
+    arrange(Depth_ft)
+  
+  list(display = df_fmt, numeric = df_num)
+}
+
+# grid and manufacturer equation
+depth_grid <- seq(0.1, 0.8, by = 0.1)
+manuf <- data.frame(a_m = 1.55, b_m = 2.58)  # global manufacturer curve
+
+res <- generate_flume_table(
+  post = post3,
+  depths = depth_grid,
+  prob = 0.95,
+  kind = "parameter",     # "parameter" for comparing flume calibration curves
+  ndraws = 4000,
+  manuf = manuf,
+  flume_names = c("1"="3D Printed 1","2"="3D Printed 2","3"="Fiberglass"),
+  digits = 3
+)
+
+# Quick view for reporting (one column per flume with "median [lo, hi]")
+res$display
+
+# Numeric table for export or further analysis
+res$numeric
+
+# Save both to CSVs if you like
+# write.csv(res$display, "../output/flume_generated_display.csv", row.names = FALSE)
+write.csv(res$numeric, "../output/flume_generated_numeric.csv", row.names = FALSE)
 
 
 
