@@ -32,9 +32,9 @@ The Bayesian approach allows direct inference on the *true* (latent) discharge f
 A hierarchical Bayesian model of the form:
 
 ```math
-Q_{\text{true},i} = a_j\, H_i^{\,b_j} + \varepsilon_{\text{proc},j},
-\qquad
-Q_{\text{obs},i} \sim \mathrm{Normal}\!\left(Q_{\text{true},i},\, \sigma_{\text{meas}}\right).```
+$Q_{\text{true},i} = a_j\, H_i^{\,b_j} + \varepsilon_{\text{proc},j}, \quad 
+Q_{\text{obs},i} \sim \mathrm{Normal}(Q_{\text{true},i},\, \sigma_{\text{meas}})$
+```
 
 was fit using the `ulam()` function from the **rethinking** R package.  
 Each flume \(j\) had its own rating‑curve parameters (*a*, *b*) and process variance \(\sigma_{proc,j}\), while additive and proportional error terms modeled infiltration and flow‑meter precision.  
