@@ -163,21 +163,26 @@ post3 <- extract.samples(flume_model_3)
 # --- Dependencies ---
 # install.packages(c("ggplot2","dplyr","tidyr"))
 
-plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 2000,
+plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
                                  show_manufacturer = NULL,
+                                 ribbon_kind = c("process", "parameter", "predictive"),
+                                 show_qobs_errors = FALSE,
                                  flume_names = c("1" = "3D Printed 1",
                                                  "2" = "3D Printed 2",
                                                  "3" = "Fiberglass")) {
+  ribbon_kind <- match.arg(ribbon_kind)
   stopifnot(all(c("Q_obs","H_obs","F","J") %in% names(dat)))
+  
   Q    <- as.numeric(dat$Q_obs)
   H    <- pmax(as.numeric(dat$H_obs), 1e-8)
   Fidx <- as.integer(dat$F)
   J    <- as.integer(dat$J)
   
-  # use a single global grid so all lines span the full x-range
+  # global grid so all lines span full x-range
   Hgrid <- seq(min(H), max(H), length.out = 200)
+  logH  <- log(Hgrid)
   
-  # choose posterior draws
+  # posterior draw subset
   Sfull <- nrow(post$a)
   S     <- min(ndraws, Sfull)
   sel   <- if (S < Sfull) sample.int(Sfull, S) else seq_len(S)
@@ -185,39 +190,74 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 2000,
   a_draw  <- post$a[sel, , drop=FALSE]
   b_draw  <- post$b[sel, , drop=FALSE]
   sp_draw <- post$sigma_proc[sel, , drop=FALSE]
-  cv_draw <- as.numeric(post$cv_Q[sel, 1])
+  cv_draw <- as.numeric(post$cv_Q[sel])
   sq_draw <- post$sigma_Q_add[sel, , drop=FALSE]
   
   flumes_present <- sort(unique(Fidx))
   
-  # ribbons on common grid
+  # convenience: central interval endpoints and z-critical for prob
+  p_lo  <- (1 - prob)/2
+  p_hi  <- 1 - p_lo
+  zcrit <- qnorm((1 + prob)/2)
+  
+  # ribbons for Q_true across H
   rib_list <- lapply(flumes_present, function(j){
-    logH   <- log(Hgrid)
     log_mu <- outer(b_draw[, j], logH, `*`) +
-      matrix(log(a_draw[, j]), nrow = S, ncol = length(Hgrid))
+      matrix(log(a_draw[, j]), nrow=S, ncol=length(Hgrid))
     mu_mat <- exp(log_mu)
-    sd_mat <- sqrt( (cv_draw^2) * (mu_mat^2) + (sq_draw[, j]^2) + (sp_draw[, j]^2) )
-    yrep   <- mu_mat + sd_mat * matrix(rnorm(length(mu_mat)), nrow = S)
+    
+    if (ribbon_kind == "predictive") {
+      sd_mat <- sqrt( (cv_draw^2) * (mu_mat^2) + (sq_draw[, j]^2) + (sp_draw[, j]^2) )
+      z_s    <- matrix(rnorm(S), nrow=S, ncol=length(Hgrid))
+      y_mat  <- mu_mat + z_s * sd_mat
+      lo <- apply(y_mat,  2, quantile, probs = p_lo)
+      hi <- apply(y_mat,  2, quantile, probs = p_hi)
+    } else if (ribbon_kind == "process") {
+      sd_mat <- matrix(sp_draw[, j], nrow=S, ncol=length(Hgrid))
+      z_s    <- matrix(rnorm(S), nrow=S, ncol=length(Hgrid))
+      y_mat  <- mu_mat + z_s * sd_mat
+      lo <- apply(y_mat,  2, quantile, probs = p_lo)
+      hi <- apply(y_mat,  2, quantile, probs = p_hi)
+    } else { # parameter
+      lo <- apply(mu_mat, 2, quantile, probs = p_lo)
+      hi <- apply(mu_mat, 2, quantile, probs = p_hi)
+    }
+    
     data.frame(
       flume = j,
       H     = Hgrid,
-      Q_lo  = apply(yrep, 2, quantile, probs = (1 - prob)/2),
-      Q_hi  = apply(yrep, 2, quantile, probs = 1 - (1 - prob)/2),
-      Q_med = apply(yrep, 2, median)
+      Q_lo  = lo,
+      Q_hi  = hi,
+      Q_med = apply(mu_mat, 2, median)
     )
   })
   ribbon_df <- do.call(rbind, rib_list)
   
-  # observations with median error model
+  # Q_true intervals at observed H (from posterior samples)
+  Qtrue_draws <- post$Q_true[sel, , drop=FALSE]
+  Qtrue_df <- data.frame(
+    H    = H,
+    Q    = apply(Qtrue_draws, 2, median),
+    Q_lo = apply(Qtrue_draws, 2, quantile, p_lo),
+    Q_hi = apply(Qtrue_draws, 2, quantile, p_hi),
+    flume = Fidx,
+    ptype = "Q_true"
+  )
+  
+  # Q_obs error bars using zcrit that corresponds to prob
   cv_med   <- median(post$cv_Q)
   sq_med_j <- apply(post$sigma_Q_add, 2, median)
   sp_med_j <- apply(post$sigma_proc,   2, median)
-  obs_df <- data.frame(H = H, Q = Q, flume = Fidx)
-  obs_df$se_Q <- sqrt( (cv_med * obs_df$Q)^2 +
-                         (sq_med_j[obs_df$flume])^2 +
-                         (sp_med_j[obs_df$flume])^2 )
+  se_obs   <- sqrt( (cv_med * Q)^2 + (sq_med_j[Fidx])^2 + (sp_med_j[Fidx])^2 )
+  Qobs_df  <- data.frame(
+    H = H, Q = Q,
+    Q_lo = pmax(Q - zcrit*se_obs, 0),
+    Q_hi = Q + zcrit*se_obs,
+    flume = Fidx,
+    ptype = "Q_obs"
+  )
   
-  # manufacturer curve on global grid
+  # manufacturer curve
   manuf_df <- NULL
   if (!is.null(show_manufacturer)) {
     if (!all(c("a_m","b_m") %in% names(show_manufacturer)))
@@ -225,56 +265,71 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 2000,
     if ("flume" %in% names(show_manufacturer)) {
       tmp <- subset(show_manufacturer, flume %in% flumes_present)
       mlist <- lapply(tmp$flume, function(j){
-        a_m <- tmp$a_m[tmp$flume == j][1]
-        b_m <- tmp$b_m[tmp$flume == j][1]
+        a_m <- tmp$a_m[tmp$flume == j][1]; b_m <- tmp$b_m[tmp$flume == j][1]
         data.frame(flume = j, H = Hgrid, Qm = a_m * Hgrid^b_m)
       })
       manuf_df <- do.call(rbind, mlist)
     } else {
-      # one global manufacturer curve (no flume split)
       manuf_df <- data.frame(H = Hgrid,
                              Qm = show_manufacturer$a_m[1] * Hgrid^(show_manufacturer$b_m[1]))
     }
   }
   
-  # match Python colors: 1=blue, 2=green, 3=orange (edit if your indexing differs)
-  color_map <- c("1" = "#1f77b4",  # 3D Printed 1
-                 "2" = "#ff7f0e",  # 3D Printed 2
-                 "3" = "#2ca02c")  # Fiberglass
-  # keep only present flumes
+  # colors and shapes
+  color_map <- c("1" = "#1f77b4", "2" = "#ff7f0e", "3" = "#2ca02c")
   color_map <- color_map[intersect(names(color_map), as.character(flumes_present))]
+  ptype_shapes <- c("Q_true" = 19, "Q_obs" = 21)
   
-  # shapes by flume, stable across figures
-  shape_map <- c("1" = 16, "2" = 18, "3" = 15)
-  
-  # plotting
   ggplot() +
     geom_ribbon(data = ribbon_df,
                 aes(H, ymin = Q_lo, ymax = Q_hi, fill = factor(flume)),
-                alpha = 0.25, color = NA) +
+                alpha = 0.25, color = NA, show.legend = FALSE) +
     geom_line(data = ribbon_df,
               aes(H, Q_med, color = factor(flume)), linewidth = 1.2) +
-    geom_errorbar(data = obs_df,
-                  aes(H, ymin = pmax(Q - se_Q, 0), ymax = Q + se_Q,
-                      color = factor(flume)),
-                  width = 0, alpha = 0.6) +
-    geom_point(data = obs_df,
-               aes(H, Q, color = factor(flume), shape = factor(flume)),
-               size = 2.2, stroke = 0.6) +
-    { if (!is.null(manuf_df) && "flume" %in% names(manuf_df))
-      geom_line(data = manuf_df, aes(H, Qm, group = flume),
-                linewidth = 1.0, linetype = 3, color = "black")
-      else if (!is.null(manuf_df))
-        geom_line(data = manuf_df, aes(H, Qm),
-                  linewidth = 1.0, linetype = 3, color = "black") } +
-    scale_color_manual(values = color_map, name = "Flume", labels = flume_names[names(color_map)]) +
+    
+    # Q_true intervals and points
+    geom_linerange(data = Qtrue_df,
+                   aes(H, ymin = Q_lo, ymax = Q_hi, color = factor(flume)),
+                   linewidth = 2.0, alpha = 0.5, show.legend = FALSE) +
+    geom_point(data = Qtrue_df,
+               aes(H, Q, color = factor(flume), shape = ptype),
+               size = 3.5, stroke = 0.6) +
+    
+    # Q_obs intervals (optional) and points
+    { if (show_qobs_errors)
+      geom_linerange(data = Qobs_df,
+                     aes(H, ymin = Q_lo, ymax = Q_hi, color = factor(flume)),
+                     linewidth = 0.8, alpha = 0.45, show.legend = FALSE) } +
+    geom_point(data = Qobs_df,
+               aes(H, Q, color = factor(flume), shape = ptype),
+               size = 2, stroke = 2, fill = "white") +
+    
+    # manufacturer curve
+    { if (!is.null(manuf_df))
+      geom_line(data = manuf_df,
+                aes(H, Qm, linetype = "Manufacturer equation"),
+                linewidth = 1.0, color = "black") } +
+    
+    scale_color_manual(values = color_map,
+                       name = "Flume",
+                       labels = flume_names[names(color_map)]) +
     scale_fill_manual(values = scales::alpha(color_map, 0.25), guide = "none") +
-    scale_shape_manual(values = shape_map[names(color_map)], name = "Flume", labels = flume_names[names(color_map)]) +
+    scale_shape_manual(values = ptype_shapes,
+                       name = "Points",
+                       breaks = c("Q_true","Q_obs"),
+                       labels = c("Estimated True Flow","Measured Flow")) +
+    scale_linetype_manual(values = c("Manufacturer equation" = "dotted"), name = "") +
+    guides(color   = guide_legend(order = 1),
+           shape   = guide_legend(order = 2),
+           linetype= guide_legend(order = 3)) +
     labs(x = "Stage (ft)", y = "Flow rate (cfs)") +
     theme_bw(base_size = 13) +
     theme(legend.position = "right",
           panel.grid.minor = element_blank())
 }
+
+
+
 
 
 # Assuming you already have:
@@ -291,7 +346,7 @@ manuf <- data.frame(
 )
 
 g <- plot_flume_posterior(post3, dat, prob = 0.95, ndraws = 4000,
-                          show_manufacturer = manuf)
+                          show_manufacturer = manuf, show_qobs_errors = F)
 print(g)
 # save the plot
 ggsave("../output/flume_posterior_curves.jpg", g, width = 8, height = 5.5, dpi = 300)
