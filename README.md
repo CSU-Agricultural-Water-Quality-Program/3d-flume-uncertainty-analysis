@@ -32,8 +32,10 @@ The Bayesian approach allows direct inference on the *true* (latent) discharge f
 A hierarchical Bayesian model of the form:
 
 ```math
-$Q_{\text{true},i} = a_j\, H_i^{\,b_j} + \varepsilon_{\text{proc},j}, \quad 
-Q_{\text{obs},i} \sim \mathrm{Normal}(Q_{\text{true},i},\, \sigma_{\text{meas}})$
+Q_{\text{true},i} = a_j\, H_i^{\,b_j} + \varepsilon_{\text{proc},j}, \quad 
+
+
+Q_{\text{obs},i} \sim \mathrm{Normal}(Q_{\text{true},i},\, \sigma_{\text{meas}})
 ```
 
 was fit using the `ulam()` function from the **rethinking** R package.  
