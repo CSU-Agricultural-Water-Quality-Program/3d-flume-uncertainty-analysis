@@ -130,8 +130,8 @@ flume_model_3 <- ulam(
 )
 
 # model convergence check
-traceplot(flume_model_3)
-trankplot(flume_model_3)
+traceplot_ulam(flume_model_3, ask=F, window=c(2100,4000))
+trankplot(flume_model_3, ask=F, window=c(2100,4000))
 
 # Summarize the model and save output
 p3 <- precis(flume_model_3, depth = 2)
@@ -142,6 +142,7 @@ p3
 jpeg("../output/flume_model_3_precis.jpg", width = 6.5, height = 6.5, units = "in", res = 600)
 plot(p3)
 dev.off()
+par(mfrow=c(1,1))
 plot(p3)
 
 
