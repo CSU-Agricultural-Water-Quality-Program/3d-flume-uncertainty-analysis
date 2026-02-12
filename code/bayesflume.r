@@ -15,7 +15,8 @@ library(tidyr)
 setwd("C:/Users/ansle/OneDrive/Documents/GitHub/3d-flume-uncertainty-analysis/data")
 
 # Load the flume calibration data
-df_raw <- read.csv("../data/flume_data.csv")
+#df_raw <- read.csv("../data/flume_data.csv")
+df_raw <- read.csv("../data/sim_data.csv") # for testing with simulated data
 
 # Drop flume calibration rows (i.e., where flume_type == EQ)
 df <- df_raw %>% filter(flume_type != "EQ")
@@ -36,58 +37,58 @@ dat <- list(
 # Model 1.0 
 # - basic model, not looking at flume types separately
 # - True flow Q is latent variable
-flume_model_1 <- ulam(
-  alist(
-    # Observation model for discharge
-    Q_obs ~ dnorm(Q_true, sigma_true),
-    
-    # Process model for true discharge (power-law)
-    vector[N]:Q_true ~ dnorm(a * H_obs^b, sigma_proc),
-    
-    # Priors
-    a ~ dlnorm(log(1.55) , 0.5),
-    b ~ dlnorm(log(2.58) , 0.5),
-    sigma_true ~ dexp(1),
-    sigma_proc ~ dexp(1)
-  ),
-  data = dat, chains = 4, cores = 4, iter = 2000, log_lik = TRUE
-)
+# flume_model_1 <- ulam(
+#     alist(
+#       # Observation model for discharge
+#       Q_obs ~ dnorm(Q_true, sigma_true),
+#       
+#       # Process model for true discharge (power-law)
+#       vector[N]:Q_true ~ dnorm(a * H_obs^b, sigma_proc),
+#       
+#       # Priors
+#       a ~ dlnorm(log(1.55) , 0.5),
+#       b ~ dlnorm(log(2.58) , 0.5),
+#       sigma_true ~ dexp(1),
+#       sigma_proc ~ dexp(1)
+#     ),
+#     data = dat, chains = 4, cores = 4, iter = 2000, log_lik = TRUE
+#   )
 
 # Summarize the model
-precis(flume_model_1, depth = 2)
-plot(precis(flume_model_1, depth = 2))
+# precis(flume_model_1, depth = 2)
+# plot(precis(flume_model_1, depth = 2))
 
 
 # Model 2.0
 # - hierarchical model, looking at flume types separately
 # - True flow Q is latent variable
-flume_model_2 <- ulam(
-  alist(
-    # Observation model for discharge (sigma varies by flume via F)
-    Q_obs ~ dnorm( Q_true , sigma_true[F] ),
-    
-    # Process model for latent true discharge (sigma varies by flume)
-    vector[N]:Q_true ~ dnorm( mu , sigma_proc[F] ),
-    
-    # Vectorized mean, per row using flume-indexed a and b
-    mu <- a[F] * H_obs^b[F],
-    
-    # Per-flume priors
-    vector[J]:a ~ dlnorm( log(1.55) , 0.5 ),
-    vector[J]:b ~ dlnorm( log(2.58) , 0.5 ),
-    
-    # Per-flume scatter
-    vector[J]:sigma_true ~ dexp(1),
-    vector[J]:sigma_proc ~ dexp(1)
-  ),
-  data = dat,
-  chains = 4, cores = 4, iter = 2000, log_lik = TRUE
-)
+# flume_model_2 <- ulam(
+#     alist(
+#       # Observation model for discharge (sigma varies by flume via F)
+#       Q_obs ~ dnorm( Q_true , sigma_true[F] ),
+#       
+#       # Process model for latent true discharge (sigma varies by flume)
+#       vector[N]:Q_true ~ dnorm( mu , sigma_proc[F] ),
+#       
+#       # Vectorized mean, per row using flume-indexed a and b
+#       mu <- a[F] * H_obs^b[F],
+#       
+#       # Per-flume priors
+#       vector[J]:a ~ dlnorm( log(1.55) , 0.5 ),
+#       vector[J]:b ~ dlnorm( log(2.58) , 0.5 ),
+#       
+#       # Per-flume scatter
+#       vector[J]:sigma_true ~ dexp(1),
+#       vector[J]:sigma_proc ~ dexp(1)
+#     ),
+#     data = dat,
+#     chains = 4, cores = 4, iter = 2000, log_lik = TRUE
+#   )
 
 
 # Summarize the model
-precis(flume_model_2, depth = 2)
-plot(precis(flume_model_2, depth = 2))
+# precis(flume_model_2, depth = 2)
+# plot(precis(flume_model_2, depth = 2))
 
 
 # Model 3.0
@@ -129,6 +130,7 @@ flume_model_3 <- ulam(
   data = dat, chains = 4, cores = 4, iter = 4000
 )
 
+
 # model convergence check
 traceplot_ulam(flume_model_3, ask=F, window=c(2100,4000))
 trankplot(flume_model_3, ask=F, window=c(2100,4000))
@@ -148,7 +150,76 @@ plot(p3)
 
 post3 <- extract.samples(flume_model_3)
 
-# Graphing Outputs
+
+# Model 4: same as Model 3, but reparameterize a = exp(alpha)
+# so the mean is computed via log space:
+#   mu = exp(alpha[F] + b[F] * log(H))
+#
+# Likelihood and uncertainty structure remain on original Q scale:
+#   Q_true ~ Normal(mu, sigma_proc[F])
+#   Q_obs  ~ Normal(Q_true, sqrt((cv_Q*Q_true)^2 + sigma_Q_add[F]^2))
+
+# Model 4.0
+# - identical likelihood / uncertainty structure to Model 3
+# - reparameterizes a[F] as exp(alpha[F]) so the power law mean is computed in log space
+# - goal: improve sampling geometry for a/b without changing your manuscript’s uncertainty story
+
+flume_model_4 <- ulam(
+  alist(
+    # Latent true discharge with per-flume process scatter (vectorized)
+    vector[N]:Q_true ~ dnorm( mu , sigma_proc[F] ),
+    
+    # Mean computed in log space, then exponentiated back to original scale
+    # (this is mathematically identical to mu <- a[F] * H_obs^b[F] when a[F] = exp(alpha[F]))
+    mu <- exp( alpha[F] + b[F] * log(H_obs + 1e-9) ),
+    
+    # Observation model: SAME as Model 3 (heteroscedastic SD)
+    Q_obs ~ dnorm(
+      Q_true,
+      sqrt(
+        square( cv_Q * Q_true ) +
+          square( sigma_Q_add[F] )
+      )
+    ),
+    
+    # Priors: alpha is the log of a, consistent with your original a prior
+    # If a ~ LogNormal(log(1.55), 0.5), then alpha = log(a) ~ Normal(log(1.55), 0.5)
+    vector[J]:alpha ~ dnorm( log(1.55) , 0.5 ),
+    
+    # Same b prior as Model 3
+    vector[J]:b ~ dlnorm( log(2.58) , 0.5 ),
+    
+    # Same per-flume process scatter
+    vector[J]:sigma_proc ~ dexp(1),
+    
+    # Same error hyperparameters
+    cv_Q ~ dlnorm( log(2e-4) , 0.5 ),
+    vector[J]:sigma_Q_add ~ dlnorm( log(0.02) , 0.5 )
+  ),
+  data = dat,
+  chains = 4, cores = 4, iter = 4000
+  #log_lik = TRUE
+)
+
+
+# model convergence check
+traceplot_ulam(flume_model_4, ask=F, window=c(2100,4000))
+trankplot(flume_model_4, ask=F, window=c(2100,4000))
+
+# Summarize the model and save output
+p4 <- precis(flume_model_4, depth = 2)
+write.csv(p4, "../output/flume_model_4_precis.csv", row.names = TRUE)
+p4
+
+# plot model summary and save as jpg
+jpeg("../output/flume_model_4_precis.jpg", width = 6.5, height = 6.5, units = "in", res = 600)
+plot(p4)
+dev.off()
+par(mfrow=c(1,1))
+plot(p4)
+
+
+######################### Graphing Outputs #####################################
 
 # Stage discharge curves by flume type with uncertainty intervals
 #' Plot Bayesian stage–discharge curves with posterior ribbons
