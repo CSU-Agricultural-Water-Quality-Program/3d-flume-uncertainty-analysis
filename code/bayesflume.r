@@ -11,15 +11,108 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 
+# Calibration inputs and priors remain in ft and cfs. Convert only reporting
+# quantities, using the international foot (exactly 0.3048 m).
+# Source: NIST SP 811, Appendix B.8:
+# https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8
+FT_TO_CM <- 30.48
+CFS_TO_LPS <- (FT_TO_CM / 100)^3 * 1000  # exactly 28.316846592 L/s per cfs
+
+# Transform complete chains before summarizing: a_cm = a * CFS_TO_LPS /
+# FT_TO_CM^b, so Q in L/s = a_cm * (H in cm)^b. The sampled b must be used
+# in each draw; transforming marginal means or interval endpoints is invalid.
+metric_precis <- function(fit, prob = 0.89) {
+  original <- precis(fit, depth = 2, prob = prob)
+  if (!is.null(attr(fit, "cstanfit"))) {
+    draws <- attr(fit, "cstanfit")$draws(
+      variables = rownames(original), format = "draws_array"
+    )
+  } else {
+    draws <- posterior::as_draws_array(as.array(attr(fit, "stanfit")))
+    draws <- draws[, , rownames(original), drop = FALSE]
+  }
+  variables <- dimnames(draws)[[3]]
+  metric_names <- variables
+  for (k in seq_along(variables)) {
+    v <- variables[k]
+    if (grepl("^(a|alpha)\\[", v)) {
+      b_name <- sub("^(a|alpha)", "b", v)
+      if (grepl("^a\\[", v)) {
+        draws[, , k] <- draws[, , k] * CFS_TO_LPS / FT_TO_CM^draws[, , b_name]
+        metric_names[k] <- sub("^a", "a_cm", v)
+      } else {
+        draws[, , k] <- draws[, , k] + log(CFS_TO_LPS) -
+          draws[, , b_name] * log(FT_TO_CM)
+        metric_names[k] <- sub("^alpha", "alpha_cm", v)
+      }
+    } else if (grepl("^(Q_true|mu|sigma_proc|sigma_Q_add)(\\[|$)", v)) {
+      draws[, , k] <- draws[, , k] * CFS_TO_LPS
+      metric_names[k] <- sub("^(Q_true|mu|sigma_proc|sigma_Q_add)", "\\1_lps", v)
+    }
+  }
+  dimnames(draws)[[3]] <- metric_names
+  result <- as.data.frame(posterior::summarise_draws(
+    draws, mean = base::mean, sd = stats::sd,
+    interval = function(x) stats::quantile(x, probs = c((1 - prob)/2, (1 + prob)/2)),
+    rhat = posterior::rhat, ess_bulk = posterior::ess_bulk
+  ))
+  rownames(result) <- result$variable
+  result$variable <- NULL
+  methods::new("precis", result, digits = 3)
+}
+
+# Keep units explicit in CSVs; b and cv_Q are dimensionless. alpha_cm is the
+# log of the numerical coefficient a_cm when stage is cm and flow is L/s.
+write_metric_precis <- function(summary, filename) {
+  result <- as.data.frame(summary)
+  v <- rownames(result)
+  result$units <- ifelse(grepl("_lps", v), "L/s",
+                        ifelse(grepl("^a_cm\\[", v), "(L/s)/cm^b",
+                               ifelse(grepl("^alpha_cm\\[", v), "log(a_cm)", "dimensionless")))
+  write.csv(result, filename, row.names = TRUE)
+}
+
+# rethinking 2.42's dashboard() assumes divergent__ and energy__ occupy columns
+# 2 and 3. CmdStanR's restored CSV fits return them in columns 5 and 6. Supply a reporting-only
+# backend proxy with named diagnostics reordered; keep the fitted object intact.
+# Source: https://github.com/rmcelreath/rethinking/blob/master/R/dashboard.r
+dashboard_flume <- function(fit) {
+  backend <- attr(fit, "cstanfit")
+  if (!is.null(backend)) {
+    proxy <- as.list(backend)
+    class(proxy) <- class(backend)
+    proxy$sampler_diagnostics <- function(...) {
+      x <- backend$sampler_diagnostics(...)
+      required <- c("accept_stat__", "divergent__", "energy__")
+      variables <- dimnames(x)[[3]]
+      stopifnot(all(required %in% variables))
+      x[, , c(required, setdiff(variables, required)), drop = FALSE]
+    }
+    attr(fit, "cstanfit") <- proxy
+  }
+  dashboard(fit)
+}
+
+# dashboard() draws with base graphics. Always close its file device, even
+# if plotting fails; the on-screen dashboard is still drawn separately.
+save_dashboard <- function(fit, filename) {
+  png(filename, width = 8, height = 8, units = "in", res = 300)
+  on.exit(dev.off(), add = TRUE)
+  dashboard_flume(fit)
+  invisible(filename)
+}
+
 # set working directory
 setwd("C:/Users/ansle/OneDrive/Documents/GitHub/3d-flume-uncertainty-analysis/data")
 
 # Load the flume calibration data
-#df_raw <- read.csv("../data/flume_data.csv")
-df_raw <- read.csv("../data/sim_data.csv") # for testing with simulated data
+# df_raw <- read.csv("../data/flume_data.csv")
+# df_raw <- read.csv("../data/sim_data.csv") # for testing with simulated data
+df_raw <- read.csv("../data/New Data Sep 2026/flume_data_sep2026.csv")
 
 # Drop flume calibration rows (i.e., where flume_type == EQ)
 df <- df_raw %>% filter(flume_type != "EQ")
+dir.create("../output", showWarnings = FALSE, recursive = TRUE)
 
 # create data list for Stan model
 dat <- list(
@@ -134,14 +227,16 @@ flume_model_3 <- ulam(
 # model convergence check
 traceplot_ulam(flume_model_3, ask=F, window=c(2100,4000))
 trankplot(flume_model_3, ask=F, window=c(2100,4000))
+dashboard_flume(flume_model_3)
+save_dashboard(flume_model_3, "../output/sep2026_flume_model_3_dashboard.png")
 
 # Summarize the model and save output
-p3 <- precis(flume_model_3, depth = 2)
-write.csv(p3, "../output/flume_model_3_precis.csv", row.names = TRUE)
+p3 <- metric_precis(flume_model_3)
+write_metric_precis(p3, "../output/sep2026_flume_model_3_precis.csv")
 p3
 
 # plot model summary and save as jpg
-jpeg("../output/flume_model_3_precis.jpg", width = 6.5, height = 6.5, units = "in", res = 600)
+jpeg("../output/sep2026_flume_model_3_precis.jpg", width = 6.5, height = 6.5, units = "in", res = 600)
 plot(p3)
 dev.off()
 par(mfrow=c(1,1))
@@ -205,14 +300,16 @@ flume_model_4 <- ulam(
 # model convergence check
 traceplot_ulam(flume_model_4, ask=F, window=c(2100,4000))
 trankplot(flume_model_4, ask=F, window=c(2100,4000))
+dashboard_flume(flume_model_4)
+save_dashboard(flume_model_4, "../output/sep2026_flume_model_4_dashboard.png")
 
 # Summarize the model and save output
-p4 <- precis(flume_model_4, depth = 2)
-write.csv(p4, "../output/flume_model_4_precis.csv", row.names = TRUE)
+p4 <- metric_precis(flume_model_4)
+write_metric_precis(p4, "../output/sep2026_flume_model_4_precis.csv")
 p4
 
 # plot model summary and save as jpg
-jpeg("../output/flume_model_4_precis.jpg", width = 6.5, height = 6.5, units = "in", res = 600)
+jpeg("../output/sep2026_flume_model_4_precis.jpg", width = 6.5, height = 6.5, units = "in", res = 600)
 plot(p4)
 dev.off()
 par(mfrow=c(1,1))
@@ -227,11 +324,12 @@ plot(p4)
 #' @param post  list returned by rethinking::extract.samples(ulam_fit)
 #'              expects components: a[J], b[J], sigma_proc[J], cv_Q, sigma_Q_add[J]
 #' @param dat   list you passed to ulam, needs: Q_obs[N], H_obs[N], F[N], J
-#' @param prob  probability mass for ribbons (default 0.89)
-#' @param ndraws number of posterior draws to use for ribbons (default 800)
+#' @param prob  probability mass for ribbons (default 0.95)
+#' @param ndraws number of posterior draws to use for ribbons (default 4000)
+#' @param extrapolation_fraction extend the grid above max observed stage (default 0.10)
 #' @param show_manufacturer optional data.frame with columns flume (factor or int 1..J),
 #'              a_m (manufacturer a), b_m (manufacturer b) to add dotted curves
-#' @return      ggplot object
+#' @return      ggplot object with stage in cm and flow in L/s
 # --- Dependencies ---
 # install.packages(c("ggplot2","dplyr","tidyr"))
 
@@ -239,6 +337,7 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
                                  show_manufacturer = NULL,
                                  ribbon_kind = c("process", "parameter", "predictive"),
                                  show_qobs_errors = FALSE,
+                                 extrapolation_fraction = 0.10,
                                  flume_names = c("1" = "3D Printed 1",
                                                  "2" = "3D Printed 2",
                                                  "3" = "Fiberglass")) {
@@ -247,12 +346,18 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
   stopifnot(all(c("Q_obs","H_obs","F","J") %in% names(dat)))
   
   Q    <- as.numeric(dat$Q_obs)
-  H    <- pmax(as.numeric(dat$H_obs), 1e-8)
+  H    <- as.numeric(dat$H_obs)
   Fidx <- as.integer(dat$F)
   J    <- as.integer(dat$J)
   
-  # global grid (smooth coverage across x-range)
-  Hgrid <- seq(min(H), max(H), length.out = 200)
+  stopifnot(all(is.finite(H)), all(H >= 0), max(H) > 0,
+            length(extrapolation_fraction) == 1L,
+            is.finite(extrapolation_fraction), extrapolation_fraction >= 0,
+            all(is.finite(post$a)), all(post$a > 0),
+            all(is.finite(post$b)), all(post$b > 0))
+  # Evaluate in calibration units, including exact zero. For positive a and b,
+  # exp(log(a) + b * log(0)) = 0, the exact power-law limit at zero stage.
+  Hgrid <- seq(0, max(H) * (1 + extrapolation_fraction), length.out = 200)
   logH  <- log(Hgrid)
   
   # subset posterior draws
@@ -351,6 +456,23 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
     }
   }
   
+  # Convert every plotted quantity, including intervals and manufacturer flow.
+  to_metric <- function(x) {
+    x$H <- x$H * FT_TO_CM
+    q_columns <- grep("^Q", names(x), value = TRUE)
+    x[q_columns] <- lapply(x[q_columns], function(q) q * CFS_TO_LPS)
+    x
+  }
+  ribbon_df <- to_metric(ribbon_df)
+  Qtrue_df <- to_metric(Qtrue_df)
+  Qobs_df <- to_metric(Qobs_df)
+  if (!is.null(manuf_df)) manuf_df <- to_metric(manuf_df)
+  # Use coordinate limits so negative Gaussian interval tails are clipped only
+  # in the display, rather than deleting rows or changing posterior summaries.
+  y_max <- max(ribbon_df$Q_hi, ribbon_df$Q_med, Qtrue_df$Q_hi, Qobs_df$Q,
+               if (show_qobs_errors) Qobs_df$Q_hi,
+               if (!is.null(manuf_df)) manuf_df$Qm) * 1.10
+
   # ---------- aesthetics ----------
   color_map <- c("1"="#1f77b4","2"="#ff7f0e","3"="#2ca02c")
   color_map <- color_map[intersect(names(color_map), as.character(flumes_present))]
@@ -400,7 +522,8 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
                        name = "Points",
                        breaks = c("Q_true","Q_obs"),
                        labels = c("Estimated True Flow","Measured Flow")) +
-    scale_linetype_manual(values = c("Manufacturer equation" = "dotted"), name = "") +
+    { if (!is.null(manuf_df))
+      scale_linetype_manual(values = c("Manufacturer equation" = "dotted"), name = "") } +
     guides(
       color   = guide_legend(order = 1),
       shape   = guide_legend(
@@ -416,7 +539,11 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
       ),
       linetype= guide_legend(order = 3)
     ) +
-    labs(x = "Stage (ft)", y = "Flow rate (cfs)") +
+    scale_x_continuous(expand = expansion(mult = 0)) +
+    scale_y_continuous(expand = expansion(mult = 0)) +
+    coord_cartesian(xlim = c(0, max(Hgrid) * FT_TO_CM),
+                    ylim = c(0, y_max), expand = FALSE) +
+    labs(x = "Stage (cm)", y = "Flow rate (L/s)") +
     theme_bw(base_size = 13) +
     theme(legend.position = "right",
           panel.grid.minor = element_blank())
@@ -433,7 +560,7 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
 #                 F=as.integer(as.factor(df$flume_type)), J=length(unique(df$flume_type)))
 
 # Optional manufacturer coefficients by flume index (edit as needed)
-# Equation: Q = a_m * H^b_m
+# Equation: Q (cfs) = a_m * H (ft)^b_m; converted only for reporting.
 manuf <- data.frame(
   a_m   = c(1.55),
   b_m   = c(2.58)
@@ -457,19 +584,19 @@ g <- plot_flume_posterior(
 print(g)
 
 # Save a high-resolution version
-ggsave("../output/flume_posterior_curves_final.jpg", g,
+ggsave("../output/sep2026_flume_posterior_curves_final.jpg", g,
        width = 8, height = 5.5, dpi = 600)
 
 
 # Generative predictions output
 # Generate posterior summaries of Q(H) on a grid for each flume
 # post  : extract.samples(ulam_fit)
-# depths: numeric vector of H (ft) at which to report results
+# depths_cm: numeric vector of stage (cm) at which to report results
 # prob  : central interval mass (e.g., 0.95)
 # kind  : "parameter" (default), "process", or "predictive"
 # manuf : data.frame with either global a_m,b_m columns, or per-flume (flume,a_m,b_m)
 # flume_names: named character vector mapping "1","2","3",... -> labels to use
-generate_flume_table <- function(post, depths = seq(0.1, 0.8, by = 0.1),
+generate_flume_table <- function(post, depths_cm = seq(0, 0.8, by = 0.1) * FT_TO_CM,
                                  prob = 0.95,
                                  kind = c("parameter", "process", "predictive"),
                                  ndraws = 4000,
@@ -492,7 +619,9 @@ generate_flume_table <- function(post, depths = seq(0.1, 0.8, by = 0.1),
   sq <- post$sigma_Q_add[sel, , drop=FALSE]    # S x J
   
   J <- ncol(a)
-  H <- depths
+  stopifnot(length(depths_cm) > 0, all(is.finite(depths_cm)), all(depths_cm >= 0),
+            all(is.finite(a)), all(a > 0), all(is.finite(b)), all(b > 0))
+  H <- depths_cm / FT_TO_CM  # evaluate the unchanged ft/cfs calibration
   G <- length(H)
   p_lo <- (1 - prob)/2
   p_hi <- 1 - p_lo
@@ -520,9 +649,10 @@ generate_flume_table <- function(post, depths = seq(0.1, 0.8, by = 0.1),
       hi <- apply(yrep, 2, quantile, p_hi)
     }
     
-    data.frame(Depth_ft = H,
+    data.frame(Depth_cm = depths_cm,
                flume = names(flume_names)[j],
-               median = md, lo = lo, hi = hi)
+               median_lps = md * CFS_TO_LPS,
+               lo_lps = lo * CFS_TO_LPS, hi_lps = hi * CFS_TO_LPS)
   })
   
   df_long <- do.call(rbind, out_list)
@@ -531,27 +661,28 @@ generate_flume_table <- function(post, depths = seq(0.1, 0.8, by = 0.1),
   # value columns as "median [lo, hi]" strings for quick reporting
   library(dplyr); library(tidyr)
   df_fmt <- df_long %>%
-    mutate(label = paste0(sprintf(paste0("%.",digits,"f"), median),
-                          " [", sprintf(paste0("%.",digits,"f"), lo),
-                          ", ", sprintf(paste0("%.",digits,"f"), hi), "]"),
-           Flume = flume_names[flume]) %>%
-    select(Depth_ft, Flume, label) %>%
+    mutate(label = paste0(sprintf(paste0("%.",digits,"f"), median_lps),
+                          " [", sprintf(paste0("%.",digits,"f"), lo_lps),
+                          ", ", sprintf(paste0("%.",digits,"f"), hi_lps), "]"),
+           Flume = paste0(flume_names[flume], " (L/s)")) %>%
+    select(Depth_cm, Flume, label) %>%
     pivot_wider(names_from = Flume, values_from = label) %>%
-    arrange(Depth_ft)
+    arrange(Depth_cm)
   
   # manufacturer column
   if (!is.null(manuf)) {
     if (all(c("a_m","b_m") %in% names(manuf)) && !("flume" %in% names(manuf))) {
-      df_fmt$`Manufacturer Eq.` <- sprintf(paste0("%.",digits,"f"),
-                                           manuf$a_m[1] * H^(manuf$b_m[1]))
+      df_fmt$`Manufacturer Eq. (L/s)` <- sprintf(paste0("%.",digits,"f"),
+                                           manuf$a_m[1] * (df_fmt$Depth_cm / FT_TO_CM)^manuf$b_m[1] * CFS_TO_LPS)
     } else if (all(c("flume","a_m","b_m") %in% names(manuf))) {
       # if provided per flume, add a column per flume with "Manu." suffix
       for (j in seq_len(J)) {
         if (as.character(j) %in% manuf$flume) {
           a_m <- manuf$a_m[manuf$flume == j][1]
           b_m <- manuf$b_m[manuf$flume == j][1]
-          colname <- paste0(flume_names[as.character(j)], " (Manu.)")
-          df_fmt[[colname]] <- sprintf(paste0("%.",digits,"f"), a_m * H^(b_m))
+          colname <- paste0(flume_names[as.character(j)], " (Manu., L/s)")
+          df_fmt[[colname]] <- sprintf(paste0("%.",digits,"f"),
+                                      a_m * (df_fmt$Depth_cm / FT_TO_CM)^b_m * CFS_TO_LPS)
         }
       }
     }
@@ -560,22 +691,37 @@ generate_flume_table <- function(post, depths = seq(0.1, 0.8, by = 0.1),
   # also return a numeric version with separate median/lo/hi columns per flume (for CSV/analysis)
   df_num <- df_long %>%
     mutate(Flume = flume_names[flume]) %>%
-    select(Depth_ft, Flume, median, lo, hi) %>%
+    select(Depth_cm, Flume, median_lps, lo_lps, hi_lps) %>%
     pivot_wider(names_from = Flume,
-                values_from = c(median, lo, hi),
+                values_from = c(median_lps, lo_lps, hi_lps),
                 names_sep = "_") %>%
-    arrange(Depth_ft)
+    arrange(Depth_cm)
+  if (!is.null(manuf)) {
+    if (!("flume" %in% names(manuf))) {
+      df_num$Manufacturer_lps <- manuf$a_m[1] *
+        (df_num$Depth_cm / FT_TO_CM)^manuf$b_m[1] * CFS_TO_LPS
+    } else {
+      for (j in seq_len(J)) {
+        m <- subset(manuf, flume == j)
+        if (nrow(m) > 0) {
+          df_num[[paste0("Manufacturer_lps_", flume_names[as.character(j)])]] <-
+            m$a_m[1] * (df_num$Depth_cm / FT_TO_CM)^m$b_m[1] * CFS_TO_LPS
+        }
+      }
+    }
+  }
   
   list(display = df_fmt, numeric = df_num)
 }
 
 # grid and manufacturer equation
-depth_grid <- seq(0.1, 0.8, by = 0.1)
+# Retain the existing reporting stages, expressed in cm, and include zero.
+depth_grid_cm <- seq(0, 0.8, by = 0.1) * FT_TO_CM
 manuf <- data.frame(a_m = 1.55, b_m = 2.58)  # global manufacturer curve
 
 res <- generate_flume_table(
   post = post3,
-  depths = depth_grid,
+  depths_cm = depth_grid_cm,
   prob = 0.95,
   kind = "parameter",     # "parameter" for comparing flume calibration curves
   ndraws = 4000,
@@ -590,9 +736,8 @@ res$display
 # Numeric table for export or further analysis
 res$numeric
 
-# Save both to CSVs if you like
-# write.csv(res$display, "../output/flume_generated_display.csv", row.names = FALSE)
-write.csv(res$numeric, "../output/flume_generated_numeric.csv", row.names = FALSE)
+write.csv(res$display, "../output/sep2026_flume_generated_display.csv", row.names = FALSE)
+write.csv(res$numeric, "../output/sep2026_flume_generated_numeric.csv", row.names = FALSE)
 
 
 
