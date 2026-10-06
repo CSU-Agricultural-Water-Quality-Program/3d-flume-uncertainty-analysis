@@ -1,0 +1,6 @@
+﻿"Parameter","Description","3D Printed 1","3D Printed 2","Fiberglass"
+"a","Scale coefficient in Q (L/s) = a * H (cm)^b.","0.00418 (0.00013 – 0.01093)","0.00495 (0.00009 – 0.01287)","0.00483 (0.00003 – 0.01521)"
+"b","Dimensionless exponent controlling rating-curve steepness.","2.84 (2.29 – 3.36)","2.80 (2.22 – 3.39)","2.86 (2.12 – 3.64)"
+"σproc","Process standard deviation (L/s).","0.223 (0.007 – 0.653)","0.272 (0.007 – 0.805)","0.398 (0.008 – 1.070)"
+"σQ,add","Additive discharge measurement-error standard deviation (L/s).","0.350 (0.099 – 0.657)","0.385 (0.143 – 0.742)","0.455 (0.152 – 0.833)"
+"cv","Shared proportional flow-meter error (% of reading).","0.023 (0.005 – 0.047)","0.023 (0.005 – 0.047)","0.023 (0.005 – 0.047)"

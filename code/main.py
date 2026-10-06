@@ -23,9 +23,9 @@ DATA = REPO / "data"
 OUTPUT = REPO / "output"
 
 DEFAULT_CSV = DATA / "flume_data.csv"
-OUT_BASIC   = OUTPUT / "flume_stage_discharge_with_errors.png"
-OUT_BAND    = OUTPUT / "flume_stage_discharge_with_band.png"
-OUT_MC      = OUTPUT / "flume_montecarlo_band.png"
+OUT_BASIC   = OUTPUT / "python_measurement_error" / "flume_stage_discharge_with_errors.png"
+OUT_BAND    = OUTPUT / "python_measurement_error" / "flume_stage_discharge_with_band.png"
+OUT_MC      = OUTPUT / "python_monte_carlo" / "flume_montecarlo_band.png"
 
 SCRIPT_BASIC = CODE / "flume-analysis.py"
 SCRIPT_BAND  = CODE / "flume-analysis-with-band.py"

@@ -6,6 +6,7 @@ Monte Carlo refitting of Q = a * H^b using known measurement uncertainties.
 """
 
 import argparse
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -90,13 +91,16 @@ def plot_results(df, results, out_path, alpha_band=0.2):
     ax.legend([handles[i] for i in order], [labels[i] for i in order])
 
     fig.tight_layout()
+    Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, bbox_inches="tight")
     print(f"[OK] Saved Monte Carlo ensemble plot to {out_path}")
 
 def main():
     parser = argparse.ArgumentParser(description="Monte Carlo refitting of flume rating curves")
     parser.add_argument("csv", help="Path to flume_data.csv")
-    parser.add_argument("--out", default="../output/flume_montecarlo_band.png", help="Output PNG path")
+    parser.add_argument("--out", default=str(Path(__file__).resolve().parents[1] / "output" /
+                                            "python_monte_carlo" / "flume_montecarlo_band.png"),
+                        help="Output PNG path")
     parser.add_argument("--n", type=int, default=1000, help="Monte Carlo iterations")
     parser.add_argument("--alpha", type=float, default=0.2, help="Transparency for shaded bands")
     args = parser.parse_args()

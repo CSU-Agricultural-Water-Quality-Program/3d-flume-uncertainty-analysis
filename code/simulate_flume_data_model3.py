@@ -17,7 +17,7 @@ This script:
   - generates simulated data from the Model 3 generative process
   - writes:
       data/sim_data.csv
-      output/sim_truth_model3.csv  (true parameters used)
+      output/simulation/sim_truth_model3.csv  (true parameters used)
 
 Run from repo root:
   python code/simulate_flume_data_model3.py
@@ -81,7 +81,7 @@ def main() -> None:
 
     root = _repo_root()
     data_dir = root / "data"
-    out_dir = root / "output"
+    out_dir = root / "output" / "simulation"
     data_dir.mkdir(parents=True, exist_ok=True)
     out_dir.mkdir(parents=True, exist_ok=True)
 

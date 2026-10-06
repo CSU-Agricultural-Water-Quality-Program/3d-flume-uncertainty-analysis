@@ -12,7 +12,16 @@ Hydraulic testing was performed at the **CSU Hydraulics Laboratory**, and a **hi
 
 The Bayesian approach allows direct inference on the *true* (latent) discharge for each flume while accounting for known error sources—depth measurement accuracy, flow‑meter precision, and infiltration loss.  
 
-![Posterior calibration plot](output/flume_posterior_curves_final.jpg)
+![September 2026 posterior calibration plot](output/bayes/sep2026/sep2026_flume_posterior_curves_final.jpg)
+
+The current September 2026 analysis uses model 3 in `code/bayesflume.r` and saves
+metric reporting products in [`output/bayes/sep2026/`](output/bayes/sep2026/).
+Model 4 is commented out and retained for reference after poorer convergence in
+the project's comparisons. Chain-level and iteration-level Stan diagnostics,
+run metadata, and a saved fit accompany each model 3 rerun. See the
+[output guide](output/README.md) and [current export notes](output/bayes/sep2026/sep2026_export_notes.md).
+The active likelihood treats observed stage as fixed; the recorded gauge-error
+value is not currently propagated through a latent-stage model.
 
 ---
 
@@ -46,6 +55,10 @@ The model produces **posterior credible intervals**—probability statements abo
 ---
 
 ## Posterior Parameter Estimates  
+
+The parameter and prediction tables below describe the earlier calibration and
+retain its original units. Use the current September metric CSVs for the updated
+manuscript; earlier Bayes products are retained in `output/bayes/legacy/`.
 
 | Parameter | Description | 3D Printed 1 | 3D Printed 2 | Fiberglass |
 |------------|-------------|--------------|---------------|-------------|
@@ -98,16 +111,22 @@ All three flumes closely reproduce the manufacturer’s relationship across the 
 │   └── Trapezoidal Flume Testing.pdf
 │
 └── output/
-    ├── flume_posterior_curves_final.jpg        # Posterior plot shown above
-    ├── flume_generated_numeric.csv             # Predicted flows with 95 % CIs
-    ├── flume_model_3_precis.csv                # Model parameter summaries
-    ├── flume_montecarlo_band.png               # Optional Monte Carlo comparison
-    └── flume_stage_discharge_with_errors.png   # Earlier frequentist comparison
+    ├── README.md                     # Output guide and regeneration instructions
+    ├── bayes/
+    │   ├── sep2026/                  # Current model 3 metric outputs and Stan diagnostics
+    │   └── legacy/                   # Earlier Bayes products
+    ├── python_monte_carlo/           # Monte Carlo refitting plots
+    ├── python_measurement_error/     # Error-bar and propagated-band plots
+    ├── simulation/                   # Known parameters for simulated data
+    └── manuscript/                   # Manually assembled summary workbook
 ```
 
 ---
 
 ## Key Takeaways  
+
+These statements refer to the earlier calibration summarized above. Review the
+current September data and diagnostic exports before updating conclusions.
 
 - All flumes perform comparably within overlapping 95 % credible intervals, with both 3D-printed versions closely matching the manufacturer’s reference curve across most of the tested range.
 - The fiberglass flume had a much larger 95% CI, most likely due to having less sample data for calibration.

@@ -7,6 +7,7 @@ based on additive measurement uncertainty propagated through the curve.
 """
 
 import argparse
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -50,7 +51,9 @@ def total_vertical_uncertainty(a, b, h):
 def main():
     parser = argparse.ArgumentParser(description="Flume plot with shaded measurement bands")
     parser.add_argument("csv", help="Path to flume_data.csv")
-    parser.add_argument("--out", default="../output/flume_stage_discharge_with_band.png", help="Output figure path")
+    parser.add_argument("--out", default=str(Path(__file__).resolve().parents[1] / "output" /
+                                            "python_measurement_error" / "flume_stage_discharge_with_band.png"),
+                        help="Output figure path")
     parser.add_argument("--band", action="store_true", help="Render shaded measurement-uncertainty bands")
     parser.add_argument("--manuf-band", action="store_true", help="Also render a band for the manufacturer curve")
     parser.add_argument("--alpha", type=float, default=0.18, help="Alpha for shaded bands")
@@ -119,6 +122,7 @@ def main():
         y_frac -= 0.06
 
     fig.tight_layout()
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(args.out, bbox_inches="tight")
     print(f"[OK] Figure saved to {args.out}")
 

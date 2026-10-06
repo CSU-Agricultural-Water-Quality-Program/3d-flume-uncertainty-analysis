@@ -10,6 +10,7 @@ Formatting is unified with the other project plots:
 """
 
 import argparse
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -46,7 +47,9 @@ def fit_power(x, y):
 def main():
     ap = argparse.ArgumentParser(description="Flume plot with error bars and power-law fits")
     ap.add_argument("csv", help="Path to flume_data.csv")
-    ap.add_argument("--out", default="../output/flume_stage_discharge_with_errors.png", help="Output figure path")
+    ap.add_argument("--out", default=str(Path(__file__).resolve().parents[1] / "output" /
+                                        "python_measurement_error" / "flume_stage_discharge_with_errors.png"),
+                    help="Output figure path")
     args = ap.parse_args()
 
     df = pd.read_csv(args.csv)
@@ -96,6 +99,7 @@ def main():
         y_frac -= 0.06
 
     fig.tight_layout()
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(args.out, bbox_inches="tight")
     print(f"[OK] Figure saved to {args.out}")
 
