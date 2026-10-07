@@ -14,7 +14,20 @@ The Bayesian approach allows direct inference on the *true* (latent) discharge f
 
 ![September 2026 posterior calibration plot](output/bayes/sep2026/sep2026_flume_posterior_curves_final.jpg)
 
-The current September 2026 analysis uses model 3 in `code/bayesflume.r` and saves
+The active code now reads the October 2026 calibration and writes to
+`output/bayes/oct2026/` with the `oct2026_` prefix. Additional point plots show
+gauge accuracy and parameter credible intervals around a solid manufacturer
+curve, with a companion percent relative difference plot. White-filled points
+show estimated latent true flow; solid colored points show measured flow.
+Parameter intervals describe the mean rating curve; manuscript captions are
+exported separately rather than embedded in the images.
+The main script also sources `code/flume-uncertainty-components.r` and exports
+permanent absolute/relative uncertainty-component lines and stacked predictive
+variance shares. Their captions are in `oct2026_flume_uncertainty_figure_captions.md`.
+See the [output guide](output/README.md)
+for definitions and regeneration from the saved fit without refitting.
+
+The September 2026 analysis also uses model 3 in `code/bayesflume.r` and retains
 metric reporting products in [`output/bayes/sep2026/`](output/bayes/sep2026/).
 Model 4 is commented out and retained for reference after poorer convergence in
 the project's comparisons. Chain-level and iteration-level Stan diagnostics,

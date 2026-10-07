@@ -179,15 +179,19 @@ export_stan_diagnostics <- function(fit, output_dir, prefix) {
 setwd("C:/Users/ansle/OneDrive/Documents/GitHub/3d-flume-uncertainty-analysis/data")
 
 # Current calibration products are separate from older Bayes and Python outputs.
-output_dir <- "../output/bayes/sep2026"
+# output_dir <- "../output/bayes/sep2026"
+# output_prefix <- "sep2026"
+output_dir <- "../output/bayes/oct2026"
+output_prefix <- "oct2026"
 dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
-output_file <- function(filename) file.path(output_dir, filename)
+output_file <- function(filename) file.path(output_dir, paste0(output_prefix, "_", filename))
 
 # Load the flume calibration data
 # df_raw <- read.csv("../data/flume_data.csv")
 # df_raw <- read.csv("../data/sim_data.csv") # for testing with simulated data
-input_csv <- "../data/New Data Sep 2026/flume_data_sep2026.csv"
-df_raw <- read.csv(input_csv)
+# input_csv <- "../data/New Data Sep 2026/flume_data_sep2026.csv"
+input_csv <- "../data/New Data Oct 2026/flume_data_oct2026.csv"
+df_raw <- read.csv(input_csv, fileEncoding = "UTF-8-BOM")
 
 # Drop flume calibration rows (i.e., where flume_type == EQ)
 df <- df_raw %>% filter(flume_type != "EQ")
@@ -199,7 +203,8 @@ dat <- list(
   H_obs   = as.numeric(df$depth_ft),                 # observed head (ft)
   F       = as.numeric(as.factor(df$flume_type)),    # flume index 1..J
   J       = length(unique(df$flume_type)),           # number of flume groups
-  sigma_H = 0.005                                    # ft, from point gauge accuracy
+  # sigma_H = 0.005                                  # previous gauge accuracy, ft
+  sigma_H = 0.01 / FT_TO_CM                          # October accuracy: +/- 0.01 cm, reported separately
 )
 
 
@@ -297,7 +302,13 @@ flume_model_3 <- ulam(
     vector[J]:sigma_proc ~ dexp(1),
     
     # Error hyperparameters
-    cv_Q ~ dlnorm( log(2e-4) , 0.5 ),            # single scalar
+    # Previous September 2026 proportional-error prior, retained for reference:
+    # cv_Q ~ dlnorm( log(2e-4) , 0.5 ),        # median 0.02% of reading
+    # October 2026: center the prior at the reported 2% of reading.
+    # cv_Q is a dimensionless fraction: 2% = 0.02, not 2 or 0.0002.
+    # The lognormal median is 0.02; retain the previous log-scale SD of 0.5.
+    cv_Q ~ dlnorm( log(0.02) , 0.5 ),          # shared across all flumes
+    # This additive prior is in cfs, not percent; retain its existing value.
     vector[J]:sigma_Q_add ~ dlnorm( log(0.02) , 0.5 )  # per flume
   ),
   data = dat, chains = 4, cores = 4, iter = 4000, seed = fit_seed
@@ -305,24 +316,24 @@ flume_model_3 <- ulam(
 
 # Preserve complete draws and diagnostics for later exports without refitting.
 attr(flume_model_3, "cstanfit")$save_object(
-  output_file("sep2026_flume_model_3_cmdstanfit.rds")
+  output_file("flume_model_3_cmdstanfit.rds")
 )
 chain_diagnostics <- export_stan_diagnostics(flume_model_3, output_dir,
-                                            "sep2026_flume_model_3")
+                                            paste0(output_prefix, "_flume_model_3"))
 
 # model convergence check
 traceplot_ulam(flume_model_3, ask=F, window=c(2100,4000))
 trankplot(flume_model_3, ask=F, window=c(2100,4000))
 dashboard_flume(flume_model_3)
-save_dashboard(flume_model_3, output_file("sep2026_flume_model_3_dashboard.png"))
+save_dashboard(flume_model_3, output_file("flume_model_3_dashboard.png"))
 
 # Summarize the model and save output
 p3 <- metric_precis(flume_model_3)
-write_metric_precis(p3, output_file("sep2026_flume_model_3_precis.csv"))
+write_metric_precis(p3, output_file("flume_model_3_precis.csv"))
 p3
 
 # plot model summary and save as jpg
-jpeg(output_file("sep2026_flume_model_3_precis.jpg"), width = 6.5, height = 6.5, units = "in", res = 600)
+jpeg(output_file("flume_model_3_precis.jpg"), width = 6.5, height = 6.5, units = "in", res = 600)
 plot(p3)
 dev.off()
 par(mfrow=c(1,1))
@@ -393,15 +404,15 @@ set.seed(fit_seed)
 # traceplot_ulam(flume_model_4, ask=F, window=c(2100,4000))
 # trankplot(flume_model_4, ask=F, window=c(2100,4000))
 # dashboard_flume(flume_model_4)
-# save_dashboard(flume_model_4, output_file("sep2026_flume_model_4_dashboard.png"))
+# save_dashboard(flume_model_4, output_file("flume_model_4_dashboard.png"))
 #
 # # Summarize the model and save output
 # p4 <- metric_precis(flume_model_4)
-# write_metric_precis(p4, output_file("sep2026_flume_model_4_precis.csv"))
+# write_metric_precis(p4, output_file("flume_model_4_precis.csv"))
 # p4
 #
 # # plot model summary and save as jpg
-# jpeg(output_file("sep2026_flume_model_4_precis.jpg"), width = 6.5, height = 6.5, units = "in", res = 600)
+# jpeg(output_file("flume_model_4_precis.jpg"), width = 6.5, height = 6.5, units = "in", res = 600)
 # plot(p4)
 # dev.off()
 # par(mfrow=c(1,1))
@@ -510,13 +521,22 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
   })
   ribbon_df <- do.call(rbind, rib_list)
   
-  # ---------- Q_true intervals at observed H ----------
-  Qtrue_draws <- post$Q_true[sel, , drop=FALSE]
+  # White points always summarize observation-specific latent Q_true. Parameter
+  # bars summarize mean rating-curve flow, matching the parameter ribbons;
+  # these two estimands are distinguished in the exported manuscript captions.
+  Qinterval_draws <- if (ribbon_kind == "parameter") {
+    vapply(seq_along(H), function(i) {
+      a_draw[, Fidx[i]] * H[i]^b_draw[, Fidx[i]]
+    }, numeric(S))
+  } else {
+    post$Q_true[sel, , drop = FALSE]
+  }
   Qtrue_df <- data.frame(
     H    = H,
-    Q    = apply(Qtrue_draws, 2, median),
-    Q_lo = apply(Qtrue_draws, 2, quantile, p_lo),
-    Q_hi = apply(Qtrue_draws, 2, quantile, p_hi),
+    Q    = apply(post$Q_true[sel, , drop = FALSE], 2, median),
+    Q_parameter_med = if (ribbon_kind == "parameter") apply(Qinterval_draws, 2, median) else NA_real_,
+    Q_lo = apply(Qinterval_draws, 2, quantile, p_lo),
+    Q_hi = apply(Qinterval_draws, 2, quantile, p_hi),
     flume = Fidx,
     ptype = "Q_true"
   )
@@ -562,7 +582,7 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
   if (!is.null(manuf_df)) manuf_df <- to_metric(manuf_df)
   # Use coordinate limits so negative Gaussian interval tails are clipped only
   # in the display, rather than deleting rows or changing posterior summaries.
-  y_max <- max(ribbon_df$Q_hi, ribbon_df$Q_med, Qtrue_df$Q_hi, Qobs_df$Q,
+  y_max <- max(ribbon_df$Q_hi, ribbon_df$Q_med, Qtrue_df$Q_hi, Qtrue_df$Q, Qobs_df$Q,
                if (show_qobs_errors) Qobs_df$Q_hi,
                if (!is.null(manuf_df)) manuf_df$Qm) * 1.10
 
@@ -576,7 +596,7 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
     line_map <- c(line_map, "Manufacturer equation"="dotted")
     curve_labels <- c(curve_labels, "Manufacturer equation")
   }
-  # White-filled measured-flow circles contrast with colored estimated-flow
+  # White-filled estimated-flow circles contrast with colored measured-flow
   # circles. Thin intervals and light ribbons reduce visual crowding.
   shape_map <- c("Q_true" = 21, "Q_obs" = 21)
   
@@ -591,23 +611,16 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
               aes(H, Q_med, color = factor(flume), linetype = factor(flume)),
               linewidth = 1.0) +
     
-    # Q_true: filled with flume color, black outline
+    # Estimated flow: white fill with flume-colored outline.
     geom_linerange(data = Qtrue_df,
                    aes(H, ymin = Q_lo, ymax = Q_hi, color = factor(flume)),
                    linewidth = 0.65, alpha = 0.7, show.legend = FALSE) +
-    geom_point(data = Qtrue_df,
-               aes(H, Q, fill = factor(flume), shape = ptype),
-               size = 2.5, stroke = 0.45, color = "black") +
     
-    # Q_obs: white-filled circles with flume-colored outlines.
+    # Q_obs: colored fill with black outline.
     { if (show_qobs_errors)
       geom_linerange(data = Qobs_df,
                      aes(H, ymin = Q_lo, ymax = Q_hi, color = factor(flume)),
                      linewidth = 0.55, alpha = 0.55, show.legend = FALSE) } +
-    geom_point(data = Qobs_df,
-               aes(H, Q, color = factor(flume), shape = ptype),
-               fill = "white", size = 1.5, stroke = 0.8,
-               show.legend = c(color = FALSE, shape = TRUE)) +
     
     # manufacturer equation
     { if (!is.null(manuf_df))
@@ -616,6 +629,16 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
                     linetype = "Manufacturer equation"),
                 linewidth = 1.8) } +
     
+    # Larger white latent estimates beneath smaller measured-flow points.
+    geom_point(data = Qtrue_df,
+               aes(H, Q, color = factor(flume), shape = ptype),
+               size = 2.5, stroke = 0.8, fill = "white",
+               show.legend = c(color = FALSE, shape = TRUE)) +
+    geom_point(data = Qobs_df,
+               aes(H, Q, fill = factor(flume), shape = ptype),
+               color = "black", size = 1.5, stroke = 0.45,
+               show.legend = c(fill = FALSE, shape = TRUE)) +
+
     # scales and guides
     scale_color_manual(values = color_map,
                        name = "Flume",
@@ -624,7 +647,7 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
     scale_shape_manual(values = shape_map,
                        name = "Points",
                        breaks = c("Q_true","Q_obs"),
-                       labels = c("Estimated True Flow","Measured Flow")) +
+                       labels = c("Estimated latent true flow", "Measured flow")) +
     scale_linetype_manual(values = line_map, name = "Flume",
                           breaks = names(line_map), labels = curve_labels) +
     guides(
@@ -638,7 +661,7 @@ plot_flume_posterior <- function(post, dat, prob = 0.95, ndraws = 4000,
           size  = c(2.5, 2.2),
           stroke= c(0.45, 0.8),
           color = c("black", "black"),  # outline in legend
-          fill  = c("grey60", "white")  # generic estimated versus measured flow
+          fill  = c("white", "grey60")  # generic estimated versus measured flow
         )
       )
     ) +
@@ -678,7 +701,7 @@ g <- plot_flume_posterior(
   post  = post3,              # posterior samples from ulam
   dat   = dat,                # data list used for the model
   prob  = 0.95,               # credible interval probability
-  ndraws = 4000,              # number of posterior draws used
+  ndraws = nrow(post3$a),     # all draws, shared with point-only summaries
   show_manufacturer = manuf,  # add manufacturer equation line
   ribbon_kind = "parameter",  # options: "parameter", "process", or "predictive"
   show_qobs_errors = FALSE,   # measurement error bars for Q_obs off (recommended)
@@ -691,7 +714,7 @@ g <- plot_flume_posterior(
 print(g)
 
 # Save a high-resolution version
-ggsave(output_file("sep2026_flume_posterior_curves_final.jpg"), g,
+ggsave(output_file("flume_posterior_curves_final.jpg"), g,
        width = 9, height = 6, dpi = 600)
 
 # Separate panels reveal each uncertainty band without changing the intervals,
@@ -701,8 +724,28 @@ g_panels <- g + facet_wrap(
   labeller = labeller(flume = c("1" = "3D Printed 1", "2" = "3D Printed 2",
                                "3" = "Fiberglass"))
 )
-ggsave(output_file("sep2026_flume_posterior_curves_by_flume.png"), g_panels,
+ggsave(output_file("flume_posterior_curves_by_flume.png"), g_panels,
        width = 11, height = 5, dpi = 300)
+
+# Additive point-only comparison and departures from the manufacturer curve.
+# Gauge accuracy is displayed separately; this does not change the likelihood.
+source("../code/flume-point-plots.r")
+point_products <- save_flume_point_plots(
+  post3, dat, manuf, output_dir, prefix = output_prefix, input_csv = input_csv,
+  fit_file = output_file("flume_model_3_cmdstanfit.rds")
+)
+print(point_products$plot)
+print(point_products$departures)
+
+# Permanent predictive-uncertainty components and variance shares.
+# The helper only defines functions; use the same joint draws as all other plots.
+source("../code/flume-uncertainty-components.r")
+uncertainty_products <- save_flume_uncertainty_components(
+  post3, dat, manuf, output_dir, prefix = output_prefix, input_csv = input_csv,
+  fit_file = output_file("flume_model_3_cmdstanfit.rds")
+)
+print(uncertainty_products$sd)
+print(uncertainty_products$shares)
 
 
 # Generative predictions output
@@ -855,8 +898,8 @@ res$display
 # Numeric table for export or further analysis
 res$numeric
 
-write.csv(res$display, output_file("sep2026_flume_generated_display.csv"), row.names = FALSE)
-write.csv(res$numeric, output_file("sep2026_flume_generated_numeric.csv"), row.names = FALSE)
+write.csv(res$display, output_file("flume_generated_display.csv"), row.names = FALSE)
+write.csv(res$numeric, output_file("flume_generated_numeric.csv"), row.names = FALSE)
 
 
 # Manuscript Table 4: posterior means with 95% HPDIs, using every saved draw.
@@ -930,7 +973,7 @@ write_manuscript_csv <- function(table, filename) {
 }
 
 table4 <- generate_manuscript_table4(post3, prob = 0.95)
-write_manuscript_csv(table4$display, output_file("sep2026_manuscript_table4.csv"))
-write.csv(table4$numeric, output_file("sep2026_manuscript_table4_numeric.csv"),
+write_manuscript_csv(table4$display, output_file("manuscript_table4.csv"))
+write.csv(table4$numeric, output_file("manuscript_table4_numeric.csv"),
           row.names = FALSE)
 
