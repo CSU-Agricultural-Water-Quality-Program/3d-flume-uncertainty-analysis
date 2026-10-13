@@ -7,6 +7,11 @@
 
 ## Overview  
 
+**Start with [code/bayes_flume.R](code/bayes_flume.R).** It is the main analysis
+entry point. See [the code guide](code/README.md) for running it and for the
+purpose of each supporting module and optional tool. Early Python analyses
+are preserved in `code/_unused_old_python/` and are obsolete for the final workflow.
+
 This repository documents the calibration and uncertainty analysis for CSU’s **3D‑printed trapezoidal flume**, developed as a low‑cost, field‑ready alternative to commercial fiberglass units.  
 Hydraulic testing was performed at the **CSU Hydraulics Laboratory**, and a **hierarchical Bayesian model** was used to jointly estimate the stage–discharge relationships and their associated measurement uncertainties.  
 
@@ -14,27 +19,52 @@ The Bayesian approach allows direct inference on the *true* (latent) discharge f
 
 ![September 2026 posterior calibration plot](output/bayes/sep2026/sep2026_flume_posterior_curves_final.jpg)
 
-The active code now reads the October 2026 calibration and writes to
-`output/bayes/oct2026/` with the `oct2026_` prefix. Additional point plots show
+The active R calibration reads `flume_data_oct2026_metric.csv` and uses metres
+and L/s throughout the likelihood, priors, predictions, and figures. Fixed prior
+medians for the rating coefficients are 941.2 and 2.58, matching the published
+metric equation. Running the main script fits the model and writes results to
+`output/bayes/oct2026_metric/`; no fitting switch is required. The metric model
+has not yet been sampled.
+The saved October 2026 calibration remains in `output/bayes/oct2026/`.
+Additional point plots show
 gauge accuracy and parameter credible intervals around a solid manufacturer
 curve, with a companion percent relative difference plot. White-filled points
 show estimated latent true flow; solid colored points show measured flow.
 Parameter intervals describe the mean rating curve; manuscript captions are
 exported separately rather than embedded in the images.
-The main script also sources `code/flume-uncertainty-components.r` and exports
+The main script also sources `code/supporting_code/flume-uncertainty-components.R` and exports
 permanent absolute/relative uncertainty-component lines and stacked predictive
 variance shares. Their captions are in `oct2026_flume_uncertainty_figure_captions.md`.
 See the [output guide](output/README.md)
 for definitions and regeneration from the saved fit without refitting.
 
-The September 2026 analysis also uses model 3 in `code/bayesflume.r` and retains
-metric reporting products in [`output/bayes/sep2026/`](output/bayes/sep2026/).
-Model 4 is commented out and retained for reference after poorer convergence in
-the project's comparisons. Chain-level and iteration-level Stan diagnostics,
-run metadata, and a saved fit accompany each model 3 rerun. See the
+The historical September 2026 analysis retains metric reporting products in
+[`output/bayes/sep2026/`](output/bayes/sep2026/). The new main script contains
+only the active model. The previous script, with alternative models 1, 2, and 4,
+is archived unchanged in `code/_unused_old_r/base_flume.R`. Chain-level and
+iteration-level Stan diagnostics, run metadata, and a saved fit accompany each
+calibration. See the
 [output guide](output/README.md) and [current export notes](output/bayes/sep2026/sep2026_export_notes.md).
-The active likelihood treats observed stage as fixed; the recorded gauge-error
-value is not currently propagated through a latent-stage model.
+The revised likelihood fits latent stage within the reported +/-1.5 mm
+(+/-0.0015 m) bound, using a uniform conditional uncertainty model. This bound
+is applied to computed depth independently for each observation. The empirical
+proportional measurement-SD prior median is 0.2%; the additive-SD prior median
+is 0.56633693184 L/s. The previous fits and original input CSV are preserved.
+The archived script retains the commented log-parameterization model.
+
+Prepare inputs and check compilation/reporting without sampling:
+
+```powershell
+Rscript code/tools/prepare-flume-metric-data.R
+Rscript code/tools/validate-flume-metric.R
+```
+
+All fixed prior settings are in the labeled `dat` list in `code/bayes_flume.R`,
+with device, source, unit, and modeling-assumption comments. Supporting scripts
+contain unit and reporting functions only.
+Run `code/bayes_flume.R` to fit the model and generate results.
+The unit/compilation validator never samples. Its previews use transformed
+historical draws to check reporting, not new metric-model inference.
 
 ---
 
@@ -110,11 +140,20 @@ All three flumes closely reproduce the manufacturer’s relationship across the 
 3d-flume-uncertainty-analysis/
 │
 ├── code/
-│   ├── bayesflume.r                 # Hierarchical Bayesian model definition and fitting
-│   ├── flume-analysis.py            # Legacy Python calibration script
-│   ├── flume-montecarlo.py          # Monte Carlo uncertainty propagation (optional)
-│   ├── flume-analysis-with-band.py  # Comparison of band vs. point estimates
-│   └── main.py                      # Entry script for Python analysis
+│   ├── bayes_flume.R               # Main model and complete result workflow
+│   ├── README.md                   # Which script to run and what each file does
+│   ├── supporting_code/            # Automatically sourced unit/reporting functions
+│   │   ├── flume-metric-units.R     # Unit constants and conversion helpers
+│   │   ├── flume-reporting.R        # Summaries, diagnostics, curves, and tables
+│   │   ├── flume-point-plots.R      # Calibration point figures
+│   │   ├── flume-uncertainty-components.R
+│   │   └── project-paths.R
+│   ├── tools/                      # Optional standalone commands
+│   │   ├── prepare-flume-metric-data.R
+│   │   ├── validate-flume-metric.R
+│   │   └── regenerate-flume-figures.R
+│   ├── _unused_old_python/         # Obsolete initial Python workflow
+│   └── _unused_old_r/              # Previous main script and retired entry points
 │
 ├── data/
 │   └── flume_data.csv               # Raw calibration data from CSU Hydraulics Lab

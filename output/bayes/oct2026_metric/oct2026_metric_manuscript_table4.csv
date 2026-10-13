@@ -1,0 +1,6 @@
+﻿Parameter,Description,3D Printed 1,3D Printed 2,Fiberglass
+a,Scale coefficient in Q (L/s) = a * H (m)^b.,1291.86 (823.63 – 1741.78),1167.45 (734.03 – 1620.08),1150.42 (737.93 – 1589.73)
+b,Dimensionless exponent controlling rating-curve steepness.,2.74 (2.55 – 2.93),2.66 (2.46 – 2.86),2.69 (2.49 – 2.89)
+σproc,Process standard deviation (L/s).,0.070 (0.003 – 0.190),0.095 (0.004 – 0.237),0.080 (0.003 – 0.208)
+"σQ,add",Additive discharge measurement-error standard deviation (L/s).,0.179 (0.062 – 0.322),0.214 (0.087 – 0.382),0.201 (0.082 – 0.354)
+cv,Shared proportional flow-meter error (% of reading).,1.194 (0.379 – 2.138),1.194 (0.379 – 2.138),1.194 (0.379 – 2.138)

@@ -1,0 +1,45 @@
+{
+  "n": 30,
+  "counts": {
+    "3D1": 10,
+    "3D2": 10,
+    "FIBER": 10
+  },
+  "old_counts": {
+    "3D1": 6,
+    "FIBER": 4,
+    "3D2": 6
+  },
+  "old_below_promag_factory_cutoff": [
+    {
+      "depth_ft": "0.326",
+      "flow_cfs": "0.04",
+      "flume_type": "FIBER"
+    },
+    {
+      "depth_ft": "0.373",
+      "flow_cfs": "0.08",
+      "flume_type": "FIBER"
+    },
+    {
+      "depth_ft": "0.241",
+      "flow_cfs": "0.03",
+      "flume_type": "3D2"
+    },
+    {
+      "depth_ft": "0.328",
+      "flow_cfs": "0.08",
+      "flume_type": "3D2"
+    }
+  ],
+  "lps_per_cfs": 28.316846592,
+  "modmag_listed_range_min_lps": 0.2361111111111111,
+  "promag_factory_cutoff_lps": 2.7777777777777777,
+  "stage_csv_max_abs_rounding_error_cm": 0.013200000000002987,
+  "modmag_min_velocity_mps": 0.07210825772626704,
+  "modmag_max_velocity_mps": 1.1537321236202727,
+  "uncertainty_assumption": "Uniform bounds; SD=half-width/sqrt(3). Gaussian likelihood would be an approximation.",
+  "diameter_assumption": "Nominal DN100 and DN300, not verified installed internal diameters.",
+  "model_modified": false,
+  "model_rerun": false
+}

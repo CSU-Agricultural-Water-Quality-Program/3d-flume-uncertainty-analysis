@@ -1,0 +1,3421 @@
+
+=== PDF PAGE 1 ===
+Electromagnetic Flow Meter
+M2000
+MAG-UM-01272-EN-43 (August 2026) User Manual
+
+
+=== PDF PAGE 2 ===
+Electromagnetic Flow Meter M2000
+Page ii August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 3 ===
+CONTENTS
+Safety Precautions and Instructions .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .5
+Basic Safety Precautions  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 5
+System Description  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 6
+Measuring Principle  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .6
+Unpacking and Inspection   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 7
+Rigging, Lifting and Moving Large Units  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .7
+Meter Location, Orientation and Applications  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 9
+Transmitter Mounting Configuration Options  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 9
+Temperature Ranges  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 10
+Protection Class   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 10
+Pipelines and Fluid Flow  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 10
+Meter Orientation  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 11
+Straight Pipe Requirements  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 11
+Pipe Reducer Requirements  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .12
+Chemical Injection Applications  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 13
+Partially-Filled Pipe Situations .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .14
+Meter Gaskets and Grounding  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 15
+Meter/Pipeline Connection Gaskets  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .15
+Meter Grounding and Potential Equalization  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 15
+Recommended Installation with Grounding Rings   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 16
+Plastic or Lined Pipelines  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .17
+Pipelines with Cathodic Protection  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 17
+Electrically Disturbed Environment  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 17
+Wiring .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .18
+Wiring Safety  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 18
+Opening the M2000 Meter Cover   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 18
+Power Connections  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 18
+Remote Mount Installation   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 19
+Signal Cable Specification  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 21
+Maximum Cable Length at Different Fluid Temperatures .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .21
+Configuring Input/Output (I/O)   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 22
+Analog Output Wiring Diagram .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .23
+Digital Output Wiring Diagrams  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 24
+Digital Input Wiring Diagram  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 25
+Communication Interfaces .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .25
+User Manual
+Page iii August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 4 ===
+Programming the M2000 Meter  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 27
+Function Buttons .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .27
+Displays .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .29
+Security .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .30
+Setting Up the M2000 Meter with Quick Setup  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .32
+Menu Structure  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .34
+Using the Main Menu Programming Options .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .36
+Encoder Protocol Interface  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 59
+Store/Restore Feature .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .61
+Data Logging Feature .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .61
+Maintenance  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 62
+Cleaning the Flow Tube and Electrode  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 62
+Replacing the Circuit Board  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 62
+Replacing the Fuse .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .62
+Troubleshooting  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 63
+Specifications  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .66
+Transmitter Specifications  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 66
+Sensor Type II Specifications .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .67
+Sensor Type II Dimensions  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 68
+Flange ANSI Class 150 
+Up to 24 in . ASME B16 .5 / > 24 in . AWWA Class D (ASME 16 .47) .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .69
+Flange ANSI Class 300 ASME B16 .5 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .69
+Flange EN 1092-1 / PN 10   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 70
+Flange EN 1092-1 / PN 16   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 70
+Flange EN 1092-1 / PN 25   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 71
+Flange EN 1092-1 / PN 40   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 71
+Sensor Type III Specifications  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 72
+Sensor Type III Dimensions   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 72
+Sensor with Sanitary Process Connections Specifications  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 73
+DIN 11851 Connection Dimensions  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 73
+Tri-Clamp Connection Dimensions   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 74
+Error Limits .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .75
+Size Selection  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .76
+OIML Approved Meter  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 77
+MID Approved Meter  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 78
+Spare Parts   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 79
+Electromagnetic Flow Meter M2000
+Page iv August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 5 ===
+SAFETY PRECAUTIONS AND INSTRUCTIONS
+Some procedures in this manual require special safety considerations . In such cases, the text is emphasized with the 
+following symbols:
+Indicates a hazardous situation, which, if not avoided, will result in death or serious personal injury .
+WARNING Indicates a hazardous situation, which, if not avoided, could result in death or serious personal injury .
+Indicates a hazardous situation, which, if not avoided, could result in minor or moderate personal injury or 
+damage to property .
+Basic Safety Precautions
+Before installing or using this product, please read this instruction manual thoroughly .
+Only qualified personnel should install and/or repair this product . If a fault appears, contact your distributor .
+Installation
+• Do not place any unit on an unstable surface that may allow it to fall .
+• Never place the units above a radiator or heating unit .
+• Route all cabling away from potential hazards .
+• Isolate from the mains before removing any covers .
+• Avoid exposing open cable ends to water/moisture (for example, in chambers), as this can penetrate into the cable and 
+cause electrical short circuits .
+• Permanently connected equipment requires the special considerations to satisfy the CEC and the Canadian deviations in 
+the standard, including overcurrent and fault protection as required .
+Protection Class
+The device has protection class IP 67 and needs to be protected against water, oils, etc .
+Setup and Operation
+Adjust only those controls that are covered by the operating instructions . Improper adjustment of other controls may result in 
+damage, incorrect operation or loss of data .
+Repair of Faults
+Disconnect all units from power supply and have it repaired by a qualified service person if any of the following occurs:
+• If a unit does not operate normally when operating instructions are followed
+• If a unit exposed to rain/water or if any liquid has been spilled into it
+• If a unit has been dropped or damaged
+• If a unit shows a change in performance, indicating a need for service
+• If the connections for any cable have been exposed to rain/water allowing moisture ingress into the cable itself
+RoHs
+Our products are RoHs compliant .
+Safety Precautions and Instructions
+Page 5 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 6 ===
+SYSTEM DESCRIPTION
+The Badger Meter model M2000 electromagnetic flow meter is intended for fluid metering in most industries including water, 
+wastewater, food and beverage, pharmaceutical and chemical . The meter is intended for the metering of all fluids with electric 
+conductivity of at least 5 µS/cm (20 µS/cm for demineralized water) . The meter has a high degree of accuracy, and measuring 
+results are independent of density, temperature and pressure .
+The basic components of an electromagnetic flow meter are:
+• The sensor, which includes the flow tube, isolating liner and measuring electrodes .
+• The transmitter, which is the electronic device responsible for the signal processing, flow calculation, display and 
+output signals  .
+Transmitter
+Sensor
+®
+Figure 1:  Transmitter and sensor
+The construction materials of the wetted parts (liner and electrodes) should be appropriate for the intended type of service . 
+Review all the compatibilities consistent with the specifications .
+Each meter is factory tested and calibrated . A calibration certificate is included with each meter .
+Measuring Principle
+In accordance with Faraday’s induction principle, electric voltage is induced in a conductor moving through a magnetic 
+field . In the case of electromagnetic flow measurement, the moving conductor is the flowing fluid . Two opposite measuring 
+electrodes conduct the induced voltage, which is proportional to flow velocity, to the transmitter . Flow volume is calculated 
+based on pipe diameter .
+For reliable and accurate flow measurement, this measuring principle always requires a fully-filled pipe .
+System Description
+Page 6 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 7 ===
+UNPACKING AND INSPECTION
+Follow these guidelines when unpacking the equipment .
+• If a shipping container shows any sign of damage, have the shipper present when you unpack the meter .
+• Follow all unpacking, lifting and moving instructions associated with the shipping container .
+• Open the container and remove all packing materials . Store the shipping container and packing  
+materials if the unit needs to be shipped for service .
+• Verify that the shipment matches the packing list and your order form .
+• Inspect the meter for any signs of shipping damage, scratches, or loose or broken parts .
+OTE: N If the unit was damaged in transit, it is your responsibility to request an inspection report from the carrier within  
+48 hours . You must then file a claim with the carrier and contact Badger Meter for appropriate repairs or replacement .
+• All sensors with polytetrafluoroethylene (PTFE) liners are shipped with a liner protector on each end to maintain proper 
+form of the PTFE material during shipping and storage .
+• Do not remove the liner protectors until you are ready to install .
+OTE: N Storage: If the meter is to be stored, place it in its original container in a dry, sheltered location .  
+Storage temperature ranges are: –40 to 160 °F (–40 to 71 °C) .
+Rigging, Lifting and Moving Large Units
+WHEN RIGGING, LIFTING OR MOVING LARGE UNITS, FOLLOW THESE GUIDELINES:
+• DO NOT lift or move a meter by its transmitter, junction box, sensor neck or cables .
+• Use a crane rigged with soft straps to lift and move meters with flow tubes that are 2–8 inches (50–200 mm) . Place the 
+straps around the sensor body, between the flanges, on each side of the sensor .
+• Use the lifting lugs when lifting meter flow tubes that are 10 inches (250 mm) in diameter or larger .
+Place straps between flanges Use lifting lugs with 10 inch or larger meters
+Figure 2:  Rigging large units
+Unpacking and Inspection
+Page 7 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 8 ===
+• Use the sling-rigged method to lift large sensors into a vertical position while they are still crated . Use this method to 
+position large sensors vertically into pipelines .
+Figure 3:  Sling-Rigged lifting methods
+• Do not lift a sensor with a forklift by positioning the sensor body on the forks, with the flanges extending beyond the lift . 
+This could dent the housing or damage the internal coil assemblies .
+• Never place forklift forks, rigging chains, straps, slings, hooks or other lifting devices inside or through the sensor's flow 
+tube to hoist the unit . This could damage the isolating liner .
+Do not lift sensor with forklift Do not lift or rig lifting devices through sensor
+Figure 4:  Lifting and rigging cautions
+Unpacking and Inspection
+Page 8 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 9 ===
+METER LOCATION, ORIENTATION AND APPLICATIONS
+Gasket and grounding requirements must be considered when determining the meter location, orientation and application . 
+See “Meter Gaskets and Grounding” on page 15 . There are two transmitter mounting options: a meter mount option and a 
+remote mount option .
+Meter mount Remote mount
+Figure 5:  Transmitter mounting options
+Transmitter Mounting Configuration Options
+There are two configuration options for mounting the transmitter and many options to accommodate a variety of  
+meter-placement and environmental conditions .
+Meter Mount Configuration
+The meter mount configuration has the transmitter mounted directly on the sensor . This compact, self-contained 
+configuration minimizes installation wiring .
+Remote Mount Configuration
+The remote mount configuration places the transmitter at a location away from the fluid flow and sensor . This is necessary in 
+situations where process fluid temperature or the environment exceeds transmitter ratings .
+The sensor and transmitter are connected by wires, run through conduit, between junction boxes on the sensor and the 
+transmitter . The distance between the sensor junction box and transmitter junction box can be up to 500 feet (150 meters) . A 
+remote mounting bracket is supplied .
+Use the remote version in the following cases:
+• Sensor protection class IP 68
+• Fluid temperature > 212 °F (100 °C)
+• Strong vibrations
+Remote Transmitter Outdoor Location
+The transmitter can be installed and operated outdoors . However, it must be protected from the elements, as follows:
+• The ambient environment/temperature rating for the unit is –4 to 140 °F (–20 to 60 °C) .
+• If an indoor location is within 500 feet (150 meters) of the sensor, consider increasing the cable length and mounting the 
+transmitter indoors .
+• At minimum, fabricate a roof or shield over and/or around the transmitter to protect the LCD screen from direct sunlight .
+• Do not install the signal cable close to power cables, electric machines or similar .
+• Fasten signal cables . Due to capacity changes, cable movements may result in incorrect measurements .
+Submersible Option
+If you are installing the meter in a vault, order the remote transmitter option . Do not install the transmitter inside a vault . 
+We also recommend ordering the remote meter package with the submersible option (NEMA 6P / IP68) . This eliminates any 
+potential problems resulting from humidity or temporary flooding in the vault .
+Meter Location, Orientation and Applications
+Page 9 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 10 ===
+The National Electronics Manufacturer's Association (NEMA) 6P enclosures are constructed for indoor or outdoor use . The 6P 
+enclosures provide protection against access to hazardous parts . They also provide a degree of protection against ingress of 
+solid foreign objects and water (hose directed water and the entry of water during prolonged submersion at a limited depth) 
+which provide an additional level of protection against corrosion and that are not damaged by the external formation of ice 
+on the enclosure .
+Temperature Ranges
+TO PREVENT DAMAGE TO THE METER, STRICTL Y OBSERVE THE TRANSMITTER’S AND SENSOR’S MAXIMUM 
+TEMPERATURE RANGES.
+• To prevent damage to the meter, strictly observe the transmitter and sensor temperature ranges .
+• In regions with extremely high ambient temperatures, protect the sensor from extreme temperatures .
+• In cases where fluid temperature exceeds 212 °F (100 °C), use the remote mount version .
+Transmitter Ambient temperature –4 to 140 °F (–20 to 60 °C)
+Sensor Fluid temperature PTFE/PFA –40 to 302 °F (–40 to 150 °C)
+Hard rubber 32 to 176 °F (0 to 80 °C)
+Protection Class
+To fulfill requirements of the protection class, follow these guidelines:
+• Make sure body seals are undamaged and in proper condition .
+• Firmly screw in all the body screws .
+• Outer diameters of the wiring cables must correspond to cable inlets (for M20 Ø 5–10 mm) . In cases where cable inlet is 
+not used, put in a dummy plug .
+• Tighten cable inlets .
+• If possible, lead cable away downwards to prevent humidity from entering cable inlet .
+The standard option is protection class IP 67 . If you require a higher protection class, use the remote mount version . NEMA 
+6P / IP 68 is an option for the sensor with the remote mount version .
+Pipelines and Fluid Flow
+Take the following precautions during installation:
+• Do not install the meter on pipes with extreme vibrations . If pipes are vibrating, secure the piping with appropriate pipe 
+supports in front of and behind the meter . If vibrations cannot be restrained, use the remote mount option .
+• Do not install the sensor close to pipeline valves, fittings or impediments that can cause flow disturbances .
+• For sensors with PTFE liners, do not install the sensor on suction sides of pumps .
+• Do not install the sensor on outlet sides of piston or diaphragm pumps . Pulsating flow can affect meter performance .
+• Avoid installing the sensor near equipment that produces electrical interference such as electric motors, transformers, 
+variable frequency or power cables .
+• Make sure both ends of the signal cables are securely fastened .
+• Place power cables and signal cables in separate conduits .
+• Place the meter where there is enough access for installation and maintenance tasks .
+• Install the meter with the forward flow label on the meter body matching the pipeline flow .
+Meter Location, Orientation and Applications
+Page 10 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 11 ===
+• For sensors with PTFE liner, only remove the protective cap on the flange or on the threaded pipes of milk pipe screws per 
+DIN 11851 shortly before installation .
+Meter Orientation
+Mag meters can operate accurately in any pipeline orientation and can measure volumetric flow in forward and reverse 
+directions as long as the pipe is completely full .
+OTE: N A “Forward Flow” direction arrow is printed on the sensor label .
+Vertical Placement
+Mag meters perform best when placed vertically, with liquid flowing upward and meter electrodes in a closed, full pipe .
+Figure 6:  Vertical placement
+Vertical placement allows the pipe to remain completely full, even in low flow, low pressure applications, and it prevents 
+solids build-up, sediment deposit and accumulation on the liner and electrodes .
+OTE: N Carefully observe the “Forward Flow” label on the meter body and install the meter accordingly . When installed 
+vertically, rotate transmitter so that the cable glands are facing down .
+Horizontal Placement
+When installing the meter on a horizontal pipe, mount the sensor to the pipe with the flow-measuring electrode axis in a 
+horizontal plane (three and nine o’clock) . This placement helps prevent solids build-up, sediment deposit and accumulation 
+on the electrodes .
+Electrode
+Plane
+RIGHT
+Electrode
+Plane
+WRONG
+Figure 7:  Horizontal placement
+Empty Pipe Detection
+M2000 meters are equipped with an empty pipe detection feature . If an electrode mounted in the pipe is not covered 
+by fluid for five seconds, the meter displays an empty pipe detection condition . The meter sends out an error message 
+and stops measuring flow . When the electrode is again covered with fluid, the error message disappears and the meter 
+resumes measuring .
+Straight Pipe Requirements
+Run sufficient straight-pipe at the sensor inlet and outlet for optimum meter accuracy and performance . An equivalent of 
+3–7 diameters of straight pipe is required on the inlet (upstream) side to provide a stable flow profile . Two (2) diameters are 
+required on the outlet (downstream) side .
+In applications with limited space, the M2000 can be installed with zero straight pipe requirements and fulfils the accuracy 
+according OIML R49 and MID Annex MI-001 .
+Meter Location, Orientation and Applications
+Page 11 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 12 ===
+Forward Flow
+Minimum Straight Pipe Minimum Straight Pipe
+Elbow
+Tee
+Gate Valve
+(Fully Open)
+Minimum Straight Pipe
+Check Valve
+Globe Valve
+Butter/f_ly Valve
+Pump
+Elbow
+Tee
+Any Valve
+Flow Meter 
+3 x D
+7 x D
+2 x D
+D (Pipe Size)D (Pipe Size)
+Standard Concentric
+Reducers
+(No Distance Required)
+Figure 8:  Minimum straight pipe requirements
+Pipe Reducer Requirements
+With pipe reducers, a smaller meter can be mounted in larger pipelines . This arrangement may increase low-flow accuracy .
+There are no special requirements for standard, concentric, pipe reducers .
+Custom fabricated pipe reducers must have a maximum slope angle of 8 degrees on each side to minimize flow disturbances 
+and excessive loss of head . If this is not possible, install the custom pipe reducers as if they were fittings and install the 
+required amount of straight pipe .
+Forward Flow
+ Flow Meter
+D (Pipe Size)
+Standard Concentric 
+Reducers
+(No Distance Required)
+Custom Fabricated
+Reducers
+(8 Degree Slope Angle)
+D (Pipe Size)
+Figure 9:  Pipe reducer requirements
+Use this nomogram to determine the occurring pressure drop (only applicable to liquids 
+with similar viscosity like water) .
+D = Pipeline diameter
+d = Sensor diameter
+1 . Calculate the diameter ratio d/D .
+2 . Read the pressure loss depending on d/D ratio and flow velocity .
+   
+Pressure loss in mbar
+Diameter relation d/D
+Diameter ratio d/D
+Meter Location, Orientation and Applications
+Page 12 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 13 ===
+Chemical Injection Applications
+For water line applications with a chemical injection point, install the meter upstream of the injection point . This eliminates 
+any meter performance issues .
+Forward Flow
+Flow Meter
+Upstream Downstream
+Chemical
+Injection
+Here
+Figure 10:  Chemical injection point downstream of meter
+If a meter must be installed downstream of a chemical injection connection, the distance between the flange and the 
+injection point should be 50–100 feet (15–30 meters) . The distance must be long enough to allow the water/chemical 
+solution to reach the meter in a complete, homogeneous mixture . If the injection point is too close, the meter senses the 
+two conductivities for each liquid . This likely results in inaccurate measurements . The injection method—spaced bursts, 
+continuous stream of drips or liquid or gas—can also affect downstream readings by the meter  .
+Forward Flow
+Flow Meter
+Upstream Downstream
+Chemical
+Injection
+Here
+50 . . . 100 ft
+Figure 11:  Chemical injection point upstream of meter
+Sometimes, due to circumstances, it is difficult to specify the exact downstream placement distances . Contact Badger Meter 
+Technical Support to review your application, if necessary .
+Meter Location, Orientation and Applications
+Page 13 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 14 ===
+Partially-Filled Pipe Situations
+In some locations, the process pipe may be momentarily only partially filled . Examples include: lack of back pressure, 
+insufficient line pressure and gravity flow applications .
+To eliminate these situations:
+• Do not install the meter at the highest point of the pipeline .
+• Do not install the meter in a vertical, downward flow section of pipe .
+• Always position the ON/OFF valves on the downstream side of the meter .
+WRONG RIGHT
+FLOW
+FLOW
+FLOW
+WRONG
+FLOW
+RIGHT
+ Do not install in a vertical, downward position . Position “On/Off” valves on downstream side .
+Figure 12:  Incorrect meter placement Figure 13:  Position valves on downstream side
+To minimize the possibility of partially-full pipe flows in horizontal, gravity or low pressure applications, create a pipe 
+arrangement that allows the sensor to remain full of liquid at all times .
+Figure 14:  Pipe positioned to keep water in sensor
+Meter Location, Orientation and Applications
+Page 14 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 15 ===
+METER GASKETS AND GROUNDING
+Gaskets and grounding are required for proper meter installation .
+IMPORTANT
+If you received grounding rings with your meter, install them. Electromagnetic meters require a good ground for proper operation. 
+Grounding rings also help protect the edge of the liner from debris that may flow from the pipe.
+Meter/Pipeline Connection Gaskets
+IMPORTANT
+It is essential that the transmitter’s input ground (zero voltage reference) be electrically connected to the liquid media and to a good, 
+solid earth ground reference.
+You must install gaskets (not provided) between the sensor's 
+isolating liner, grounding rings and the pipeline flange to provide a 
+proper and secure hydraulic seal . Use gaskets that are compatible 
+with the fluid . Center each gasket on the flange to avoid flow 
+restrictions or turbulence in the line .
+During installation, do not use graphite or any electrically 
+conductive sealing compound to hold the gaskets . This could 
+compromise the accuracy of the measuring signal .
+If you are using a grounding ring in the sensor/pipeline connection, 
+place the ring between two gaskets . See “Recommended Installation 
+with Grounding Rings” on page 16 for more instructions .
+GASKETS RECOMMENDED
+GROUNDING RING
+GROUNDING RING
+Figure 15:  Meter/pipeline connection gaskets and grounding rings
+Meter Grounding and Potential Equalization
+In order to obtain an accurate measurement, sensor and fluid need to be on the same electric potential .
+Process pipeline material can be either electrically conductive (metal) or not electrically conductive (made of or lined with 
+PVC, fiberglass or concrete) .
+If flange or intermediate flange versions with additional grounding electrode are used, grounding is provided by the 
+connected pipeline .
+IN CASE OF A TYPE WITH FLANGE, USE A CONNECTION CABLE (MINIMUM 4 MM²) BETWEEN GROUNDING SCREW 
+ON THE METER FLANGE TO THE COUNTERFLANGE IN ADDITION TO THE FIXING SCREWS. VERIFY THAT A PERFECT 
+ELECTRIC CONNECTION IS PROVIDED.
+COLOR OR CORROSION ON THE COUNTERFLANGE MAY HAVE A NEGATIVE EFFECT ON THE ELECTRIC CONNECTION.
+IN CASE OF TYPES WITH INTERMEDIATE FLANGES, THE ELECTRIC CONNECTION TO THE SENSOR IS DONE VIA TWO 1/4 
+AMP PLUGS INSTALLED ON SENSOR’S NECK.
+Meter Gaskets and Grounding
+Page 15 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 16 ===
+"X"
+"X" M4:1
+Figure 16:  Grounding electrode
+Recommended Installation with Grounding Rings
+IMPORTANT
+Badger Meter recommends the installation of a pair of grounding rings between the mating flanges at both ends of the meter. See 
+Figure 15 on page 15.
+Connect the grounding straps to both of the grounding rings and to a good, solid earth ground . Grounding rings are available 
+in stainless steel . If your fluid is too aggressive for stainless steel, order a meter with the optional grounding electrode in a 
+material compatible with the fluid .
+Meter Gaskets and Grounding
+Page 16 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 17 ===
+Plastic or Lined Pipelines
+If non-conductive pipelines or pipelines lined with non-conductive material are used, install an additional grounding 
+electrode or grounding rings between the flanges . Grounding rings are installed like gaskets between the flanges and are 
+connected with a grounding cable to the meter (See Figure 15 on page 15) .
+WHEN GROUNDING RINGS ARE USED, MAKE SURE THE MATERIAL IS RESISTANT TO CORROSION. IF AGGRESSIVE FLUIDS 
+ARE MEASURED, USE GROUNDING ELECTRODES.
+Pipelines with Cathodic Protection
+For pipelines with cathodic protection, install the meter potential-free . No electric connection from the meter to the pipeline 
+system may exist and power supply is to be provided via isolating transformer .
+USE GROUNDING ELECTRODES (GROUNDING RINGS ALSO NEED TO BE INSTALLED ISOLATED FROM THE 
+PIPELINE SYSTEM).
+Observe national rules regarding potential-free installation
+6 mm²  CuElectrically isolated Electrically isolated
+Figure 17:  Grounding for pipeline with cathodic protection
+Electrically Disturbed Environment
+In order to also ensure reliable measurement in electrically disturbed environments, the grounding methods described below 
+are recommended in mounted and remote versions .
+6 mm²  Cu
+PE
+Figure 18:  Grounding for electrically disturbed environment Figure 19:  Grounding of a remote version
+Meter Gaskets and Grounding
+Page 17 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 18 ===
+WIRING
+Wiring Safety
+AT INSTALLATION, BE SURE TO COMPL Y WITH THE FOLLOWING REQUIREMENTS:
+• Disconnect power to the unit before attempting any connection or service to the unit.
+• Do not bundle or route signal lines with power lines.
+• Keep all lines as short as possible.
+• Use twisted pair shielded wire for all output wiring.
+• Observe all applicable, local electrical codes.
+• Use only the type of power source suitable for electronic equipment. If in doubt, contact your distributor. Make sure 
+that any power cables are of a sufficiently high current rating.
+• All units must be grounded to eliminate risk of electric shock.
+• Failure to properly ground a unit may cause damage to that unit or data stored within it.
+Opening the M2000 Meter Cover
+The M2000 transmitter's design lets you open the cover without completely removing it .
+COVER IS ATTACHED WITH DISPLAY RIBBON CABLE.
+TO OPEN THE COVER YOU NEED A BLADE SCREWDRIVER.
+Follow these steps:
+1 . Disconnect power to the unit .
+2 . Completely remove the two screws from either the left or the right side of the transmitter .
+3 . Loosen each of the remaining screws so that the round head of the screw clears the top edge of the cover .
+4 . Lift and pivot the cover into the open position .
+Figure 20:  Open cover
+Power Connections
+• For the 3 × M20 cable inlets only use flexible electric cables .
+• Use separate cable inlets for auxiliary power, signal and input/output cables .
+Wiring
+Page 18 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 19 ===
+External Disconnect
+INSTALL AN EXTERNAL DISCONNECT SWITCH OR CIRCUIT BREAKER THAT MEETS LOCAL STANDARDS.
+POSITION THE M2000 METER IN AN ACCESSIBLE LOCATION.
+POSITION AND IDENTIFY THE DISCONNECT DEVICE SO AS TO PROVIDE SAFE AND EASY OPERATION.
+LABEL THE DISCONNECT DEVICE AS BEING FOR THE MAG METER.
+AC Power Wiring
+For the AC power connections, use a three-wire sheathed connection cable suitable for the rating of this device . For signal 
+output use 18–22 gauge (0 .25–0 .75 mm2) shielded wire . Overall cable diameter between 0 .20–0 .39 inch (5–10 mm) .
+TO PREVENT ACCIDENTS, CONNECT MAIN POWER ONL Y AFTER ALL OTHER WIRING HAS BEEN COMPLETED.
+The transmitter is a microprocessor device . It is important that the power supply be as “clean” as possible . Avoid using 
+power lines that feed heavy loads: pumps, motors, etc . If dedicated lines are not available, a filtering or isolation system may 
+be required .
+Power wiring is the same for meter mount and remote mount transmitters .
+Auxiliary Power
+DO NOT CONNECT METER UNDER IMPRESSED MAINS VOL TAGE.
+TAKE NATIONAL APPLICABLE RULES INTO ACCOUNT.
+OBSERVE TYPE PLATE (MAINS VOL TAGE AND FREQUENCY).
+1 . Slightly loosen both of the left cover screws and loosen the two right cover screws completely . Open cover to the left side .
+2 . Push auxiliary power cable through the upper cable inlet .
+3 . Connection as shown in Figure 21 on page 20 .
+4 . Close connection cover firmly .
+Remote Mount Installation
+Follow these instructions to install the M2000 remote transmitter .
+Mount Bracket to Transmitter
+1 . Align bracket-mounting holes with transmitter mounting holes .
+2 . Attach bracket to transmitter with supplied screws . Torque screws to 80 inch pounds .
+Wiring Configuration
+Wiring between the sensor and the M2000 transmitter comes complete from the factory . If your installation requires the use 
+of conduit, we recommend that you follow these steps when wiring the sensor to the transmitter .
+1 . Remove the junction box lid . Carefully remove the wires connected to the terminal blocks that run to the M2000 
+transmitter . See Figure 21 on page 20 for a reference of wire color to terminal connection .
+2 . Run cable through the conduit from the transmitter location while retaining the wiring of the cable to the transmitter, 
+as supplied .
+3 . Complete conduit assembly on both ends and rewire the cable into the junction box as it was previously wired .
+Wiring
+Page 19 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 20 ===
+Wiring for Remote Configuration
+CONNECT OR SEPARATE SIGNAL CONNECTION CABLE ONL Y WHEN THE UNIT HAS BEEN SWITCHED OFF.
+From
+Detector To Ampli/f_ier
+13  Shield
+12  Coil
+11  Coil
+44  Shield
+40  Empty Pipe
+44  Shield
+46  Electrode
+44  Shield
+45  Electrode
+Junction Box
+M2000 Ampli/f_ier
+CS C2 C1
+E1
+ES
+E2
+RS
+EP
+ES
+11  Coil
+12  Coil
+13  Shield
+Shield (cut oﬀ )
+Green (11)
+Yellow (12)
+Black (13) Overall Shield
+45 Electrode
+44 Shield
+46 Electrode
+44
+40 Empty Pipe
+44 Shield
+White (45) Electrode
+Black (44) Shield
+Brown (46) Electrode
+Pink (40)
+Black (44) Shield
+Gray (cut oﬀ )
+Gray (cut oﬀ )
+Black (44) Shield
+Pink (40)
+Brown (46) Electrode
+Black (44) Shield
+White (45) Electrode
+Black (13) Overall Shield
+Yellow (12)
+Green (11)
+Shield (cut oﬀ )
+Figure 21:  Wiring for remote configuration
+Remote style M2000 transmitter models can be ordered with standard cables measuring 15, 30, 50,100 and 150 feet . In 
+addition, cables up to 500 feet are available .
+From Junction Box To M2000 
+Transmitter
+Connection No. Description Wire Color Connection Label
+11 Coil Green C1
+12 Coil Yellow C2
+13 Main Shield Black (Red Ferrule) CS
+45 Electrode White E1
+44* Electrode Shield Black ES
+46 Electrode Brown E2
+40 Empty Pipe Pink EP
+44* Empty Pipe Shield Black ES
+*Connections with the No . 44 are lying on the same potential .
+Empty Pipe Detection Considerations
+Take into account the following cable length and conductivity requirements if you are using empty pipe detection .
+Cable Length (Feet) Minimum Conductivity Required (µS/cm)
+0* 5
+100 20
+500 100
+* Meter Mount
+Wiring
+Page 20 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 21 ===
+Signal Cable Specification
+OTE: N Only use signal cables delivered by Badger Meter or corresponding cable in accordance with the 
+following specification .
+Take maximum signal cable length between sensor and transmitter into account (keep distance as low as possible) .
+Distance With electrode idle Loop resistance
+0–75 m 3 × (2 × 0 .25 mm²) =< 160 Ω/km
+>75–150 m 3 × (2 × 0 .50 mm²) =< 80 Ω/km
+PVC cable with pair and total shield
+Capacity: wire/wire < 120 nF/km, wire/shield < 160 nF/km
+Temperature range: –22 to 158 °F (–30 to 70 °C)
+Maximum Cable Length at Different Fluid Temperatures
+Wiring
+Page 21 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 22 ===
+CONFIGURING INPUT/OUTPUT (I/O)
+This section describes wiring the following M2000 meter inputs/outputs:
+• Analog output
+• Digital input
+• Digital outputs
+• Communication
+Once the sensor and the transmitter have been wired, wire any inputs and outputs to the M2000 transmitter .
+Do not connect the main power connection until you have made all other wiring connections . Follow all of the safety 
+precautions and local code to prevent electrical shock and damage to the electronic components .
+I/O 
+Connections
+AC DC
+N
+L
+__
++
+Communication Interface 
+Daughterboard
+Supported protocols include: Modbus, HART, Profibus DP , M-Bus, BACnet MS/TP , Modbus TCP/IP , EtherNet/IP and BACnet/IP
+Figure 22:  Configuring input/output
+Configuring Input/Output (I/O)
+Page 22 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 23 ===
+Input/Output Description Terminal
+Analog Output 0–20 mA Resistive Load < 800 Ohms 
+4–20 mA Resistive Load < 800 Ohms 
+0–10 mA Resistive Load < 800 Ohms 
+2–10 mA Resistive Load < 800 Ohms
+16 (+) 
+15 (–)
+Digital Output 1 Passive maximum 30V DC, 100 mA 
+Active 24V DC, 50 mA (set Jumper JP1) 
+Maximum Frequency 10 kHz
+1 (+) and 2 (–)
+Digital Output 2 Passive maximum 30V DC, 100 mA 
+Active 24V DC, 50 mA (set Jumper JP2) 
+Maximum Frequency 10 kHz
+3 (+) and 4 (–)
+Digital Output 3 Passive Max 30V DC, 100 mA, 10 kHz 
+Solid State Relay 48V AC, 500 mA, 1 kHz 
+* Software configurable
+10 (+) and 9 (–) 
+10 (+) and 11 (–)
+Digital Output 4 Passive Max 30V DC, 100 mA, 10 kHz 
+Solid State Relay 48V AC, 500 mA, 1 kHz 
+* Software configurable
+13 (+) and 12 (–) 
+13 (+) and 14 (–)
+Digital Input 5–30V DC 8 (+) and 9 (–)
+RS 232 RS232, configurable, Modbus RTU, Remote Menu, or Primo 3 .1 Emulation 7 GND 
+6 Rx 
+5 Tx
+Communication Optional communications ports: Modbus, HART, Profibus DP , M-Bus, BACnet MS/TP , 
+Modbus TCP/IP , EtherNet/IP and BACnet/IP
+Communication
+Analog Output Wiring Diagram
+Figure 23:  Analog output wiring diagram
+Configuring Input/Output (I/O)
+Page 23 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 24 ===
+Digital Output Wiring Diagrams
+Figure 24:  Digital output wiring diagrams
+IF ANALOG OUTPUT AND DIGITAL OUTPUT 1 AND 2 (ONL Y AS OPEN COLLECTOR) ARE USED AT THE SAME TIME, WE 
+RECOMMEND THE USE OF A GALVANIC ISOLATION (FOR EXAMPLE, PHOENIX MINI-SOLID-STATE-RELAYS-OPT-  
+24V DC/24V DC) OF THE DIGITAL OUTPUTS TO THE EXTERNAL DEVICE (LIKE SPS). THIS IS NECESSARY BECAUSE 
+TERMINAL COM (2) OF DIGITAL OUTPUT #1 AND COM (4) OF DIGITAL OUTPUT #2 ARE ELECTRICALL Y CONNECTED TO 
+TERMINAL 15 (-) OF THE ANALOG OUTPUT. IN THIS CASE, THE METER OUTPUT MUST BE ACTIVE (JP1/JP2 SET) TO DRIVE 
+THE COUPLING RELAYS.
+Configuring Input/Output (I/O)
+Page 24 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 25 ===
+Digital Input Wiring Diagram
+Figure 25:  Digital input wiring diagram
+OTE: N Option 2 can be connected to terminals 1 and 8 or optionally to terminals 3 and 8 . Depending on which output is 
+used, set this output to 24V supply .
+Communication Interfaces
+M2000 offers following communication interfaces:
+• Modbus® RTU RS485
+• M-Bus
+• HART
+• Profibus DP
+• BACnet MS/TP 
+• Modbus TCP/IP
+• EtherNet/IP
+• BACnet/IP
+The additional interface board is already plugged in by the manufacturer or can be ordered and easily plugged in afterwards .
+The interface board is plugged in to the 12-pin connector at the lower right of the main board .
+Configuring Input/Output (I/O)
+Page 25 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 26 ===
+BA2000-22MID
+L N PE
+JP1
+JP2
+COMMUNICATION
+DISPLAY
+CS
+C2
+C1
+E1
+ES
+E2
+RS
+EP
+ES
+15
+16
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+Communication Interface
+Figure 26:  Communication interface
+The internal communications between the main board and the interface board are done via Port B . For M-Bus, HART and 
+Profibus DP , the following adjustments are done in the menu Communication->Port B
+Port B:  Port Adr . 001
+  Baudrate 38400
+  Data bits 8
+  Parity Even
+  Stop bits 1
+For the Modbus RTU RS485, the communication parameters are adjusted via Port B .
+For more information, see the separate interface manual .
+If an interface board is used, access to the analog output (terminal 15/16) is not possible, except for the HART and Modbus 
+RTU RS485 interfaces .
+Configuring Input/Output (I/O)
+Page 26 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 27 ===
+PROGRAMMING THE M2000 METER
+The M2000 transmitter comes pre-programmed from the factory . Typically, you do not need to do any additional 
+programming . However, to take advantage of special features, you can program the meter for your specific needs . If you are 
+programming the meter, familiarize yourself with the Function Buttons and Displays, and follow the procedures outlined in 
+this manual .
+Function Buttons
+All M2000 meter programming is accomplished using the three function buttons located on the front of the transmitter:
+Figure 27:  Function buttons
+OTE: N Throughout this manual, the buttons are referred to as: [↑] or [+] and [↓] or [–], depending on the context . The “Enter” 
+button is referred to as [E] .
+ Consider the Up Arrow [+ | ↑ ] button as the “next step” or “scroll text up” button . During programming, press this 
+button to display the next menu selection or increment a numeral .
+Example 1: Figure 28 shows the Start Menu . The selection arrow points to the Exit this Menu selection .
+To scroll up to the next selection, press [↑] once . The menu text scrolls up to the next menu selection, Main Menu .
+START MENU
+>Exit this Menu
+ Main Menu
+MORE: ↑,↓     ENTER:>
+Press [↑] START MENU
+> Main Menu
+  Quick Setup
+MORE: ↑,↓     ENTER:>
+Figure 28:  Scroll up
+Example 2: Some procedures require you to enter a numeric value . Use the [+] button to increment the selected numeral . 
+Figure 29 shows the Low Flow Cutoff parameter display . Notice the cursor under the 2 . In this case, press [+] once to increment 
+the numeral to the value of 3 .00% .
+LOW FLOW CUTOFF
+ % of    300.000 GPM
+       2.00%
+CHG: +,-      NEXT:E
+Press [+]
+LOW FLOW CUTOFF
+ % of    300.000 GPM
+       3.00%
+CHG: +,-      NEXT:E
+Figure 29:  Enter a numeric value
+ Consider the Down Arrow [ – | ↓ ] button as the “previous step” button . During a procedure, press this button to return 
+to the previous selection or decrement a numeral .
+Programming the M2000 Meter
+Page 27 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 28 ===
+Example 1: Figure 30 shows the Main Menu . The selection arrow points to the Meter Setup selection . Press [↓] once to scroll the 
+text down to the Exit this Menu selection (which is not visible on the display) .
+MAIN MENU
+>Meter Setup
+ Measurements
+MORE: ↑,↓     ENTER:>
+Press [↓] MAIN MENU
+>Exit this Menu
+ Meter Setup
+MORE: ↑,↓     ENTER:>
+Figure 30:  Go to previous step
+Example 2: For procedures that require you to enter a numeric value, use the [–] button to decrement the selected numeral . 
+Figure 31 shows the Low Flow Cutoff parameter display . Notice the cursor under the 3 . In this case, press the [–] once to 
+decrement the numeral to the value of 2 .00 % .
+LOW FLOW CUTOFF
+ % of    300.000 GPM
+       3.00%
+CHG: +,-      NEXT:E
+Press [–]
+LOW FLOW CUTOFF
+ % of    300.000 GPM
+       2.00%
+CHG: +,-      NEXT:E
+Figure 31:  Decrease a value
+ The [E] button functions as an “Enter” button or “cursor right” button .
+Example 1: Figure 32 shows the Main Menu . The selection arrow points to the Meter Setup selection . Press [E] to select Meter 
+Setup and open the Meter Setup display .
+MAIN MENU
+>Meter Setup
+ Measurements
+MORE: ↑,↓     ENTER:>
+Press [E] 
+METER SETUP
+>Exit this Menu
+ Scale Factor
+MORE:↑,↓     ENTER:> 
+Figure 32:  Go to meter setup
+When you are entering a numeric value, the [E] button does not function as the “Enter” button, but rather, moves the cursor to 
+the right . When the cursor is at the right-most position, the [E] then serves as the Enter key .
+Example 2: The illustration below shows the Low Flow Cutoff display . The cursor is under the 3 in the ones' place . In this case, 
+press [E] to move the cursor to the right one digit .
+LOW FLOW CUTOFF
+ % of    300.000 GPM
+       3.00%
+CHG: +,-      NEXT:E
+Press [E]
+LOW FLOW CUTOFF
+ % of    300.000 GPM
+       3.00%
+CHG: +,-      NEXT:E
+Figure 33:  Move the cursor to the right
+Programming the M2000 Meter
+Page 28 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 29 ===
+Displays
+There are two types of displays on the M2000 meter:
+• Menu Selection
+• Numeric Entry
+Menu Selection Display
+Menu selection displays appear in the following format:
+DISPLAY TITLE
+>Menu Selection 1
+ Menu Selection 2
+DIRECTIONS LINE
+START MENU
+>Exit this Menu
+ Main Menu
+MORE: ↑,↓     ENTER:>
+Display format Example menu
+Figure 34:  Menu selection displays
+The top line shows the title of the display screen . Below are two menu selections . The bottom line provides directions for 
+user input .
+Typically, a menu contains more options than fit in the two menu selection lines . Press the [↑] and [↓] buttons to scroll the 
+display text up and down one line at a time . When the arrow is pointed to a menu option, press [E] to select the item and 
+open its display .
+Numeric Entry Display
+Numeric entry displays appear in the following format:
+DISPLAY TITLE
+   Description Line
+    Numeric Value
+DIRECTIONS LINE
+LOW FLOW CUTOFF
+ % of    300.000 GPM
+       2.00%
+CHG: +,-      NEXT:E
+Display format Example numeric entry display
+Figure 35:  Numeric entry displays
+The top line shows the title of the display screen . The second line is a description of the value . The third line shows the  
+current value . The bottom line provides directions for user input .
+The bottom line of a numeric-value display provides prompts regarding the function of each button . The [+] and [–] buttons 
+change the value of the numeral . The [E] button moves the cursor one digit to the right . When the cursor is at the final, 
+right-most digit, pressing [E] repositions the cursor at the left-most digit . The bottom line display changes to reflect the new 
+function of the [E] button . Press [E] to save the current entry . Press [+] to edit the current entry .
+LOW FLOW CUTOFF
+ % of    300.000 GPM
+       3.00%
+EDIT:+        SAVE:E
+Figure 36:  Title, value description, current value, directions to user
+Details on how to change and set numeric values are described in “Function Buttons” on page 27 .
+Programming the M2000 Meter
+Page 29 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 30 ===
+Security
+The M2000 meter security feature gives you the option to restrict access to the meter with a five-digit Personal Identification 
+Number (PIN) . The system administrator can set up a single PIN for each of the three levels of access:
+• Administration – allows access to all menu configuration screens .
+• Service – allows access to service-level and user-level menu configuration screens .
+• User – allows access only to user-level menu configuration screens .
+Not all levels of access need to be set . If no PINs are set up, any user has access to all functions .
+OTE: N The security settings also apply to remote access . All remote access to the meter is blocked unless the user is 
+remotely logged in .
+Setting the Administration PIN
+Users logged in with an Administration PIN have access to all menu configuration screens .
+To set the administrator's PIN, follow these steps from the Advanced menu:
+1 . Select Security to view the Security menu .
+2 . Select Set Admin PIN to view the Admin PIN display .
+3 . Set the five-digit PIN number .
+4 . Press [E] to save the PIN and to return to the Security menu .
+Setting the Service PIN
+Users logged in with a Service PIN have access to service level menu configuration screens . Service level users do not have 
+access to administrative screens .
+OTE: N To set a service level PIN, you must first set up an administration PIN, and you must be logged in with the 
+administration PIN .
+To set the Service PIN, follow these steps from the Advanced menu:
+1 . Select Security to view the Security menu .
+2 . Select Set Service PIN to view the Service PIN display .
+3 . Set the five-digit PIN number .
+4 . Press [E] to save the PIN and to return to the Security menu .
+Setting the User PIN
+Users logged in with a User PIN have access to user-level procedures . Users do not have access to administrative or 
+service screens .
+OTE: N In order to set a user-level PIN, you must first set up an administration PIN and a service PIN, and you must be logged 
+in with either PIN .
+To set a User PIN, follow these steps from the Advanced menu:
+1 . Select Security to view the Security menu .
+2 . Select Set User PIN to view the User PIN display .
+3 . Set the five-digit PIN number .
+4 . Press [E] to save the PIN and to return to the Security menu .
+Programming the M2000 Meter
+Page 30 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 31 ===
+Entering Y our Personal Identification Number (PIN)
+If your system has been set up with PIN security, you need to enter a PIN to access programming functions . There are three 
+access levels, each with its own unique PIN: User, Service and Administration . Your system administrator can provide you with 
+the appropriate PIN .
+OTE: N All PINs are factory set to 00000 . If the system administrator has not set the PIN, pressing [E] from the Start Screen 
+opens the Main Menu . 
+If you forget or misplace your PIN, call Badger Meter Customer Service to get a master password  . When you call, have 
+the security code that appears in the upper right corner of the PIN Request display .
+Follow these steps to enter your PIN in the M2000 meter:
+1 . At the Main Menu, press [E] . The PIN Request display opens .
+PIN REQUEST    12345
+ Please enter
+    pin #:  00000
+CHG:+,-       NEXT:E
+Security Code
+Figure 37:  PIN request
+2 . Press [+] to increment the numeral .
+3 . Press [E] to move the cursor to the next digit .
+4 . Repeat the steps to enter each of the five digits to match your PIN .
+5 . Press [E]. If you entered a valid PIN, the Main Menu opens indicating your level of access . 
+If you entered the wrong PIN, the following displays:
+MENU ACCESS
+   DENIED
+Figure 38:  Wrong PIN entered
+• Press [E] to return to the PIN Request display .
+• Repeat Steps 1 through 5 .
+OTE: N Be sure to log off when you have completed work with the meter . Otherwise, there is a five-minute delay between 
+your last activity and the time when the meter automatically logs you off .
+Programming the M2000 Meter
+Page 31 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 32 ===
+Setting Up the M2000 Meter with Quick Setup
+The M2000 electromagnetic flow meter provides you with a Quick Setup utility that allows you to set or change your Flow 
+Units, Totalizer Units, Full Scale Flow and Low Flow Cutoff settings . To open the Quick Setup menu, select Quick Setup from 
+the Start Menu .
+Quick Setup
+Flow Unit
+[Region]
+Use Flow Unit to set the unit of measure for the flow rate and Full Scale Flow .
+To change the Flow Unit value, follow these steps from the Quick Setup menu .
+1 . Select Flow Unit to view the Flow Unit display .
+2 . Press [↑] or [↓] to position the arrow next to one of the following Flow Units:
+Code Flow Unit Code Flow Unit
+LPS Liters/Second GPM Gallons/Minute
+LPM Liters/Minute GPH Gallons/Hour
+LPH Liters/Hour MGD Mega Gallons/Day
+M3S Cubic Meters/Second IGS UKG/Second
+M3M Cubic Meters/Minute IGM UKG/Minute
+M3H Cubic Meters/Hour IGH UKG/Hour
+F3S Cubic Feet/Second MID MegaUKG/day
+F3M Cubic Feet/Minute LbM Pounds/Minute
+F3H Cubic Feet/Hour OPM Ounces/Minute
+GPS Gallons/Second BPM Barrels/Minute
+3 . Press [E] to save the Flow Units setting . 
+Totalizer Unit
+[Region]
+Use Totalizer Unit to establish the units of measure for the totalizers .
+To change the Totalizer Unit value, follow these steps from the Totalizer Unit display .
+1 . Press [↑] or [↓] to position the arrow next to one of the following Totalizer Units:
+Code Totalizer Unit Code Totalizer Unit
+L Liter UKG Imperial Gallon
+HL Hectoliter MIG Mega Imperial Gallons
+M3 Cubic Meter Lb Pound
+CFt Cubic Feet Oz Fluid Ounce
+USG U .S . Gallon Aft Acre Feet
+MG Mega Gallon BBL Barrel
+KG Kilo Gallon
+2 . Press [E] to save the Totalizer Units setting . 
+ 
+Programming the M2000 Meter
+Page 32 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 33 ===
+Quick Setup
+Full Scale Flow Use Full Scale Flow to set the maximum flow the system is expected to measure . This parameter 
+influences other system parameters, including:
+• Frequency Output – Full scale frequency is observed at Full Scale Flow
+• Low Flow Cutoff – Changes to Full Scale Flow affect the measuring cut-off threshold of the meter
+• Alarm Outputs – Changes to Full Scale Flow adjust the thresholds for generating set point alarms
+• Pulse Outputs – Changes to Full Scale Flow adjust the pulse frequency and duty cycle
+• Analog Outputs – Changes to Full Scale Flow adjust the interpretation of the analog output signal
+Change the Full Scale Flow based on the meter size and the application’s requirements . Verify that the 
+Full Scale Flow falls within the meter suggested flow range limits . In terms of flow velocity, the meter 
+limits are 0 .1–39 .4 feet/second . The Full Scale Flow is valid for both flow directions .
+OTE: N If the flow rate exceeds the full scale setting, an error message indicates the configured full 
+scale range has been exceeded . However, the meter continues to measure . This affects the 
+latency of the pulse outputs and may cause overflow . Furthermore, the analog output may be 
+placed in alarm mode .
+To set or change the Full Scale Flow, follow these steps from the Quick Setup menu:
+1 . Select Full Scale Flow to view the Full Scale Flow display .
+2 . Select a value for Full Scale Flow .
+3 . Press [E] to save the Full Scale Flow value and return to the Measurements menu .
+Low Flow Cutoff Low Flow Cutoff defines the threshold at which flow measurement is forced to zero . The cutoff value 
+can be set at 0–10% of the Full Scale Flow . Increasing this threshold helps prevent false readings during 
+“no flow” conditions possibly caused by pipe vibration or inherent system noise .
+To change Low Flow Cutoff, follow these steps from the Low Flow Cutoff display .
+1 . Select a value for Low Flow Cutoff, between 0% and 10% .
+2 . Press [E] to save the value .
+Programming the M2000 Meter
+Page 33 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 34 ===
+Menu Structure
+Start Menu Quick Setup Flow Unit Totalizer Unit Full Scale Flow Low Flow Cutoff
+Main Menu Meter Setup Scale Factor
+Empty Pipe Detect On
+Power Line Freq Off
+Excitation Freq
+Pipe Diameter
+Detector Factor
+Detector Offset
+Measurements Velocity Unit
+Flow Unit
+Totalizer Unit
+Full Scale Flow
+Low Flow CutOff
+Flow Direction Uni-directional
+Damping Factor Bi-directional
+Inputs/Outputs Analog Output Range
+Alarm Modus Off
+Low
+Digital Input None High
+Remote Reset
+Batch Reset
+Pos Zero Return
+ADE
+Digital Output #1 Pulses / Units
+Pulse Width
+Full Scale Freq.
+Preset Amount
+Set Point Min.
+Set Point Max. Normally Open
+Output Type Normally Closed
+Select Function None
+Frequency Output
+Forward Pulse
+Reverse Pulse
+AMR (50ms Pulse)
+Flow Set Point
+Empty Pipe Alarm
+Flow Direction
+Preset Output
+Digital Output #2 Pulses / Units Error Alarm
+Pulse Width Totalizer Alarm
+Full Scale Freq. 24 VDC Supply
+Preset Amount ADE
+Set Point Min.
+Set Point Max. Normally Open
+Output Type Normally Closed
+Select Function None
+Frequency Output
+Forward Pulse
+Digital Output #3 Reverse Pulse
+Digital Output #4 Flow Set Point
+Flow Simulation Empty Pipe Alarm
+Clear Totals Flow Direction
+Communications Preset Output
+Advanced Error Alarm
+Info/Help Totalizer Alarm
+Language Select 24 VDC Supply
+Programming the M2000 Meter
+Page 34 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 35 ===
+Start Menu Main Menu Inputs/Outputs Digital Output #3 Full Scale Freq
+Preset Amount
+Set Point Min.
+Set Point Max. Normally Open
+Output Type Normally Closed
+Hardware Select Relay
+Open Collector
+Select Function None
+Frequency Output
+Flow Set Point
+Empty Pipe Alarm
+Flow Direction
+Preset Output
+Error Alarm
+Digital Output #4 Full Scale Freq Totalizer Alarm
+Preset Amount
+Set Point Min.
+Set Point Max. Normally Open
+Output Type Normally Closed
+Hardware Select Relay
+Open collector
+Select Function None
+Flow Set Point
+Empty Pipe Alarm
+Flow Direction
+Flow Simulation Preset Output
+Error Alarm
+Clear Totals Totalizer Alarm
+Communications Port A Settings Interface Modbus RTU (DEF)
+Port Address Remote Menu
+Baud Rate Primo 3.x
+Data Bits Flow Diagnostic
+Parity Disable Port
+Stop bits
+Port B Settings Port Address
+Ext. Port Address
+Diagnostics Baud Rate
+Data Bits
+Parity
+Stop bits
+Advanced Data Logger Logging interval
+View System Clock
+Set System Clock
+Token Copy Configuration
+Encoder Protocol Store to Token
+Totalizer Dials Restore from Token
+Totalizer Resolution
+Backlight Control
+Analog Calibrate
+Software Filter MDN-Filter
+ACC-Filter
+ZFS-Filter
+IIR-Filter
+Empty Pipe Cal.
+Security Set Admin Pin
+Set Service Pin
+Info/Help Error Counts Set User Pin
+PowerUp Counter
+PowerOff Totalizer
+Version Info
+Serial Number
+Meter Tag Name
+Daughterboard Info
+Polarization Volt.
+Language Select Restore Default
+TN
+T+
+T–
+PS
+Tpwroff
+Daughterbrd Config
+Programming the M2000 Meter
+Page 35 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 36 ===
+USING THE MAIN MENU PROGRAMMING OPTIONS
+The following programming options are available from the Main Menu:
+• Meter Setup
+• Measurements
+• Inputs/Outputs
+• Clear Totals
+• Communications
+• Advanced
+• Info/Help
+• Language Select
+In the section that follows, the applicable security level for each menu option is indicated as follows:
+A
+ S
+ U
+Administrative Service User
+Options that can be set at Quick Setup are indicated with: 
+The factory default values are shown, enclosed in brackets .
+OTE: N Options labeled [Factory Set] should not be changed without specific directions from authorized 
+Badger Meter personnel  .
+Meter Setup
+scale factor
+[0 .0%] 
+A
+Changing the scale factor lets you adjust the meter accuracy without disturbing factory-set 
+parameters . You can tune the meter to meet changing application requirements . For example, if the 
+meter is under registering by 0 .5%, set the scale factor to +0 .5% . If the meter is over registering by 
+0 .5%, the scale factor to –0 .5% .
+To set the scale factor, follow these steps from the Meter Setup menu:
+1 . Select scale factor, to open the scale factor display .
+2 . Select a value for scale factor .
+3 . Press [E], to save the new value and return to the Meter Setup menu .
+Empty Pipe Detect
+[ON] 
+S
+When set to ON, Empty Pipe Detect indicates to the outputs and the display that the meter is not 
+comletely filled . When set to OFF, empty pipe detect is disabled .
+If the pipe detection does not function properly due to low conductivity of the medium, it can be 
+adjusted via Advanced menu section under Empty Pipe Cal .
+OTE: N It is recommended not to switch off empty pipe detection, especially in custody transfer 
+applications, as this can result in unreliable and inaccurate measuements outside of the 
+inteded operation .
+Power Line Freq
+[Region] 
+S
+Power Line Freq provides measuring immunity to industrial noise from a power supply feed .
+To set Power Line Frequency, follow these steps from the Meter Setup menu:
+1 . Select Power Line Freq to view the Power Line Frequency display .
+2 . Position the arrow next to 50 Hz or 60 Hz .
+3 . Press [E] to save the setting and return to the Meter Setup menu .
+Using the Main Menu Programming Options
+Page 36 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 37 ===
+Meter Setup
+Excitation Freq
+[Factory Set] 
+A
+Use Excitation Freq to configure the DC excitation of the coils . Supported frequencies are dependent on 
+the configured power line frequency:
+50 Hz 60 Hz
+1 Hz 1 Hz
+3 .125 Hz 3 .75 Hz
+6 .25 Hz 7 .5 Hz
+12 .5 Hz 15 Hz
+To change Excitation Frequency, follow these steps from the Meter Setup menu:
+1 . Select Excitation Freq to view the Excitation Frequency display .
+2 . Position the arrow to select a frequency .
+3 . Press [E] to save the setting and return to the Meter Setup menu . 
+Pipe Diameter
+[Factory Set] 
+A
+If the transmitter is replaced, verify that the pipe diameter matches the installed pipe size .
+To change Pipe Diameter, follow these steps from the Meter Setup menu:
+1 . Select Pipe Diameter to open the Pipe Diameter display .
+2 . Position the arrow to select a diameter .
+3 . Press [E] to save the setting and return to the Meter Setup menu .
+Sensor Factor
+[Factory Set] 
+A
+Use Sensor Factor to compensate for accuracy error as a result of the installed sensor . If accuracy 
+adjustment of the meter is required, see the scale factor parameter .
+If the transmitter is replaced, this parameter must be reprogrammed with the original sensor factor .
+Sensor Offset
+[Factory Set] 
+A
+Use Sensor Offset to compensate for accuracy error as a result of the installed sensor . If accuracy 
+adjustment of the meter is required, see the scale factor parameter .
+OTE: N Changes of the sensor offset have an impact on meter accuracy at low flow .
+Using the Main Menu Programming Options
+Page 37 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 38 ===
+Measurements
+Velocity Unit
+[Region] 
+ 
+ U  
+Use Velocity Unit to set the velocity to meters/sec or feet/sec .
+To set Velocity Unit, follow these steps from the Measurements menu:
+1 . Select Velocity Unit .
+2 . Position the arrow to select meters/sec or feet/sec .
+3 . Press [E] to save the setting and return to the Measurements menu .
+Flow Units
+[Region] 
+ 
+ U  
+Use Flow Units to set the unit of measure for the flow rate and Full Scale Flow . Changing the flow units 
+parameter readjusts the Full Scale Flow parameter . For example, changing from gpm to gps would 
+change the Full Scale Flow from 60 gpm to 1 gps .
+To change the Flow Unit, follow these steps from the Measurements menu:
+1 . Select Flow Units to view the Flow Units display .
+2 . Position the arrow next to one of the following flow unit options:
+Code Flow Unit Code Flow Unit
+LPS Liters/Second GPM Gallons/Minute
+LPM Liters/Minute GPH Gallons/Hour
+LPH Liters/Hour MGD Mega Gallons/Day
+M3S Cubic Meters/Second IGS UKG/Second
+M3M Cubic Meters/Minute IGM UKG/Minute
+M3H Cubic Meters/Hour IGH UKG/Hour
+F3S Cubic Feet/Second MID Mega UKG/Day
+F3M Cubic Feet/Minute LbM Pounds/Minute
+F3H Cubic Feet/Hour OPM Ounces/Minute
+GPS Gallons/Second BPM Barrels/Minute
+3 . Press [E] to save the flow units and return to the Measurements menu .
+Totalizer Unit
+[Region] 
+ 
+ S   
+Use the Totalizer Unit to establish the units of measure for the totalizers .
+To change the Totalizer Unit value, follow these steps from the Measurements menu:
+1 . Select Totalizer Unit to view the Totalizer Unit display .
+2 . Position the arrow next to one of the following totalizer units:
+Code Totalizer Unit Code Totalizer Unit
+L Liters MIG Mega Imperial Gallons
+HL Hectoliters Lb Pounds
+M3 Cubic Meters Oz Fluid Ounces
+CFt Cubic Feet Aft Acre Feet
+USG U .S . Gallons BBL Barrels
+MG Mega Gallons SFD Second Foot Day
+UKG Imperial Gallons
+3 . Press [E] to save the totalizer unit and return to the Measurements menu .
+Using the Main Menu Programming Options
+Page 38 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 39 ===
+Measurements
+Full Scale Flow
+[Factory Set] 
+U  
+Use Full Scale Flow to set the maximum flow the system is expected to measure . This parameter has 
+influence on other system parameters, which include:
+• Frequency Output – Full scale frequency is observed at Full Scale Flow
+• Low Flow Cutoff – Changes to Full Scale Flow affect the measuring cut-off threshold of the meter
+• Alarm Outputs – Changes to Full Scale Flow adjust the thresholds for generating set point alarms
+• Pulse Outputs – Changes to Full Scale Flow adjust the pulse frequency and duty cycle
+• Analog Outputs – Changes to Full Scale Flow adjust the interpretation of the analog output signal
+Change the Full Scale Flow based on the meter size and the application requirements . Verify that the 
+Full Scale Flow falls within the meter suggested flow range limits . The flow velocity limits range from 
+0 .1–39 .4 feet/second . Full Scale Flow is valid for both flow directions .
+OTE: N If the flow rate exceeds the full scale setting, an error message indicates that the configured 
+full scale range has been exceeded . However, the meter continues to measure . This affects the 
+latency of the pulse outputs and possibly causes overflow . Analog output may also be placed in 
+alarm mode .
+To change the Full Scale Flow, follow these steps from the Measurements menu:
+1 . Select Full Scale Flow to view the Full Scale Flow display .
+2 . Select a value for Full Scale Flow .
+3 . Press [E] to save the Full Scale Flow value and return to the Measurements menu .
+Low Flow Cutoff
+[0 .2%] 
+ 
+ S  
+Low flow cutoff defines the threshold at which flow measurement is forced to zero . The cutoff value can 
+be set at 0–10% of the Full Scale Flow . Increasing this threshold helps prevent false readings during “no 
+flow” conditions possibly caused by pipe vibration or inherent system noise .
+To change the Low Flow Cutoff value, follow these steps from the Measurements menu:
+1 . Select Low Flow Cutoff to view the Low Flow Cutoff display .
+2 . Select a value for low flow cutoff .
+3 . Press [E] to save the new low flow cutoff value and return to the Measurements menu .
+Flow Direction
+[Bi-Directional] 
+U  
+Use Flow Direction to set the meter to measure forward flow only (uni-directional) or both forward and 
+reverse flow (bidirectional) .
+Uni-Directional
+Flow is totalized in only one direction . The flow direction is indicated by the arrow on the sensor label . 
+Uni-directional measurements on the main display screen include:
+• T1: Registers forward flow, resettable by menu or Modbus RTU
+• T2: Registers forward flow, resettable by menu, Modbus RTU or digital input configured for 
+Remote Reset
+Bi-Directional
+Flow is totalized in both directions . Bidirectional measurements on the main display screen include:
+• T+: Registers forward flow, resettable by menu or Modbus RTU
+• T–: Registers reverse flow, resettable by menu or Modbus RTU
+• TN: Registers total flow, T+, T–, resettable by menu or Modbus RTU
+To change the flow direction follow these steps from the Measurements menu .
+1 . Select Flow Direction to view the Flow Direction display .
+2 . Select Uni-Directional or Bi-Directional .
+3 . Press [E] to save the flow direction and return to the Measurements menu .
+A change of the flow direction can be signaled by the digital outputs .
+Using the Main Menu Programming Options
+Page 39 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 40 ===
+Measurements
+Damping Factor
+[5 s] 
+U
+Use Damping Factor to establish the stability of the measured flow rate . If back and forth oscillations 
+of the flow rate are observed during normal flow conditions, increase this value incrementally until the 
+flow rate stabilizes . This parameter has no affect on the totalizers .
+To change the Damping Factor value, follow these steps from the Measurements menu .
+1 . Select Damping Factor to view the Damping Factor display .
+2 . Select one of the following damping factors:
+1 Second 10 Seconds
+2 Seconds 20 Seconds
+3 Seconds 30 Seconds
+4 Seconds No Damping
+5 Seconds
+3 . Press [E] to save the damping factor and return to the Measurements menu .
+Inputs/Outputs
+Analog Output Range
+[4 to 20 mA] 
+S
+Use Analog Output to establish the range of the analog output signal . To change Analog 
+Output range, follow these steps from the Inputs/Outputs menu:
+1 . Select Analog Output to view the Analog Output display .
+2 . Select one of the following options:
+• 4 to 20 mA
+• 0 to 20 mA
+• 2 to 10 mA
+• 0 to 10 mA
+3 . Press [E] to save the analog output and return to the Inputs/Outputs menu .
+OTE: N If an error message is displayed, set current to 22 mA . If you select bidirectional 
+operation, you can signal flow direction via digital outputs .
+Alarm Mode
+[OFF] 
+S
+Use Alarm Mode to configure the behavior of the analog output during alarm 
+conditions . There are three options for this parameter: OFF, LOW, and HIGH .
+OFF: Analog signal is based on flow rate and always within the configured range
+LOW: During alarm conditions, the analog signal is 2 mA less than the configured 
+lower range
+HIGH: During alarm conditions, the analog signal is 2 mA more than the configured 
+upper range
+For example, if the analog range is 4–20 mA and the alarm mode is set to HIGH, then 
+during a Full Scale Flow alarm condition, the analog output current is 22 mA .
+To change the analog output alarm mode, follow these steps from the Inputs/Outputs 
+menu:
+1 . Select Alarm Mode to view the Alarm Mode display .
+2 . Select one of the following options:
+• OFF
+• LOW
+• HIGH
+3 . Press [E] to save the alarm mode and return to the Inputs/Outputs menu .
+Using the Main Menu Programming Options
+Page 40 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 41 ===
+Inputs/Outputs
+Digital Input
+[Disabled]
+Use Digital Input to configure the functional operation of the digital input . The following functions 
+are supported:
+• Remote Reset – Clears totalizer T2 (uni-directional)
+• Batch Reset – Resets batch totalizer PS to preset amount and clears T2 (uni-directional)
+• Pos Zero Return – Forces flow rate to zero (does not totalize)
+• ADE – Input configured for ADE operation . See “Encoder Protocol Interface” on page 59 .
+To change Digital Input, follow these steps from the Inputs/Outputs menu:
+1 . Select Digital Input to view the Digital Input display .
+2 . Select a function .
+3 . Press [E] to save the digital input and return to the Inputs/Outputs menu .
+Apply an external potential of 5–30V DC or an internal voltage source of 24V DC via output #2 to enable 
+input switching (by a normally open contact) . If using the internal source, set the function of digital 
+output #2 to “24V DC Supply” . Jumper JP2 must be placed .
+Digital Output Pulses/Unit
+[1 pulse/unit] 
+S
+The Pulses/Unit parameter lets you set the number of pulses per unit of measure 
+transmitted to remote applications . For example, assuming the unit of measure 
+is gallons:
+• Setting the Pulses/Unit to 1 transmits 1 pulse every gallon
+• Setting the Pulses/Unit to 0 .01 transmits 1 pulse every 100 gallons
+You must configure pulses/unit if the function of the selected output is forward, 
+reverse or AMR pulse .
+Consider this parameter with the Pulse Width and Full Scale Flow parameters . The 
+maximum pulse frequency is 10 kHz . The frequency is correlated with the flow rate . 
+Violation of output frequency limits generates a configuration error  .
+To change the pulses/unit, follow these steps from the Inputs/Outputs menu:
+1 . Select Digital Output 1 or 2 and press [E] to open the Digital Output menu .
+2 . From the Digital Output menu select Pulses/Unit, and press [E] to open the 
+Pulses/Unit display .
+3 . Enter the pulses/unit value . Press [E] to save the new parameter and return to 
+the Digital Output menu .
+Pulse Width
+[0 ms] 
+S
+Use Pulse Width to establish the On duration of the transmitted pulse . The  
+configurable range is 0–1000 ms .
+• Non-zero pulse width configuration, the Off duration of the transmitted pulse, is 
+dependent on flow rate . The Off duration should be at least the configured On 
+duration range . At Full Scale Flow, the On duration equals the Off duration . The 
+maximum configurable output frequency is limited to 500 Hz .
+• 0 ms pulse width configuration, the duty cycle of the transmitted pulse, is at 
+50 % allowing for a maximum configurable output frequency of 10 kHz .
+Consider this parameter with the Pulses/Unit and Full Scale Flow parameters . The 
+maximum pulse frequency is 10 kHz . The frequency is correlated with the flow rate . 
+Violation of output frequency limits generates a configuration error  .
+To change the pulse width, follow these steps from the Inputs/Outputs menu:
+1 . Select Digital Output 1 or 2 and press [E] to open the Digital Output menu .
+2 . From the Digital Output menu select Pulse Width and press [E] to open the 
+Pulse Width display .
+3 . Enter the pulse width value . Press [E] to save the new parameter and return to 
+the Digital Output menu .
+Using the Main Menu Programming Options
+Page 41 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 42 ===
+Inputs/Outputs
+Digital Output 
+(continued)
+Full Scale 
+Frequency
+[1000 Hz] 
+S
+Use Full Scale Frequency to establish the Full Scale Flow output frequency when the 
+flow rate equals the configured Full Scale Flow .
+To change the Full Scale Frequency, follow these steps from the Inputs/Outputs 
+main menu:
+1 . Select Digital Output 1, 2 or 3 and press [E] to open the Digital Output menu .
+2 . From the Digital Output menu select Full Scale Frequency and press [E] to 
+open the Full Scale Frequency display .
+3 . Select a value for full scale frequency .
+4 . Press [E] to save the new parameter and return to the Digital Output menu .
+Preset Amount
+[0 .0] 
+S
+Use Preset Amount to set the reset value for the associated PS totalizer when the 
+digital input is set to Batch Reset .
+To change the Preset Amount, follow these steps from the Inputs/Outputs menu:
+1 . Select Digital Output 1, 2, 3 or 4 and press [E] to open the Digital 
+Output menu .
+2 . From the Digital Output menu select Preset Amount and press [E] to open the 
+Preset Amount display .
+3 . Enter the preset amount value . Press [E] to save the new parameter and return 
+to the Digital Output menu .
+OTE: N You can only set one Preset Amount . If you set the Preset Amount for Digital 
+Output 1, it is the same for 2, 3 and 4 .
+Set Point 
+Minimum
+[0%] 
+S
+Use Set Point Minimum to establish, as a percentage of Full Scale Flow, the threshold 
+at which the output alarm is activated . Flow rates below the threshold activate the 
+output alarm .
+To change the Set Point Minimum, follow these steps from the Inputs/Outputs menu:
+1 . Select Digital Output 1, 2, 3 or 4 and press [E] to open the Digital 
+Output menu .
+2 . From the Digital Output menu select Set Point Minimum and press [E] to open 
+the Set Point Minimum display .
+3 . Enter the set point minimum value . Press [E] to save the new parameter and 
+return to the Digital Output menu .
+Set Point 
+Maximum
+[100%] 
+S
+Use Set Point Maximum to establish, as a percentage of Full Scale Flow, the threshold 
+at which the output alarm is activated . Flow rates above the threshold activate the 
+output alarm .
+To change the maximum set point, follow these steps from the Inputs/Outputs menu:
+1 . Select Digital Output 1, 2, 3 or 4 and press [E] to open the Digital Output menu .
+2 . From the Digital Output menu select Set Point Maximum and press [E] to open 
+the Set Point Maximum display .
+3 . Enter the set point maximum value and press [E] to save the new parameter 
+and return to the Digital Output menu .
+Using the Main Menu Programming Options
+Page 42 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 43 ===
+Inputs/Outputs
+Digital Output 
+(continued)
+Output Type
+[1: Normally Open]
+[2: Normally Open]
+[3: Normally Open]
+[4: Normally Closed] 
+S
+Use Output Type to set the output switch to normally open or normally closed . 
+If Normally Open is selected, the output switch is open (no current) when the 
+output is inactive and closed (current flows) when the output is active .
+If Normally Closed is selected, the output switch is closed (current flows) when 
+the output is inactive and open (no current) when the output is active .
+To change the Output Type, follow these steps from the Inputs/Outputs 
+main menu:
+1 . Select Digital Output 1, 2, 3 or 4 and press [E] to open the Digital 
+Output menu .
+2 . From the Digital Output menu, select Output Type and press [E] to open 
+the Output Type display .
+3 . Select Normally Open or Normally Closed .
+4 . Press [E] to save the new parameter and return to the Digital Output menu  .
+Hardware Type
+[3: Open Collector]
+[4: Solid-state Relay] 
+S
+Use Hardware Type to select the type of hardware used to drive the output 
+signal: either Open Collector or Solid-state Relay .
+To change the Hardware Type, follow these steps from the Inputs/Outputs 
+main menu:
+1 . Select Digital Output 3 or 4 and press [E] to open the Digital 
+Output menu .
+2 . From the Digital Output menu select Hardware Type and press [E] to 
+open the Hardware Type display .
+3 . Select Open Collector or Relay .
+4 . Press [E] to save the new parameter and return to the Digital Output menu  .
+Using the Main Menu Programming Options
+Page 43 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 44 ===
+Inputs/Outputs
+Digital Output 
+(continued)
+Select Function
+[1: Forward Pulse]
+[2: Reverse Pulse]
+[3: Empty 
+Pipe Detection]
+[4: Error Alarm] 
+S
+Use Select Function to configure the functional operation of the associated 
+output . The following operations are supported:
+• Frequency Output – Generates pulses correlated to the absolute value of 
+the flow rate .
+• Forward Pulse – Generates pulses during forward flow conditions .
+• Reverse Pulse – Generates pulses during reverse flow conditions .
+• AMR (50 ms Pulse)
+• Flow Set Point – Indicates when flow rate exceeds thresholds defined by 
+flow set points .
+• Empty Pipe Alarm – Indicates when pipe is empty .
+• Flow Direction – Indicates current flow direction  
+(Inactive = Reverse or No Flow, Active = Forward) .
+• Preset Output – Indicates when preset batch amount has been realized .
+• Error Alarm – Indicates when meter has error condition . Error conditions 
+include empty pipe error, Full Scale Flow error and sensor error .
+• Totalizer Alarm – Sends alarm when either a rollover error or warning 
+has occurred .
+• 24V DC Supply – Provides constant 24 volts on output (forces output type 
+to Normally Open) .
+• ADE – Provides meter information in digital format . See “Encoder Protocol 
+Interface” on page 59 .
+The following functions can be selected for outputs 1–4:
+Function Dig Out 1 Dig Out 2 Dig Out 3 Dig Out 4
+Inactive X X X X
+Forward Pulse X X
+Reverse Pulse X X
+AMR (50 ms) X
+Frequency 
+Output X X X
+Flow Set Point X X X X
+Empty Pipe 
+Alarm X X X X
+Flow Direction X X X X
+Preset Output X X X X
+Error Alarm X X X X
+24V DC Supply X X
+ADE X
+Totalizer Alarm X X X X
+To change Select Function, follow these steps from the Inputs/Outputs 
+main menu:
+1 . Select Digital Output 1, 2, 3 or 4 and press [E] to open the Digital 
+Output menu .
+2 . From the Digital Output menu choose Select Function and press [E] to 
+open the Select Function display .
+3 . Select a function .
+4 . Press [E] to save the setting and return to the Digital Output menu .
+Using the Main Menu Programming Options
+Page 44 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 45 ===
+Inputs/Outputs
+Flow 
+Simulation
+[Off ] 
+S
+Flow Simulation provides output simulation based on a percentage of the Full Scale Flow . Simulation 
+does not accumulate the totalizers . The range of simulation includes –100 to 100% of the Full Scale Flow .
+The Flow Simulation Parameter lets you set the range of simulation in 10% increments .
+To change the Flow Simulation, follow these steps from the Inputs/Outputs menu:
+1 . Select Flow Simulation to view the Flow Simulation display .
+2 . Click [+] to increment the percentage by 10, or click [–] to decrement the percentage by 10 .
+3 . Press [E] to save the displayed setting and return to the Inputs/Outputs menu .
+This function remains active after exiting the menu . Set Q on “Deactivate .” If the simulation is active, the 
+message “STS simulation” is displayed in measuring mode .
+Clear Totals
+TN 
+A
+The bidirectional net totalizer, when reset, clears both the forward and the reverse flow totalizers (T+ and 
+T–) . It is reset within the menu manager or through remote communications . Clearing TN also clears the 
+associated rollover counter .
+T+ 
+A
+The bidirectional forward flow totalizer is reset within the menu manager or through remote 
+communications . Clearing T+ also clears the associated rollover counter .
+T– 
+T–
+A
+The bidirectional reverse flow totalizer is reset within the menu manager or through remote 
+communications . Clearing T– also clears the associated rollover counter .
+PS 
+A
+The batch totalizer is reset to the configured preset amount value . It is reset within the menu manager, 
+remote communications or through a properly configured digital input (function = batch reset) .
+Tpwroff 
+A
+The totalizer accumulating meter time without external power is reset with the menu manager or through 
+remote communications .
+T1 
+A
+The unidirectional totalizer T1 is reset within the menu manager .
+T2 
+A
+The unidirectional totalizer T2 is reset within the menu manager or with digital input .
+VW 
+A
+The preset batch is reset within the menu manager or with digital input .
+Using the Main Menu Programming Options
+Page 45 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 46 ===
+Communication
+Port A Settings Interface
+[Modbus RTU] 
+S
+Use Interface to configure how the RS232 communication port is used .
+• Modbus RTU
+• Remote menu (RDI – Remote Display Interface)
+• Primo 3 .x
+• Flow diagnostic – After every flow measurement, provides data out of the 
+communication port primarily for diagnosing flow measurement issues .
+• Disable port
+The remote menu Interface checks for display updates once a second . If a change 
+is detected, the display contents are transmitted in ASCII format over the RS232 
+communication port . The remote menu Interface also allows for menu navigation and 
+control of the meter as if using the external push buttons . Keyboard control characters 
+such as <UP>,<DWN> and <ENTER> are supported to navigate the menus .
+The Primo 3 .x Interface emulates the legacy Primo 3 .x protocol . This protocol transmits an 
+ASCII string in the following format every 500 ms: 
+“RATE;0 .0000; GPM; TOT1;150 .0000; USG ; TOT2;150 .0000; USG ;” – For Unidirectional Mode 
+“RATE;0 .0000; GPM; TOT+;10 .0000; USG ; TOT-;50 .0000; USG ;” – For Bidirectional Mode
+To change the Interface follow these steps from the Port A Settings menu:
+1 . Select Interface to view the Interface display .
+2 . Select an interface .
+3 . Press [E] to save and return to the Port A Settings menu .
+Port Address
+[1] 
+S
+Use Port Address to establish the Modbus RTU address . Modbus RTU requests are only 
+processed if the configured port address of the meter matches the request address 
+found in the Modbus RTU packet . The range of addresses supported by Modbus RTU 
+is 1–247 . Modbus RTU request packets with an address of 0 imply the packet is to be 
+treated as a broadcast packet .
+To change the port address, follow these steps from the Port A Settings menu:
+1 . Select Port Address to view the Port Address display .
+2 . Select a port address (1–247) .
+3 . Press [E] to save the option and to return to the Port A Settings menu .
+Baud Rate
+[9600] 
+S
+The following baud rates are supported
+• 9600
+• 19200
+• 38400
+To change the baud rate, follow these steps from the Port A Settings menu:
+1 . Select Baud Rate to view the Baud Rate display .
+2 . Select one of the following baud rates: 9600, 19200 or 38400 .
+3 . Press [E] to save the option and to return to the Port A Settings menu .
+Using the Main Menu Programming Options
+Page 46 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 47 ===
+Communication
+Port A 
+Settings 
+(continued)
+Data Bits
+[8 bits] 
+S
+The following data bits are supported:
+• 8 bits
+• 7 bits
+• 5 bits
+To change the data bits, follow these steps from the Port A Settings menu:
+1 . Select Data Bits to view the Data Bits display .
+2 . Select one of the following: 8 Bits, 7 Bits or 5 Bits .
+3 . Press  [E] to save the option and to return to the Port A Settings menu .
+Parity
+[Even] 
+S
+The following parities are supported:
+• Even
+• Odd
+• None
+To change the parity, follow these steps from the Port A Settings menu:
+1 . Select Parity to view the Parity display .
+2 . Select one of the following: None, Even or Odd .
+3 . Press  [E] to save the option and to return to the Port A Settings menu .
+Stop Bits
+[1 Stop Bit] 
+S
+The following stop bits are supported:
+• 1 Stop Bit
+• 2 Stop Bits
+To change the stop bits, follow these steps from the Port A Settings menu:
+1 . Select Stop Bits to view the Stop Bits display .
+2 . Select one of the following: 1 Stop Bit or 2 Stop Bits .
+3 . Press  [E] to save the option and to return to the Port A Settings menu .
+Port B 
+Settings
+OTE: N The parameters for Port B are the same as for Port A, with the exception of the additional External 
+Port Address detailed below .
+Port Address
+[1] 
+S
+An additional communication port, known as Port B, offers enhanced communications 
+with the meter . This port is located on the 12-pin terminal of the PCB . Enhanced 
+protocols like HART, Profibus DP or Modbus RTU over RS485 are available . In addition, 
+this communication port has similar configurable properties as port A . Refer to 
+the following user manuals for additional information regarding the enhanced 
+communication capabilities of the M2000 meter . Each manual is available at 
+Badgermeter.com .
+•  M2000HART® Bi-Directional Communication Protocol Data Access  
+(MAG-UM-01408-EN)
+•  M2000PROFIBUS DP (MAG-UM-01409-EN)
+•  M2000Modbus RTU Communication Daughterboard (MAG-UM-01410-EN)
+External Port 
+Address
+[1] 
+S
+For Profibus use only . Use External Port Address to configure the Profibus DP 
+daughterboard address . 
+Using the Main Menu Programming Options
+Page 47 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 48 ===
+Communication
+Diagnostics Port A  
+Counters
+[0] 
+S
+Port counters are used for diagnostics when configured for Modbus RTU . These counters 
+are only cleared on power up .
+Counter Description
+Pkts Processed Number of packets processed by meter .
+Broadcast Pkts Number of broadcast packets (address = 0) processed by meter .
+CRC Errors Number of received packets with CRC error; packet is discarded .
+Pkts Rcvd Number of packets received with an address of the configured 
+port address  .
+Pkts Sent Number of packets transmitted in response to a received packet .
+Parity Errors Number of characters with parity errors (for example, if the received 
+character has a mismatch between the number of 1s and its parity bit); 
+packet is discarded .
+Framing Errors Number of characters with framing errors (for example, stop bit is not 
+found – indicates that synchronization with the start bit has been lost 
+and the character is improperly framed); packet is discarded .
+Overrun Errors Number of characters received that were not processed due to 
+degradation of system performance . 
+Break Detects Number of detections that transmission line is locked (for example, the 
+receive line is low for 10-bit transmissions following a missing stop bit) .
+Port B 
+Counters
+[0] 
+S
+Daughterboard Configuration (BACnet MS/TP Daughterboard Installed)
+Communication
+Parameter Value Description
+BACnet MS/TP Baud 9600 Baud Rate of the BACnet MS/TP network . Common settings would be 9600, 
+19200, 38400, and 76800 .
+BACnet MS/TP MAC ID 1 Sets BACnet MS/TP Device ID of module/meter . Max value = 127 .
+BACnet Max Master 127 Sets the max master variable for the device . Max value = 127 .
+BACnet Instance 10001 Sets the BACnet Instance number . The instance number is an unsigned decimal 
+number that can range from 0 to 4,194,302 . Every device on a BACnet network 
+gets an instance number, and two devices must not have the same number .
+Daughterboard Configuration (Modbus TCP/IP Daughterboard Installed)
+Communication
+Parameter Value Description
+DHCP Enabled Enabled When enabled the IP address is dynamically assigned .
+IP Address 192 .168 .0 .1 Unique address that identifies this M2000 on the Modbus network . Valid entries 
+for each octet are 0–255 . This address is only used if the DHCP enable is off .
+Subnet Mask 255 .255 .0 .0 By default the Subnet mask is configured as Class B . Valid entries for each octet 
+are 0–255 . This number is only used if the DHCP enable is turned off .
+Gateway IP 10 .0 .1 .1 Default Gateway address when no other route specification matches the 
+destination IP address of the IP packet . Valid entries for each octet are 0–255 .
+TCP Timeout 120 Defines the interval during which the TCP connection verifies that the FCIP link 
+is working . Value is in seconds .
+Modbus TCP Port 502 16-bit unsigned value . Value range is 1–65,535 .
+Ethernet MAC Address 00:16:0F:80:##:## A unique identifier for the connected M2000 daughterboard .
+• Where XX:XX is the unique serial number used within the unique MAC 
+Address . “EthernetMACAddr” in the data map .
+• 00:16:0F corresponds to Badger Meter’s OUI .
+• 80 corresponds to the M2000 Product line .
+Webserver Access Enabled This enables or disables the access to the proprietary webserver for viewing 
+device configuration and meter data . Enter the M2000 device IP address 
+into the address bar within a browser window on a PC which is on the same 
+network/subnet to view the webserver . When this is disabled, access to this 
+webserver interface is prohibited .
+Using the Main Menu Programming Options
+Page 48 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 49 ===
+Daughterboard Configuration (BACnet/IP Daughterboard Installed)
+Communication
+Parameter Value Description
+DHCP Enabled Enabled When enabled the IP address is dynamically assigned .
+IP Address 192  .168  .0  .1 Unique address that identifies this M2000 on the Modbus network . Valid entries 
+for each octet are 0–255 . This address is only used if the DHCP enable is turned 
+off .
+Subnet Mask 255  .255  .0  .0 By default the Subnet mask is configured as Class B . Valid entries for each octet 
+are 0–255 . This number is only used if the DHCP enable is turned off .
+Gateway IP 10  .0  .1  .1 Default Gateway address when no other route specification matches the 
+destination IP address of the IP packet . Valid entries for each octet are 0–255 .
+BACnet Instance 10001 Sets the BACnet Instance number . The instance number is an unsigned decimal 
+number that can range from 0 to 4,194,302 . Every device on a BACnet network 
+gets an instance number, and two devices must not have the same number .
+BACnet UDP Port 47808 16-bit unsigned value . Value range is 1–65,535 .
+Ethernet MAC Address 00:16:0F:80:##:## A unique identifier for the connected M2000 daughterboard .
+• Where XX:XX is the unique serial number used within the unique MAC 
+Address “EthernetMACAddr” in the data map .
+• 00:16:0F corresponds to Badger Meter’s OUI .
+• 80 corresponds to the M2000 Product line .
+Webserver Access Enabled This enables or disables the access to the proprietary webserver for viewing 
+device configuration and meter data . Enter the M2000 device IP address 
+into the address bar within a browser window on a PC which is on the same 
+network/subnet to view the webserver . When this is disabled, access to this 
+webserver interface is prohibited .
+Daughterboard Configuration (EtherNet/IP Daughterboard Installed)
+Communication
+Parameter Value Description
+DHCP Enabled Enabled When enabled the IP address is dynamically assigned .
+IP Address 192 .168 .0 .1 Unique address that identifies this M2000 on the Modbus network . Valid entries 
+for each octet are 0–255 . This address is only used if the DHCP enable is turned 
+off .
+Subnet Mask 255 .255 .0 .0 By default the Subnet mask is configured as Class B . Valid entries for each octet 
+are 0–255 . This number is only used if the DHCP enable is turned off .
+Gateway IP 10 .0 .1 .1 Default Gateway address when no other route specification matches the 
+destination IP address of the IP packet . Valid entries for each octet are 0–255 .
+TCP Timeout 120 Defines the interval during which the TCP connection verifies that the FCIP link 
+is working . Value is in seconds .
+Ethernet MAC Address 00:16:0F:80:##:## A unique identifier for the connected M2000 daughterboard .
+• Where XX:XX is the unique serial number used within the unique MAC 
+Address “EthernetMACAddr” in the data map .
+• 00:16:0F corresponds to Badger Meter’s OUI .
+• 80 corresponds to the M2000 Product line .
+Webserver Access Enabled This enables or disables the access to the proprietary webserver for viewing 
+device configuration and meter data . Enter the M2000 device IP address 
+into the address bar within a browser window on a PC which is on the same 
+network/subnet to view the webserver . When this is disabled, access to this 
+webserver interface is prohibited .
+Using the Main Menu Programming Options
+Page 49 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 50 ===
+Advanced
+Data Logger
+OTE: N This 
+feature needs an 
+additional memory 
+token that is not 
+included with the 
+standard meter
+The Data Logger feature requires firmware version 1 .10 or later . Reference Badger Meter  
+P/N 67354-003 to obtain a firmware upgrade kit . See the M2000 Data Logging user manual, available 
+at www.badgermeter.com, for details on this feature .
+The Data Logging feature records three types of events to a memory token:
+• Totalizer/error events
+• Configuration change events
+• Startup events (power up, power down or reset events)
+Token Copy
+OTE: N This 
+feature needs an 
+additional memory 
+token that is not 
+included with the 
+standard meter
+• Configuration
+• Store to Token
+• Restore to Token
+See the M2000 Store/Restore user manual, available at  
+www.badgermeter.com, for details on using the Token Copy features .
+Encoder Protocol Protocol Type The Protocol Type enables the encoder interface . Selecting V1 or V2 
+automatically configures the Digital Input and Digital Output #1 for 
+encoder operation . Manually configuring the input and output for encoder 
+operation is not allowed and results in an error .
+See “Encoder Protocol Interface” on page 59 for further details .
+V1 – Standard encoder protocol
+V2 – Enhanced encoder protocol, provides additional digital information
+Disabled – disables and removes encoder configuration
+Totalizer Dials Set the totalizer dial to 4–10 to select the number of digits for the totalizer to display . For example, 
+setting the dial to 6 causes the totalizer to display six digits (12 .3456 USG)
+OTE: N A totalizer roll over can be indicated by a totalizer alarm via the digital output .
+Using the Main Menu Programming Options
+Page 50 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 51 ===
+Advanced
+Totalizer 
+Resolution
+[Off ] 
+U
+Use Totalizer Resolution to establish the number of units of measure that have to accumulate before 
+the display totalizers are updated . This is also known as setting the number of “dead” zeroes in the 
+display totalizer . For example:
+Totalizer Resolution less than 1
+Totalizer 
+Resolution
+Example
+OFF 0 .00000 USG 0 .00012 USG 0 .00123 USG 0 .01234 USG 0 .12345 USG
+0 .0001 0 .0000 USG 0 .0001 USG 0 .0012 USG 0 .0123 USG 0 .1234 USG
+0 .001 0 .000 USG 0 .000 USG 0 .001 USG 0 .012 USG 0 .123 USG
+0 .01 0 .00 USG 0 .00 USG 0 .00 USG 0 .01 USG 0 .12 USG
+0 .1 0 .0 USG 0 .0 USG 0 .0 USG 0 .0 USG 0 .1 USG
+Totalizer Resolution greater than or equal to 1
+Totalizer 
+Resolution
+Example
+OFF 0 .00000 USG 1 .23456 USG 12 .34567 USG 123 .4567 USG 1234 .456 USG
+1 0 USG 1 USG 12 USG 123 USG 1234 USG
+10 0 USG 0 USG 10 USG 120 USG 1230 USG
+100 0 USG 0 USG 0 USG 100 USG 1200 USG
+1000 0 USG 0 USG 0 USG 0 USG 1000 USG
+To change the Totalizer Resolution, follow these steps from the Advanced menu:
+1 . Select Totalizer Resolution to view the Totalizer Resolution display .
+2 . Select a resolution .
+3 . Press  [E] to save the option and to return to the Advanced menu . 
+Backlight Control
+[Timed Off ] 
+U
+Use Backlight Control to set the backlight to: Always On, Always Off or Timed Off .
+When set to Timed Off, the backlight automatically turns off after one minute of inactivity (no buttons 
+pressed) . Pressing any button turns the backlight on, but does not immediately navigate the menu .
+To change Backlight Control, follow these steps from the Advanced menu:
+1 . Select Backlight Control to view the Backlight Control display .
+2 . Select an option .
+3 . Press  [E] to save the option and to return to the Advanced menu .
+Longer operation with the backlight set to “Always On” can reduce LCD lifespan .
+Using the Main Menu Programming Options
+Page 51 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 52 ===
+Advanced
+Analog Calibrate Custom Settings
+[Zero Scale: 0 mA]
+[Full Scale: 0 mA] 
+S
+To set the analog calibration custom settings, follow these steps from the 
+Advanced menu:
+1 . Select Analog Calibrate to view the Analog Calibrate menu .
+2 . Select Custom Settings to view the Custom Settings display .
+3 . Select one of the following:
+• Offset 4 mA
+• Offset 20 mA
+4 . Configure the offset .
+5 . Press  [E] to save the option and to return to the Custom 
+Settings menu .
+6 . Press  [E] to return to the Analog Calibrate menu .
+Factory Settings
+[Factory Set] 
+S
+To change the analog calibration factory settings, follow these steps from 
+the Advanced menu:
+1 . Select Analog Calibrate to view the Analog Calibrate menu .
+2 . Select Factory Settings to view the Factory Settings display .
+3 . Select one of the following:
+• Calibration Point A
+• Calibration Point B
+4 . Set the calibration point to the measured output current .
+5 . Press  [E] to save the option and to return to the Factory 
+Settings menu .
+6 . Press  [E] to return to the Analog Calibrate menu .
+Software Filter 
+MDN-Filter
+Description This software filter operates as a median filter . This filter is very responsive 
+and can be used to help stabilize flow measurements . It is enabled by 
+selecting a non-zero filter size . Supported filter sizes are:
+• S0 - Size 0
+• S5 - Size 5
+• S7 - Size 7
+• S9 - Size 9
+The filter technique uses the median value of the last Sx samples used for 
+determining flow measurement .
+Using the Main Menu Programming Options
+Page 52 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 53 ===
+Advanced
+Software Filter 
+ACC-Filter
+Description This software filter operates as an acceleration filter . This filter, when configured 
+properly, allows for filtering of fast changes in fluid flow . Generally, this filter 
+is used in applications having highly conductive fluids . It is intended to help 
+provide smoothing of the analog output and display fluctuations .
+Activation
+[Off ] 
+A
+Use Activation to enable or disable the software acceleration filter  .
+To change the Activation setting, follow these steps from the Advanced menu:
+1 . Select Activation from the Advanced menu .
+2 . Select a setting .
+3 . Press  [E] to save the option and to return to the Advanced menu . 
+Filter Delay
+[1] 
+A
+Use Filter Delay to set the amount of time that the flow is held constant once 
+the filter is activated . The filter is activated by an acceleration component of the 
+fluid exceeding the configured limit .
+To change the Filter Delay follow these steps from the Advanced menu:
+1 . Select Filter Delay from the Advanced menu .
+2 . Enter the setting .
+3 . Press  [E] to save the option and to return to the Advanced menu .
+Acceleration Factor
+[1] 
+A
+Use Acceleration Factor to set the maximum acceleration for a given pipe 
+diameter . It is dependent on the excitation frequency . The maximum 
+fluid velocity is 12 m/s . The following equation defines the maximum 
+fluid acceleration:
+Acceleration(MAX) = Acceleration Factor * 12 m/s * Pipe Area * Excitation  
+Frequency/1 .5
+If the realized fluid acceleration exceeds the configured maximum acceleration, 
+fluid flow is held constant for the time set at the Filter Delay parameter .
+To change the Acceleration Factor setting, follow these steps from the 
+Advanced menu:
+1 . Select Acceleration Factor from the Advanced menu .
+2 . Enter the setting .
+3 . Press  [E] to save the option and to return to the Advanced menu . 
+Constant Flow
+[150 M3/Sec2] 
+A
+During normal flow conditions, there is always a non-zero 
+acceleration component  .
+For example, if acceleration of the flow activates the filter, the meter assumes 
+constant flow for the duration of the filter delay time unless the flow returns 
+within limits .
+Properly configured, this parameter helps offset excessive impacts of the filter 
+delay . The Constant Flow parameter lets you set the acceleration limit for 
+constant flow .
+To change the Constant Flow setting, follow these steps from the 
+Advanced menu:
+1 . Select Constant Flow from the Advanced menu .
+2 . Enter the setting .
+3 . Press  [E] to save the option and to return to the Advanced menu .
+Using the Main Menu Programming Options
+Page 53 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 54 ===
+Advanced
+Software Filter 
+ACC-Filter 
+(continued)
+Peak Detect
+[0 M3/Sec2] 
+A
+Peak Detect offers a diagnostic view of the acceleration components observed 
+during flow conditions . This parameter records the “high water mark” of the 
+measured accelerations component . This value helps to properly configure 
+the Acceleration Factor parameter . Generally, you set the acceleration factor at 
+about 75% of the Peak Detect measurement .
+To reset the Peak Detect setting, follow these steps from the Advanced menu:
+1 . Select Peak Detect from the Advanced menu .
+2 . Press [+] to reset .
+3 . Press  [E] to return to the Advanced menu .
+Software Filter 
+ZFS-Filter
+Description This software filter operates as a zero-flow stability filter . A specific volume is 
+defined for a specific time window . If that volume is not measured during the 
+time window, this volume is ignored and not totalized . The actual flow can be 
+monitored with the status function . Filter options are:
+• Volume USG
+• Time
+• Status (shows Volume and Time)
+Software Filter 
+IIR-Filter
+Description This software filter operates as an infinite impulse response filter, used to help 
+suppress erratic flow measurements . Contact Badger Meter Technical Support .
+Activation ON/OFF
+Coefficient Min Numeric entry
+Coefficient Max Numeric entry
+Coefficient Status Numeric entry
+Sensitivity Numeric entry
+Hysteresis m/s
+Using the Main Menu Programming Options
+Page 54 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 55 ===
+Advanced
+Empty Pipe Cal.
+[Default] 
+S
+Fluid conductivity impacts the performance of empty pipe measurements . If you require empty pipe 
+detection, you should perform this empty pipe calibration procedure .
+Before starting the empty pipe calibration, verify that empty pipe detection is enabled . Also, run both 
+the empty pipe and the full pipe calibration procedures .
+Calibrating an Empty Pipe
+Before calibrating an empty pipe, verify that the pipe is empty .
+To calibrate with an empty pipe, follow these steps from the Advanced menu:
+1 . Select Empty Pipe Cal to view the Calibration menus .
+2 .  Select Cal. Empty Pipe to view the Empty Pipe Calibrate menu .
+3 . To enable calibration, place the cursor on the calibration enable line and press [E] .
+4 .  Wait 30 seconds for voltage measurement to stabilize .
+5 .  To save the setting, place the cursor on Exit with Save and press [E] .
+Calibrating a Full Pipe
+Before calibrating a full pipe, verify that the pipe is full .
+To calibrate with a full pipe, follow these steps from the Advanced menu:
+1 . Select Empty Pipe Cal to view the Calibration menus .
+2 .  Select Cal. Full Pipe to view the Full Pipe Calibrate menu .
+3 . Enable calibration by placing the cursor on the calibration enable line and press [E] .
+4 .  Wait 30 seconds for voltage measurement to stabilize .
+5 .  To save the setting, place the cursor on Exit with Save and press [E] .
+Using the Main Menu Programming Options
+Page 55 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 56 ===
+Advanced
+Security Set Admin PIN
+[00000] 
+A
+Users logged in with this PIN have access to all M2000 meter procedures .
+To set the administrator's PIN, follow these steps from the Advanced Menu:
+1 . Select Security to view the Security menu .
+2 . Select Set Admin PIN to view the Admin PIN display .
+3 . Set the five-digit PIN number to a value .
+4 . Press  [E] to save the PIN and to return to the Security menu .
+Set Service PIN
+[00000] 
+A
+Users logged in with this PIN have access to all service level and user-level procedures . 
+Service users do not have access to administrative procedures .
+To set the service PIN, follow these steps from the Advanced Menu:
+1 . Select Security to view the Security menu .
+2 . Select Set Service PIN to view the Service PIN display .
+3 . Set the five-digit PIN number to a value .
+4 . Press  [E] to save the PIN and to return to the Security menu .
+Set User PIN
+[00000] 
+A
+Users logged in with this PIN have access to user-level procedures . Users at this level do 
+not have access to administrative or service procedures .
+To set the user's PIN, follow these steps from the Advanced Menu:
+1 . Select Security to view the Security menu .
+2 . Select Set User PIN to view the User PIN display .
+3 . Set the five-digit PIN number to a value .
+4 . Press  [E] to save the PIN and to return to the Security menu .
+Using the Main Menu Programming Options
+Page 56 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 57 ===
+Info/Help
+Error Counts
+[0] 
+U
+Description This menu provides a diagnostic view of meter performance . Below are 
+several system diagnostic counters and their definitions . Use discretion when 
+interpreting these counters . These values could be altered during system setup 
+or when using the verification device . We suggest that you reset these counters 
+before you start monitoring your system and look for conditions possibly 
+affecting performance .
+Sensor The number of times an invalid sensor condition has been observed .
+Empty Pipe The number of times an empty pipe condition has been observed by the meter .
+Full Scale The number of times the flow has exceeded the Full Scale Flow setting .
+Totalizer The number of times the totalizers have exceeded limits of the meter .
+Pulse Sync. The number of times the pulse outputs have fallen out of synchronization .
+ADC Interrupt The number of times an analog input measurement has been missed .
+ADC Range The number of times the analog input measurement range has been exceeded .
+System Error A diagnostic system message indicating the reason for a system reset .
+System Resets The number of times the meter has been reset .
+System Reset 
+ID
+Diagnostic information about a system reset as a result of expired 
+internal timers  .
+Token Errors Indicates the number of parameter copies from a memory token that failed to 
+be copied to the meter .
+Checksum For MID meters . If data corruption to the meter memory occurs, this “counter” indicates the 
+memory region that is corrupted .
+PowerUp Counter
+[Not applicable] 
+U
+The number of times that the unit has been powered on .
+Power Off Totalizer
+[Not applicable] 
+U
+The length of time that the unit has been without power .
+Version Info
+[Not applicable] 
+U
+The current software version .
+Serial Number
+[Not applicable] 
+U
+The manufacturing serial number in the format YYMM####, where YYMM indicates year and 
+month of manufacturing and #### indicates the sequence number  .
+Meter Tag Name For Profibus – This parameter is only programmable over external Profibus communications .
+Daughterboard  
+Information
+Describes current version of attached daughterboard .
+OTE: N RS485 daughterboard is not recognized because it is a pass-through device rather than 
+an intelligent protocol converter like HART-to-Modbus .
+Polarization Voltage Diagnostic voltage to help determine if the meter or application is performing optimally .
+Using the Main Menu Programming Options
+Page 57 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 58 ===
+Info/Help
+Restore Defaults
+[Not applicable] 
+A
+Use Restore Defaults to restore all non-calibrated parameters to the factory defaults .
+Language Select
+Language Select
+[English] 
+U
+The meter supports one alternate language along with English . This alternate language choice is 
+set at the factory . The options are: Spanish, German, Czech or French .
+To select the language, follow these steps from the Language Select menu:
+1 . Select a language .
+2 . Press [E] to save the selection .
+Using the Main Menu Programming Options
+Page 58 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 59 ===
+ENCODER PROTOCOL INTERFACE
+The encoder protocol interface requires firmware version 1 .10 or later . Reference Badger Meter P/N 67354-003 to obtain a 
+firmware upgrade kit . 
+Enabling the meter as an encoder requires three settings, all within the advanced menu, to be configured .
+• Totalizer Resolution – Selects the resolution of the display totalizer .
+• Protocol Type – Selects the type of information to be transmitted to the encoder .
+• Dial Type – Enables encoder and selects the number of significant totalizer digits to transmit .
+Changing the protocol type automatically configures the necessary digital inputs/outputs . Manually changing the digital 
+inputs/outputs within the Input/Outputs menu is not allowed . Below is a wiring diagram for connecting an encoder to 
+the meter .
+ 
+ONLY WHEN CONNECTING TO AN
+ORION CELLULAR L TE ENDPOINT,
+add a 15K resistor
+(Badger Meter P/N 69224-001)
+between Terminal 1 and
+Terminal 8. 
+IMPORTANT: A 15K RESISTOR IS REQUIRED ONLY
+  FOR ORION CELLULAR L TE ENDPOINTS. 
+  NO OTHER ENDPOINTS REQUIRE A RESISTOR.
+Figure 40:  Encoder interface
+OTE: N  ONLY WHEN CONNECTING TO AN ORION® CELLULAR L TE ENDPOINT,  
+add a 15K resistor (Badger Meter P/N 69224-001) to the meter terminal block between terminal 1 (green cable) and 
+terminal 8 (red cable), as shown, to correct any potential problem with meter reading process . Resistor is shown with 
+an arrow in both photograph and in figure .
+Encoder Protocol Interface
+Page 59 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 60 ===
+The following table demonstrates how the totalizers are displayed under various configurations of the Totalizer Resolution 
+(that is, resolution) and Dial Type . The non-shaded digits are transmitted as defined by the dial type .
+For example, if the dial type is 4-dial and the resolution is 10000 then an arbitrary totalizer value of 99999999 is displayed 
+on the meter as 99990000 and 9999 is transmitted to the receiving application . In this configuration it takes 10000 units 
+(for example, USG) before the display totalizer is updated to a new value . For this example the display totalizer rolls over 
+to 00000000 .
+Dial  
+Type
+Totalizer 
+Resolution
+Display Digits
+1 2 3 4 5 6 7 8 9 0
+4 dial
+10000 1 2 3 4 0 0 0 0
+1000 1 2 3 4 0 0 0
+100 1 2 3 4 0 0
+10 1 2 3 4 0
+1 1 2 3 4
+0 .1 1 2 3  . 4
+0 .01 1 2  . 3 4
+0 .001 1  . 2 3 4
+0 .0001 0 0 1 2 3 4
+5 dial
+10000 1 2 3 4 5 0 0 0 0
+1000 1 2 3 4 5 0 0 0
+100 1 2 3 4 5 0 0
+10 1 2 3 4 5 0
+1 1 2 3 4 5
+0 .1 1 2 3 4  . 5
+0 .01 1 2 3  . 4 5
+0 .001 1 2  . 3 4 5
+0 .0001 1  . 2 3 4 5
+6 dial
+10000 1 2 3 4 5 6 0 0 0 0
+1000 1 2 3 4 5 6 0 0 0
+100 1 2 3 4 5 6 0 0
+10 1 2 3 4 5 6 0
+1 1 2 3 4 5 6
+0 .1 1 2 3 4 5  . 6
+0 .01 1 2 3 4  . 5 6
+0 .001 1 2 3  . 4 5 6
+0 .0001 1 2  . 3 4 5 6
+7 dial
+10000 Not Applicable – Not enough display digits
+1000 1 2 3 4 5 6 7 0 0 0
+100 1 2 3 4 5 6 7 0 0
+10 1 2 3 4 5 6 7 0
+1 1 2 3 4 5 6 7
+0 .1 1 2 3 4 5 6  . 7
+0 .01 1 2 3 4 5  . 6 7
+0 .001 1 2 3 4  . 5 6 7
+0 .0001 1 2 3  . 4 5 6 7
+8 dial
+10000 Not Applicable – Not enough display digits
+1000 Not Applicable – Not enough display digits
+100 1 2 3 4 5 6 7 8 0 0
+10 1 2 3 4 5 6 7 8 0
+1 1 2 3 4 5 6 7 8
+0 .1 1 2 3 4 5 6 7  . 8
+0 .01 1 2 3 4 5 6  . 7 8
+0 .001 1 2 3 4 5  . 6 7 8
+0 .0001 1 2 3 4  . 5 6 7 8
+9 dial
+10000 Not Applicable– Not enough display digits
+1000 Not Applicable– Not enough display digits
+100 Not Applicable– Not enough display digits
+10 1 2 3 4 5 6 7 8 9 0
+1 1 2 3 4 5 6 7 8 9
+0 .1 1 2 3 4 5 6 7 8  . 9
+0 .01 1 2 3 4 5 6 7  . 8 9
+0 .001 1 2 3 4 5 6  . 7 8 9
+0 .0001 1 2 3 4 5  . 6 7 8 9
+Encoder Protocol Interface
+Page 60 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 61 ===
+Dial  
+Type
+Totalizer 
+Resolution
+Display Digits
+1 2 3 4 5 6 7 8 9 0
+10 dial*
+10000 Not Applicable– Not enough display digits
+1000 Not Applicable– Not enough display digits
+100 Not Applicable– Not enough display digits
+10 Not Applicable– Not enough display digits
+1 1 2 3 4 5 6 7 8 9 0
+0 .1 1 2 3 4 5 6 7 8 9  .0
+0 .01 1 2 3 4 5 6 7 8  .9 0
+0 .001 1 2 3 4 5 6 7  .8 9 0
+0 .0001 1 2 3 4 5 6  .7 8 9 0
+*10 dial reading is not supported by the encoder protocol . When the meter is configured, the display settings for number of dials and resolution are based 
+on what the encoder protocol can support . For example, if the encoder output is enabled (V1 or V2) and you try to select 10 dials, the display shows an error 
+dialog since this is an invalid configuration for the encoder . If the encoder output is not enabled, a selection of up to 10 digits is available .
+IMPORTANT
+The totalizers are represented in a manner equivalent to an actual encoder. For example, 1 USG on a 4 dial is transmitted/displayed 
+as “0001” . If in bidirectional mode, –1 USG is transmitted/displayed as “9999” .
+The protocol type has two options:
+• V1 – meter provides single totalizer, Tn (bidirectional) or T1 (unidirectional)
+• V2 – meter provides extended information (For ORION Cellular, ORION Fixed Network (SE) or ORION Migratable (ME))
+The additional information provided by protocol type V2 is only accessible for specific models of the encoder (for example, 
+ORION SE or ORION ME) . The additional information of protocol type V2 includes status information of the meter, meter 
+identification, a second totalizer reading (T+ or T2), relative flow rate (0–100%) and flow direction .
+Store/Restore Feature
+The Store/Restore feature is intended to save installation costs and reduce installation time . This feature is also intended to 
+protect meter configuration and assure the operator that the meter is properly configured . Over time and handling of the 
+meter, the meter configuration could change . The Store/Restore feature allows the meter to be quickly set to the operator’s 
+original configuration . Refer to the M2000 Store/Restore user manual for details on this feature .
+Data Logging Feature
+The Data Logging feature records three types of events to a memory token:
+• Totalizer/error events
+• Configuration change events
+• Startup events (power up, power down or reset events)
+Each type of event is recorded into three separate files stored on the memory token . These files are extracted using the 
+provided flow meter tool software over the RS232 communication link . Refer to the M2000 Data Logging user manual for 
+details on this feature .
+Encoder Protocol Interface
+Page 61 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 62 ===
+MAINTENANCE
+Mandatory, routine or scheduled maintenance should not be required for the M2000 meter electronics or flow tube after 
+proper installation .
+However, some instances may require you to perform the following:
+• Flow tube and electrode cleaning
+• Fuse replacement
+• Circuit board replacement
+• DISCONNECT MAIN POWER TO THE UNIT BEFORE ATTEMPTING ANY DEVICE MAINTENANCE OR CLEANING.
+• DO NOT CLEAN COMPONENTS INSIDE THE AMPLIFIER OR JUNCTION BOX.
+• CLEAN USING A DAMP CLOTH. DO NOT USE LIQUID OR AEROSOL CLEANERS.
+Cleaning the Flow Tube and Electrode
+At times flow tube, electrodes, transmitter/junction box housings and the transmitter window may need periodic cleaning, 
+depending on process fluid properties, fluid flow rate and surrounding environment .
+Clean the flow tube and electrodes by following the material handling and cleaning procedures documented in Material 
+Safety Data Sheet (MSDS) guidelines for the product(s) that were in contact with the flow tube and electrodes .
+Should flow tube and/or electrode cleaning become necessary:
+1 . Disconnect sensor from pipeline .
+2 . Clean electrodes according to MSDS guidelines .
+3 . Reconnect sensor to pipeline .
+Replacing the Circuit Board
+Refer to the M2000 Interchangeability Procedure Application Brief for information on replacing circuit boards .
+Replacing the Fuse
+DISCONNECT MAIN POWER TO THE UNIT BEFORE ATTEMPTING ANY DEVICE MAINTENANCE. RISK OF ELECTRICAL 
+SHOCK. REPLACE THE FUSE ONL Y WITH 250V AC, 2 AMP , SLOW BLOW (5 × 20 MM). AUTHORIZED PERSONNEL MUST 
+REPLACE FUSES.
+Fuse type: T2 H 250 V (2A idle)
+L
+N
+F1   2AT
+BA14MID
+Figure 41:  Fuse
+Maintenance
+Page 62 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 63 ===
+TROUBLESHOOTING
+The meter is designed for many years of optimal performance . However, should it malfunction, there are certain things that 
+we recommend you check before contacting our Technical Support department or your local Badger Meter Representative .
+If the fluid measured has a high concentration of conductive solids, deposits may accumulate on the internal liner walls and 
+electrodes . These deposits cause a reduction of the measuring output . Thus, Badger Meter recommends that you remove 
+the meter and inspect the liner and electrodes after six months . If deposits are found, remove them with a soft brush . Repeat 
+inspection process every six months or until an appropriate inspection cycle can be established for the specific application .
+Description Possible Cause Recommended Action
+Rollover warning • A rollover warning occurs when the display 
+totalizer can no longer represent the current 
+value within the totalizer . A rollover warning is 
+dependent on the number of dials, resolution and 
+the unit of measure .
+• Increase number of dials
+• Reduce resolution or
+• Clear totalizers
+Flow is present but display is “0” • Digital input is holding flow .
+• Disconnected signal cable .
+• Sensor mounted opposite of the main flow 
+direction (see arrow on the nameplate) .
+• Coil or electrode cables exchanged .
+• Improper low flow cutoff or Full Scale Flow .
+• Verify digital input configuration .
+• Check signal cable .
+• Turn sensor by 180 °or switch terminal E1 and E2 or 
+reprogram to bidirectional mode .
+• Check cable connections for cross wiring .
+• Replace configuration defaults .
+Inaccurate measuring • Improper calibration .
+• Wrong calibration parameter . 
+• Pipe not fully filled, or air in pipe .
+• Invalid fluid conductivity .
+• Invalid fluid mixture .
+• Restore calibration defaults .
+• Check the parameters (sensor factor and size) according 
+to supplied data sheet .
+• Check if meter is completely filled with fluid .
+• Purge line to eliminate air bubbles .
+No display • No power .
+• Incorrect power .
+• Blown fuse .
+• Bad wiring connections .
+• Apply power .
+• Check power value .
+• Replace fuse (2 amp, 250V AC, slow blow 5 × 20 mm) .
+• Check display ribbon cable . 
+Flow rate value known to 
+be wrong 
+• Sensor factor .
+• Deposits on electrodes and/or liner .
+• Incorrect pipe size programmed .
+• Check value on label .
+• Check and remove deposits .
+• Check size if necessary .
+Flow rate indication unstable • Cable issue .
+• Grounding issue . 
+• Partially full pipe .
+• Air in pipe .
+• Transmitter location – outside electrical .
+• Invalid fluid conductivity .
+• Make sure cable is shielded and not vibrating .
+• Make sure meter is properly grounded to a good 
+earth ground  .
+• Make sure pipe is full of fluid .
+• Make sure fluid does not contain air bubbles .
+• Make sure transmitter is not too close to sources of 
+electrical interference  .
+BEACON AMA displays multiple 
+estimated flow occurrences for 
+meters connected to ORION 
+Cellular LTE endpoints .
+• ORION Cellular LTE endpoints require 
+additional resistance  . 
+• Add a 15K resistor to the M2000 meter terminal block . 
+See “Encoder Protocol Interface” on page 59 for 
+complete details  . 
+Troubleshooting
+Page 63 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 64 ===
+Menu Manager Configuration Errors
+Error Description Recommended Action
+100 ADE®: Configuration of the ADE 
+interface is invalid
+This error is displayed when an invalid modification to any of the following menu parameters is 
+detected: Protocol Type, Dial Type, Totalizer Resolution, Digital Input Function Type or Digital Output 
+Function Type .
+1 . Configuring the meter as an ADE interface has the following limitations: Protocol Type V1 is only 
+allowed if number of dials is less than 8 .
+2 . The Totalizer Resolution must be set to something other than OFF .
+3 . For 8 dial configuration, a resolution of 10000 and 1000 are not supported . There are not enough 
+display digits to accommodate 8 dials and greater than 100 units of resolution .
+4 . For 7 dial configuration, a resolution of 10000 is not supported . There are not enough display 
+digits to accommodate 7 dials and greater than 1000 units of resolution .
+101 ADE: Enabling/Disabling ADE 
+operation is invalid
+This error is observed when Digital input or output function is manually selected for ADE operation . 
+Enabling or Disabling ADE operation can only be accomplished by setting the ADE protocol type . 
+102 ADE: General Configuration Error Check if the resolution and dial type are appropriate for ADE operation . See the encoder protocol 
+interface section of the user manual .
+103 ADE: Leading Zeros Invalid This error occurs when leading zeroes formatting is turned on while in ADE mode . Disable ADE mode 
+if leading zeroes are desired .
+110 Output 1/2: Pulse Output 
+Configuration Error
+This error is observed when improperly configuring either the Full Scale Flow, pulse per unit, pulse 
+width or digital output function type for pulse output operation . Preparing these parameters for pulse 
+output operation (forward or reverse) has limitations that are monitored by the menu manager .
+This error can indicate the following configuration violations:
+• Pulse Frequency exceeds limits at Full Scale Flow
+• Pulse duty cycle is less than 50% at Full Scale Flow (pulse on time > pulse off time)
+• AMR Pulse Frequency exceeds limit at Full Scale Flow
+The pulse frequency limit is 10 kHz when the pulse width is 0 (50% duty cycle) .
+The pulse frequency limit is 1/(2 * Pulse Width) when the pulse width is non-zero in order to achieve a 
+50% duty cycle .
+For AMR operation, the frequency limit is 3 HZ .
+Follow these steps for configuring meter for pulse output operation:
+1 . Set PPU to zero for both output 1 and 2 .
+2 . If necessary, set Full Scale Flow appropriately for application .
+3 . Set PW as required by the equipment receiving pulse transmissions from the meter . Observe 
+frequency limits for non-zero pulse widths .
+4 . Determine the needed pulse frequency at a typical flow rate (for example, 1000 HZ @ 250 GPM) .
+5 . Calculate ratio of typical flow rate to Full Scale Flow: ratio = typical flow rate/Full Scale Flow (for 
+example, 250 GPM/500 GPM = 0 .5) .
+6 . Calculate flow rate conversion factor: For GPM, conversion factor = 1/60, for GPH, conversion 
+factor = 1/3600, for GPS, conversion factor = 1 .
+7 . Calculate PPU: PPU = (Needed pulse frequency at typical flow rate/ratio)/[ Full Scale Flow * 
+(conversion factor) ]= (1000/0 .5)/[500 * (1/60) ] = 240 Pulse/Gallon .
+8 . If you receive an error consider reducing value of Full Scale Flow and making sure pulse frequency 
+is within limits . Then redo steps 4–7 .
+If not using the pulse outputs, set the pulses per unit to zero to allow for re-configuration of the Full 
+Scale Flow . If required to use the pulse outputs, re-evaluate the pulse output configuration . Consider 
+recording and clearing totalizers following pulse output configuration .
+120 Display: Totalizer Conversion 
+Error – Totalizer cannot be properly 
+converted for display
+This error is observed while trying to change the totalizer units . Limits of display prevent improper 
+configuration of the volume unit dependent on current totalizer values . Consider recording and 
+cleaning totalizers prior to changing totalizer .
+121 Output 1/2: Pulse Output  
+Configuration Error
+This error is observed when changing the totalizer units of measure . This error implies the pulse 
+configuration exceeds limits (see error 110) . Please note the pulses per unit are not automatically 
+updated on volume unit re-configuration . The pulses per unit should be manually changed to 
+accommodate the units of measure . It may be necessary to set the pulses per unit to zero, then 
+change the totalizer units .
+140 Output 3: Configuration Error – Full 
+scale frequency exceeds limits of 
+relay (1000 Hz)
+Reduce full scale frequency output setting when hardware is configured for relay operation .
+150 Output 3: Configuration Error 
+– Full scale frequency exceeds 
+limits (10 kHz)
+Reduce full scale frequency output setting when hardware is configured for open collector operation .
+170 Output 1/2: Output Type 
+Configuration Error
+This error is observed when the function type is 24V DC and the output type is changed from 
+Normally Open to Normally Closed . Normally Open output type is required for 24V DC output 
+operation .
+Troubleshooting
+Page 64 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 65 ===
+Menu Manager Configuration Errors
+Error Description Recommended Action
+171 Output 1/2: Output Type 
+Configuration Error
+This error is observed when the function type is ADE and the output type is changed from Normally 
+Open to Normally Closed . Normally Open output type is required for ADE operation .
+190 Full Scale Flow: Entered Value 
+exceeds limits
+Value entered exceeds the absolute maximum flow the meter supports . Reduce the value for this 
+parameter or consider increasing pipe diameter .
+191 Zero Scale Flow: Entered Value 
+Exceeds Limits
+The zero scale flow must be set less than 50% of the value of the configured full scale flow . Or, the zero 
+scale flow is being attempted to set to a value higher than the full scale flow value . Change the full 
+scale flow value to something larger, or the zero scale flow value to something less .
+200 Analog Output: Range Error If using a HART Daughterboard the Analog output range must be 4–20 mA .
+Display Error/Status Messages
+Error Message Possible Cause Recommended Action
+Err: Detector No sensor connection with transmitter . Check sensor and cable connections in accordance with this manual .
+Connection between transmitter and sensor . Contact Technical Support .
+Supply voltage too low . Contact Technical Support .
+Grounded coils in meter . Contact Technical Support .
+Water in sensor . Contact Technical Support .
+Err: Empty pipe Pipe may not be full . Make sure all trapped air is out of system .
+If fluid or fluid conductivity, recalibrate the parameter .
+Err: Full scale Actual flow rate is exceeding 
+programmed flow  .
+Reduce flow rate or increase the programmed full scale value by more than 5% .
+Err: AD-Range AD-Converter is exceeding signal limits . Check the grounding scheme of the meter installation . See grounding section in 
+this manual . Verify pipe is not empty .
+Err: AD-INT Initialization of AD-Converter unsuccessful . Contact Technical Support .
+Err: Rollover Rollover counters have exceeded limit . Clear all totalizers .
+Err: Rollover Status Totalizer rollover has occurred . Reload totalizer then clear all totalizers .
+Err: Simulation I/O simulator is enabled . Disable simulator in I/O menu .
+Err: Coil Meter not connected .
+Connection to meter interrupted .
+Sensor electronics or coils defective .
+Check if meter is connected and make sure that cable connection is not 
+interrupted . Contact Technical Support if not resolved .
+Wrn: Pulse Sync False synchronization of pulse output . —
+Err: ADC range Input signal from sensor too high . Check the grounding scheme of the meter installation . See “Meter Grounding and 
+Potential Equalization” on page 15 for instructions .
+Repair of Faults
+Disconnect all units from power supply and have it repaired by a qualified service person if any of the following occurs:
+• The power cord or plug is damaged or frayed .
+• The unit does not operate normally when operating instructions are followed .
+• The unit was exposed to rain/water or a liquid has been spilled into it .
+• The unit has been dropped or damaged .
+• The unit shows a change in performance, indicating a need for service .
+Troubleshooting
+Page 65 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 66 ===
+SPECIFICATIONS
+OTE: N DN represents nominal diameter in mm .
+Transmitter Specifications
+Flow Range 0 .10–39 .4 ft/s (0 .03–12 m/s)
+Accuracy ± 0 .20% m .v . ± 1 mm/s       OIML/MID: 2–28 in . (DN50–800) with 0d up and 0d downstream ±1% ≥ 0 .5 ft/s (0 .15 m/s)
+Repeatability ± 0 .1%
+Power Supply AC Power Supply: 100–240V AC (±10%); Typical Power: 20V A or 15W; Maximum Power: 26V A or 20W 
+Optional DC Power Supply: 12–32V DC (±10%); Typical Power: 10W; Maximum Power: 14W
+Analog Output 4–20 mA, 0–20 mA, 0–10 mA, 2–10 mA (programmable and scalable)  
+Voltage sourced 24V DC isolated . Maximum loop resistance < 800 Ohms
+Digital Output Four total, configurable 24V DC sourcing active output (up to 2),100 mA total, 50 mA each; sinking open collector output (up to 
+four), 30V DC max, 100 mA each; solid-state relay (up to 2), 48V DC, 500 mA max, either polarity
+Absolute Digital Encoded output for connectivity to AquaCUE or BEACON cellular endpoints
+Digital Input Max 30V DC (programmable – positive zero return, external totalizer reset or preset batch start)
+Frequency Output Scalable up to 10 kHz, open collector up to 1 kHz, solid-state relay
+Misc Output High/low flow alarm (0–100% of flow), error alarm, empty pipe alarm, flow direction, preset batch alarm,  
+24V DC supply, ADE
+Communication RS232 Modbus RTU; RS485 Modbus RTU, HART, Profibus DP ,  BACnet MS/TP , Modbus TCP/IP , EtherNet/IP and BACnet/IP require 
+separate daughterboards 
+Pulse Width Scalable up to 10 kHz, passive open collector up to 10 kHz, active switched 24V DC . Up to two outputs (forward and reverse) . Pulse 
+width programmable from 1–1000 ms or 50% duty cycle
+Processing 32-bit DSP
+Empty Pipe Detection Field tunable for optimum performance based on specific application
+Excitation Frequency 1 Hz, 3 .75 Hz, 7 .5 Hz or 15 Hz (factory optimized to pipe diameter)
+Noise Dampening Programmable 0–30 seconds
+Low Flow Cut-Off Programmable 0–10% of maximum flow
+Galvanic Separation 250V
+Fluid Conductivity Minimum 5 .0 µS/cm (minimum 20 µS/cm for demineralized water)
+Fluid Temperature With Remote Transmitter:  PFA, PTFE & ETFE 302 °F (150 °C) 
+With Meter-Mounted Transmitter: Rubber 178 °F, (80 °C), PFA, PTFE & ETFE 212 °F (100 °C)
+Ambient Temperature –4 to 140 °F (–20 to 60 °C)
+Relative Humidity Up to 90 percent non-condensing
+Pollution Degree 2
+Installation Category II
+Altitude 8202 ft (2500 m)
+Flow Direction Unidirectional or bidirectional two separate totalizers (programmable)
+Totalization Programmable/resettable
+Units of Measure Ounce, pound, liter, US gallon, imperial gallon, barrel, hectoliter, mega gallon, cubic meter, cubic feet, acre feet
+Display 4 x 20 character display with backlight
+Programming Three-button, external manual or remote
+Transmitter Housing Cast aluminum, powder-coated paint
+Mounting Meter mount or remote wall mount (bracket supplied)
+Locations Indoor and outdoor
+Meter Enclosure 
+Classification
+Standard: NEMA 4X (IP67); Optional: Submersible NEMA 6P (IP68) depth of 2 m for 72 hr, remote transmitter required
+Junction Box 
+Enclosure Protection
+For remote transmitter option: powder-coated die-cast aluminum, NEMA 4 (IP67)
+Cable Entries M20 cable glands (3)
+Optional Stainless 
+Steel  
+Grounding Rings
+Meter Size Thickness of one ring Thickness of one ring (DIN Flanges)
+Up through 10 in . 0 .135 in . (3 .429 mm) 0 .12 in . (3 mm)
+12–78 in . 0 .187 in . (4 .750 mm) 0 .12 in . (3 mm)
+NSF/ANSI/CAN 61 and 
+372 Listed 
+WRAS, ACS, KTW
+NSF-61 hard rubber and PTFE liner, all sizes 
+ 
+WRAS (hard rubber), ACS (PTFE), KTW (PTFE)
+OIML R49-1 
+MID MI-001 
+AWWA C715 
+MCERT
+Size range: DN50–800 / 2–28 in . 
+Minimum straight inlet flow: 0 DN /outlet flow: 0 DN 
+Forward and reverse (bi-directional) flow on any orientation 
+Ratio (Q3/Q1) up to 250 
+Accuracy Class 1 and Class 2
+Token Features Data Logging (Blue token); Store/Restore (Red token); Firmware Upgrade (Black token)
+Specifications
+Page 66 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 67 ===
+M2000 Transmitter Dimensions 
+in. (mm)
+3.90 (99)7.09 (180)
+7.09 (180)
+M20 (x3)
+11.06 (281)
+M2000-1
+2.36 (60) Ø 0.20 (5.2)
+2.56 (65)
+Sensor Type II Specifications
+The electromagnetic sensor type II is not only available in a number of different flange process connections (DIN, ANSI, JIS, 
+AWWA) but also in a number of liners like hard rubber, PTFE, PFA, or ETFE . The sensor is configurable with up to 4 electrodes 
+for measuring, empty pipe and grounding electrodes . Available in sizes from DN 6 to DN 2000 and nominal pressures up to 
+PN 100, the sensor type II is best suited for a variety of applications in the industry and the water/waste water industry .
+Size 1/4–78 in . (DN 6–2000)
+Flanges ANSI B16 .5, AWWA, ISO 1092-1, JIS and more in carbon steel . Optional 304 or 316 stainless steel .
+Nominal Pressure up to 1450 psi (100 bar)
+Pressure Rating Line sizes 1/4–24 in . In accordance with ASME B16 .5 Class 150 or Flange Rating Class 300 
+Line sizes 26–78 in . AWWA C-207 Class D or Class E Flange Rating
+Protection CLass NEMA 4X (IP67), optional NEMA 6P (IP68)
+Minimum Conductivity 5 µS/cm (20 µS/cm for demineralized water)
+Liner Material
+Hard rubber 1–78 in . (DN 25–2000)  32–176 °F (0–80 °C)
+PTFE 1/2–24 in . (DN 15–600) –40 to 302 °F (–40 to 150 °C)
+ETFE 12 in . (DN 300) and larger –40 to 302 °F (–40 to 150 °C)
+PFA 1/4–3/8 in . (DN 6–10) —
+Measuring tube Stainless steel, lined by different materials
+Housing Standard: Carbon steel welded; Optional: 316 or 304 stainless steel 
+Electrode Materials Standard: Hastelloy C22; Optional: 316 stainless steel, gold/platinum plated, tantalum, platinum/rhodium
+Lay Length See “A Standard” and “A ISO*” in the following tables: Flanges ANSI and EN 1092-1 on pages 69–71
+Specifications
+Page 67 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 68 ===
+Sensor Type II Dimensions
+Remote Version in. (mm) Mounted Version in. (mm)
+A
+4.80 (122) 3.15 (80)
+B1
+4.72 (120)
+K
+D
+d2 x n
+M2000-3
+DN
+3.90 (99)7.09 (180)
+7.09 (180)
+M20 (x3)
+11.06 (281)
+2.36 (60)
+Ø 0.20 (5
+.2)
+2.56 (65)
+A
+B2
+K
+D
+d2 x n
+DN
+M2000-2
+7.09 (180)
+7.09 (180)
+M20 (x3)
+3.27 (83)
+IMPORTANT: Flange Sizes ≤ 24 in., Standard: ANSI B16.5 Class 150 RF forged carbon steel; Optional: 300 lb forged carbon steel, 316 
+or 304 stainless steel
+Flange Sizes > 24 in., Standard: AWWA Class D Flanges RF forged carbon steel
+Specifications
+Page 68 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 69 ===
+Flange ANSI Class 150 
+Up to 24 in. ASME B16.5 / > 24 in. AWWA Class D (ASME 16.47)
+Size DN A Standard A ISO* B1 B2 D K d2 x n
+inch mm inch mm inch mm inch mm inch mm inch mm inch mm inch mm
+1/4 6 6 .7 170 — — 9 .0 228 11 .3 288 3 .5 89 2 .4 61 0 .6 × 4 16 × 4
+5/16 8 6 .7 170 — — 9 .0 228 11 .3 288 3 .5 89 2 .4 61 0 .6 × 4 16 × 4
+3/8 10 6 .7 170 — — 9 .0 228 11 .3 288 3 .5 89 2 .4 61 0 .6 × 4 16 × 4
+1/2 15 6 .7 170 7 .9 200 9 .4 238 11 .7 298 3 .5 89 2 .4 61 0 .6 x 4 16 x 4
+3/4 20 6 .7 170 7 .9 200 9 .4 238 11 .7 298 3 .9 99 2 .8 71 0 .6 x 4 16 x 4
+1 25 8 .9 225 7 .9 200 9 .4 238 11 .7 298 4 .3 109 3 .1 79 0 .6 x 4 16 x 4
+1-1/4 32 8 .9 225 7 .9 200 10 .0 253 12 .3 313 4 .6 117 3 .5 89 0 .6 x 4 16 x 4
+1-1/2 40 8 .9 225 7 .9 200 10 .0 253 12 .3 313 5 .0 127 3 .9 99 0 .6 x 4 16 x 4
+2 50 8 .9 225 7 .9 200 10 .0 253 12 .3 313 6 .0 152 4 .8 122 0 .8 x 4 19 x 4
+2-1/2 65 11 .0 280 7 .9 200 10 .7 271 13 .0 331 7 .0 178 5 .5 140 0 .8 x 4 19 x 4
+3 80 11 .0 280 7 .9 200 10 .7 271 13 .0 331 7 .5 191 6 .0 152 0 .8 x 4 19 x 4
+4 100 11 .0 280 9 .8 250 10 .9 278 13 .3 338 9 .0 229 7 .5 191 0 .8 x 8 19 x 8
+5 125 15 .7 400 9 .8 250 11 .7 298 14 .1 358 10 .0 254 8 .5 216 0 .9 x 8 22 x 8
+6 150 15 .7 400 11 .8 300 12 .2 310 14 .6 370 11 .0 279 9 .5 241 0 .9 x 8 22 x 8
+8 200 15 .7 400 13 .8 350 13 .3 338 15 .7 398 13 .5 343 11 .8 300 0 .9 x 8 22 x 8
+10 250 19 .7 500 17 .7 450 14 .3 362 16 .6 422 16 .0 406 14 .3 363 1 .0 x 12 25 x 12
+12 300 19 .7 500 19 .7 500 16 .7 425 19 .1 485 19 .0 483 17 .0 432 1 .0 x 12 25 x 12
+14 350 19 .7 500 21 .7 550 17 .7 450 20 .1 510 21 .0 533 18 .8 478 1 .1 x 12 28 x 12
+16 400 23 .6 600 23 .6 600 18 .7 475 21 .1 535 23 .5 597 21 .3 541 1 .1 x 16 28 x 16
+18 450 23 .6 600 23 .6 600 19 .7 500 22 .0 560 25 .0 635 22 .8 579 1 .3 x 16 32 x 16
+20 500 23 .6 600 23 .6 600 20 .7 525 23 .0 585 27 .5 699 25 .0 635 1 .3 x 20 32 x 20
+24 600 23 .6 600 23 .6 600 23 .1 588 25 .5 648 32 .0 813 29 .5 749 1 .4 x 20 35 x 20
+28 700 23 .6 600 27 .6 700 24 .6 625 27 .0 685 36 .5 927 34 .0 864 1 .4 x 28 35 x 28
+30 750 31 .5 800 29 .5 750 25 .6 650 28 .0 710 38 .8 986 36 .0 914 1 .4 x 28 35 x 28
+32 800 31 .5 800 31 .5 800 26 .9 683 29 .3 743 41 .8 1062 38 .5 978 1 .6 x 28 41 x 28
+36 900 31 .5 800 35 .4 900 28 .5 725 30 .9 785 46 .0 1168 42 .8 1087 1 .6 x 32 41 x 32
+40 1000 31 .5 800 39 .4 1000 31 .1 790 33 .5 850 50 .8 1290 47 .3 1201 1 .6 x 36 41 x 36
+42 1050 39 .4 1000 41 .3 1050 32 .5 825 34 .8 885 53 .0 1346 49 .5 1257 1 .6 x 36 41 x 36
+48 1200 39 .4 1000 47 .2 1200 35 .4 900 37 .8 960 59 .5 1511 56 .0 1422 1 .6 x 44 41 x 44
+54 1350 39 .4 1000 53 .1 1350 38 .4 975 40 .7 1035 66 .3 1684 62 .8 1595 1 .9 x 44 48 x 44
+56 1400 39 .4 1000 55 .1 1400 39 .4 1000 41 .7 1060 68 .8 1748 65 .0 1651 1 .9 x 48 48 x 48
+Other sizes on request
+IMPORTANT: ISO* sensor lay length according to ISO 20456
+Flange ANSI Class 300 ASME B16.5
+Size DN A Standard A ISO* B1 B2 D K d2 x n
+inch mm inch mm inch mm inch mm inch mm inch mm inch mm inch mm
+1/2 15 6 .7 170 7 .9 200 9 .4 238 11 .7 298 3 .8 95 2 .6 67 0 .6 x 4 16 x 4
+3/4 20 6 .7 170 7 .9 200 9 .4 238 11 .7 298 4 .6 117 3 .3 83 0 .8 x 4 19 x 4
+1 25 8 .9 225 7 .9 200 9 .4 238 11 .7 298 4 .9 124 3 .5 89 0 .8 x 4 19 x 4
+1-1/4 32 8 .9 225 7 .9 200 10 .0 253 12 .3 313 5 .3 133 3 .9 99 0 .8 x 4 19 x 4
+1-1/2 40 8 .9 225 7 .9 200 10 .0 253 12 .3 313 6 .1 155 4 .5 114 0 .9 x 4 22 x 4
+2 50 8 .9 225 7 .9 200 10 .0 253 12 .3 313 6 .5 165 5 .0 127 0 .8 x 8 19 x 8
+2-1/2 65 11 .0 280 7 .9 200 10 .7 271 13 .0 331 7 .5 191 5 .9 149 0 .9 x 8 22 x 8
+3 80 11 .0 280 7 .9 200 10 .7 271 13 .0 331 8 .3 210 6 .6 168 0 .9 x 8 22 x 8
+4 100 11 .0 280 9 .8 250 10 .9 278 13 .3 338 10 .0 254 7 .9 200 0 .9 x 8 22 x 8
+5 125 15 .7 400 9 .8 250 11 .7 298 14 .1 358 11 .0 279 9 .3 235 0 .9 x 8 22 x 8
+6 150 15 .7 400 11 .8 300 12 .2 310 14 .6 370 12 .5 318 10 .6 270 0 .9 x 12 22 x 12
+8 200 15 .7 400 13 .8 350 13 .3 338 15 .7 398 15 .0 381 13 .0 330 1 .0 x 12 25 x 12
+10 250 19 .7 500 17 .7 450 14 .3 362 16 .6 422 17 .5 445 15 .3 387 1 .1 x 16 28 x 16
+12 300 19 .7 500 19 .7 500 16 .7 425 19 .1 485 20 .5 521 17 .8 451 1 .3 x 16 32 x 16
+14 350 19 .7 500 21 .7 550 17 .7 450 20 .1 510 23 .0 584 20 .3 514 1 .3 x 20 32 x 20
+16 400 23 .6 600 23 .6 600 18 .7 475 21 .1 535 25 .5 648 22 .5 572 1 .4 x 20 35 x 20
+18 450 23 .6 600 23 .6 600 19 .7 500 22 .0 560 28 .0 711 24 .8 629 1 .4 x 24 35 x 24
+20 500 23 .6 600 23 .6 600 20 .7 525 23 .0 585 30 .5 775 27 .0 686 1 .4 x 24 35 x 24
+24 600 23 .6 600 23 .6 600 23 .1 588 25 .5 648 36 .0 914 32 .0 813 1 .6 x 24 41 x 24
+Other sizes on request
+IMPORTANT: ISO* sensor lay length according to ISO 20456
+Specifications
+Page 69 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 70 ===
+Flange EN 1092-1 / PN 10
+Size DN A Standard A ISO* B1 B2 D K d2 x n
+inch mm inch mm inch mm inch mm inch mm inch mm inch mm inch mm
+8 200 15 .7 400 13 .8 350 13 .3 338 15 .7 398 13 .4 340 11 .6 295 0 .9 x 8 22 x 8
+10 250 19 .7 500 17 .7 450 14 .3 362 16 .6 422 15 .6 395 13 .8 350 0 .9 x 12 22 x 12
+12 300 19 .7 500 19 .7 500 16 .7 425 19 .1 485 17 .5 445 15 .7 400 0 .9 x 12 22 x 12
+14 350 19 .7 500 21 .7 550 17 .7 450 20 .1 510 19 .9 505 18 .1 460 0 .9 x 16 22 x 16
+16 400 23 .6 600 23 .6 600 18 .7 475 21 .1 535 22 .2 565 20 .3 515 1 .0 x 16 26 x 16
+18 450 23 .6 600 23 .6 600 19 .7 500 22 .0 560 24 .2 615 22 .2 565 1 .0 x 20 26 x 20
+20 500 23 .6 600 23 .6 600 20 .7 525 23 .0 585 26 .4 670 24 .4 620 1 .0 x 20 26 x 20
+24 600 23 .6 600 23 .6 600 23 .1 588 25 .5 648 30 .7 780 28 .5 725 1 .2 x 20 30 x 20
+28 700 23 .6 600 27 .6 700 24 .6 625 27 .0 685 35 .2 895 33 .1 840 1 .2 x 24 30 x 24
+32 800 31 .5 800 31 .5 800 26 .9 683 29 .3 743 40 .0 1015 37 .4 950 1 .3 x 24 33 x 24
+36 900 31 .5 800 35 .4 900 28 .5 725 30 .9 785 43 .9 1115 41 .3 1050 1 .3 x 28 33 x 28
+40 1000 31 .5 800 39 .4 1000 31 .1 790 33 .5 850 48 .4 1230 45 .7 1160 1 .4 x 28 36 x 28
+48 1200 39 .4 1000 47 .2 1200 35 .4 900 37 .8 960 57 .3 1455 54 .3 1380 1 .5 x 32 39 x 32
+56 1400 39 .4 1000 55 .1 1400 39 .4 1000 41 .7 1060 65 .9 1675 62 .6 1590 1 .7 x 36 42 x 36
+Other sizes on request
+IMPORTANT: ISO* sensor lay length according to ISO 20456
+Flange EN 1092-1 / PN 16
+Size DN A Standard A ISO* B1 B2 D K d2 x n
+inch mm inch mm inch mm inch mm inch mm inch mm inch mm inch mm
+1/4 6 6 .7 170 — — 9 .0 228 11 .3 288 3 .5 90 2 .4 60 0 .6 x 4 14 x 4
+5/16 8 6 .7 170 — — 9 .0 228 11 .3 288 3 .5 90 2 .4 60 0 .6 x 4 14 x 4
+3/8 10 6 .7 170 — — 9 .0 228 11 .3 288 3 .5 90 2 .4 60 0 .6 x 4 14 x 4
+1/2 15 6 .7 170 7 .9 200 9 .4 238 11 .7 298 3 .7 95 2 .6 65 0 .6 x 4 14 x 4
+3/4 20 6 .7 170 7 .9 200 9 .4 238 11 .7 298 4 .1 105 3 .0 75 0 .6 x 4 14 x 4
+1 25 8 .9 225 7 .9 200 9 .4 238 11 .7 298 4 .5 115 3 .3 85 0 .6 x 4 14 x 4
+1-1/4 32 8 .9 225 7 .9 200 10 .0 253 12 .3 313 5 .5 140 3 .9 100 0 .7 x 4 18 x 4
+1-1/2 40 8 .9 225 7 .9 200 10 .0 253 12 .3 313 5 .9 150 4 .3 110 0 .7 x 4 18 x 4
+2 50 8 .9 225 7 .9 200 10 .0 253 12 .3 313 6 .5 165 4 .9 125 0 .7 x 4 18 x 4
+2-1/2 65 11 .0 280 7 .9 200 10 .7 271 13 .0 331 7 .3 185 5 .7 145 0 .7 x 8 18 x 8
+3 80 11 .0 280 7 .9 200 10 .7 271 13 .0 331 7 .9 200 6 .3 160 0 .7 x 8 18 x 8
+4 100 11 .0 280 9 .8 250 10 .9 278 13 .3 338 8 .7 220 7 .1 180 0 .7 x 8 18 x 8
+5 125 15 .7 400 9 .8 250 11 .7 298 14 .1 358 9 .8 250 8 .3 210 0 .7 x 8 18 x 8
+6 150 15 .7 400 11 .8 300 12 .2 310 14 .6 370 11 .2 285 9 .4 240 0 .9 x 8 22 x 8
+8 200 15 .7 400 13 .8 350 13 .3 338 15 .7 398 13 .4 340 11 .6 295 0 .9 x 8 22 x 12
+10 250 19 .7 500 17 .7 450 14 .3 362 16 .6 422 15 .9 405 14 .0 355 1 .0 x 12 26 x 12
+12 300 19 .7 500 19 .7 500 16 .7 425 19 .1 485 18 .1 460 16 .1 410 1 .0 x 12 26 x 12
+14 350 19 .7 500 21 .7 550 17 .7 450 20 .1 510 20 .5 520 18 .5 470 1 .0 x 16 26 x 16
+16 400 23 .6 600 23 .6 600 18 .7 475 21 .1 535 22 .8 580 20 .7 525 1 .2 x 16 30 x 16
+18 450 23 .6 600 23 .6 600 19 .7 500 22 .0 560 25 .2 640 23 .0 585 1 .2 x 20 30 x 20
+20 500 23 .6 600 23 .6 600 20 .7 525 23 .0 585 28 .1 715 25 .6 650 1 .3 x 20 33 x 20
+24 600 23 .6 600 23 .6 600 23 .1 588 25 .5 648 33 .1 840 30 .3 770 1 .4 x 20 36 x 20
+28 700 23 .6 600 27 .6 700 24 .6 625 27 .0 685 35 .8 910 33 .1 840 1 .4 x 24 36 x 24
+32 800 31 .5 800 31 .5 800 26 .9 683 29 .3 743 40 .4 1025 37 .4 950 1 .5 x 24 39 x 24
+36 900 31 .5 800 35 .4 900 28 .5 725 30 .9 785 44 .3 1125 41 .3 1050 1 .5 x 28 39 x 28
+40 1000 31 .5 800 39 .4 1000 31 .1 790 33 .5 850 49 .4 1255 46 .1 1170 1 .7 x 28 42 x 28
+48 1200 39 .4 1000 47 .2 1200 35 .4 900 37 .8 960 58 .5 1485 54 .7 1390 1 .9 x 32 48 x 32
+56 1400 39 .4 1000 55 .1 1400 39 .4 1000 41 .7 1060 66 .3 1685 62 .6 1590 1 .9 x 36 48 x 36
+Other sizes on request
+IMPORTANT: ISO* sensor lay length according to ISO 20456
+Specifications
+Page 70 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 71 ===
+Flange EN 1092-1 / PN 25
+Size DN A Standard A ISO* B1 B2 D K d2 x n
+inch mm inch mm inch mm inch mm inch mm inch mm inch mm inch mm
+1/2 15 6 .7 170 7 .9 200 9 .4 238 11 .7 298 3 .7 95 2 .6 65 0 .6 x 4 14 x 4
+3/4 20 6 .7 170 7 .9 200 9 .4 238 11 .7 298 4 .1 105 3 .0 75 0 .6 x 4 14 x 4
+1 25 8 .9 225 7 .9 200 9 .4 238 11 .7 298 4 .5 115 3 .3 85 0 .6 x 4 14 x 4
+1-1/4 32 8 .9 225 7 .9 200 10 .0 253 12 .3 313 5 .5 140 3 .9 100 0 .7 x 4 18 x 4
+1-1/2 40 8 .9 225 7 .9 200 10 .0 253 12 .3 313 5 .9 150 4 .3 110 0 .7 x 4 18 x 4
+2 50 8 .9 225 7 .9 200 10 .0 253 12 .3 313 6 .5 165 4 .9 125 0 .7 x 4 18 x 4
+2-1/2 65 11 .0 280 7 .9 200 10 .7 271 13 .0 331 7 .3 185 5 .7 145 0 .7 x 4 18 x 8
+3 80 11 .0 280 7 .9 200 10 .7 271 13 .0 331 7 .9 200 6 .3 160 0 .7 x 8 18 x 8
+4 100 11 .0 280 9 .8 250 10 .9 278 13 .3 338 9 .3 235 7 .5 190 0 .9 x 8 22 x 8
+5 125 15 .7 400 9 .8 250 11 .7 298 14 .1 358 10 .6 270 8 .7 220 1 .0 x 8 26 x 8
+6 150 15 .7 400 11 .8 300 12 .2 310 14 .6 370 11 .8 300 9 .8 250 1 .0 x 8 26 x 8
+8 200 15 .7 400 13 .8 350 13 .3 338 15 .7 398 14 .2 360 12 .2 310 1 .0 x 8 26 x 12
+10 250 19 .7 500 17 .7 450 14 .3 362 16 .6 422 16 .7 425 14 .6 370 1 .2 x 12 30 x 12
+12 300 19 .7 500 19 .7 500 16 .7 425 19 .1 485 19 .1 485 16 .9 430 1 .2 x 12 30 x 16
+14 350 19 .7 500 21 .7 550 17 .7 450 20 .1 510 21 .9 555 19 .3 490 1 .3 x 16 33 x 16
+16 400 23 .6 600 23 .6 600 18 .7 475 21 .1 535 24 .4 620 21 .7 550 1 .4 x 16 36 x 16
+18 450 23 .6 600 23 .6 600 19 .7 500 22 .0 560 26 .4 670 23 .6 600 1 .4 x 20 36 x 20
+20 500 23 .6 600 23 .6 600 20 .7 525 23 .0 585 28 .7 730 26 .0 660 1 .4 x 20 36 x 20
+24 600 23 .6 600 23 .6 600 23 .1 588 25 .5 648 33 .3 845 30 .3 770 1 .5 x 20 39 x 20
+28 700 23 .6 600 27 .6 700 24 .6 625 27 .0 685 37 .8 960 34 .4 875 1 .7 x 24 42 x 24
+32 800 31 .5 800 31 .5 800 26 .9 683 29 .3 743 42 .7 1085 39 .0 990 1 .9 x 24 48 x 24
+36 900 31 .5 800 35 .4 900 28 .5 725 30 .9 785 46 .7 1185 42 .9 1090 1 .9 x 28 48 x 28
+40 1000 31 .5 800 39 .4 1000 31 .1 790 33 .5 850 52 .0 1320 47 .6 1210 2 .2 x 28 56 x 28
+Other sizes on request
+IMPORTANT: ISO* sensor lay length according to ISO 20456
+Flange EN 1092-1 / PN 40
+Size DN A Standard A ISO* B1 B2 D K d2 x n
+inch mm inch mm inch mm inch mm inch mm inch mm inch mm inch mm
+1/2 15 6 .7 170 7 .9 200 9 .4 238 11 .7 298 3 .7 95 2 .6 65 0 .6 x 4 14 x 4
+3/4 20 6 .7 170 7 .9 200 9 .4 238 11 .7 298 4 .1 105 3 .0 75 0 .6 x 4 14 x 4
+1 25 8 .9 225 7 .9 200 9 .4 238 11 .7 298 4 .5 115 3 .3 85 0 .6 x 4 14 x 4
+1-1/4 32 8 .9 225 7 .9 200 10 .0 253 12 .3 313 5 .5 140 3 .9 100 0 .7 x 4 18 x 4
+1-1/2 40 8 .9 225 7 .9 200 10 .0 253 12 .3 313 5 .9 150 4 .3 110 0 .7 x 4 18 x 4
+2 50 8 .9 225 7 .9 200 10 .0 253 12 .3 313 6 .5 165 4 .9 125 0 .7 x 4 18 x 4
+2-1/2 65 11 .0 280 7 .9 200 10 .7 271 13 .0 331 7 .3 185 5 .7 145 0 .7 x 4 18 x 8
+3 80 11 .0 280 7 .9 200 10 .7 271 13 .0 331 7 .9 200 6 .3 160 0 .7 x 8 18 x 8
+4 100 11 .0 280 9 .8 250 10 .9 278 13 .3 338 9 .3 235 7 .5 190 0 .9 x 8 22 x 8
+5 125 15 .7 400 9 .8 250 11 .7 298 14 .1 358 10 .6 270 8 .7 220 1 .0 x 8 26 x 8
+6 150 15 .7 400 11 .8 300 12 .2 310 14 .6 370 11 .8 300 9 .8 250 1 .0 x 8 26 x 8
+8 200 15 .7 400 13 .8 350 13 .3 338 15 .7 398 14 .8 375 12 .6 320 1 .2 x 8 30 x 12
+10 250 19 .7 500 17 .7 450 14 .3 362 16 .6 422 17 .7 450 15 .2 385 1 .3 x 12 33 x 12
+12 300 19 .7 500 19 .7 500 16 .7 425 19 .1 485 20 .3 515 17 .7 450 1 .3 x 12 33 x 16
+14 350 19 .7 500 21 .7 550 17 .7 450 20 .1 510 22 .8 580 20 .1 510 1 .4 x 16 36 x 16
+16 400 23 .6 600 23 .6 600 18 .7 475 21 .1 535 26 .0 660 23 .0 585 1 .5 x 16 39 x 16
+18 450 23 .6 600 23 .6 600 19 .7 500 22 .0 560 27 .0 685 24 .0 610 1 .5 x 20 39 x 20
+20 500 23 .6 600 23 .6 600 20 .7 525 23 .0 585 29 .7 755 26 .4 670 1 .7 x 20 42 x 20
+24 600 23 .6 600 23 .6 600 23 .1 588 25 .5 648 35 .0 890 31 .3 795 1 .9 x 20 48 x 20
+Other sizes on request
+IMPORTANT: ISO* sensor lay length according to ISO 20456
+Specifications
+Page 71 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 72 ===
+Sensor Type III Specifications
+Thanks to its very short lay length, the sensor type III is often the right alternative to a lot of applications . Delivered with a 
+PTFE liner, the sensor type III has a standard nominal pressure of PN 40 .
+Size 1–4 in . (DN 25–100)
+Process Connection Wafer connection (in-between flange mounting)
+Nominal Pressure 580 psi (40 bar)
+Protection Class NEMA 4X (IP67), optional NEMA 6P (IP68)
+Minimum Conductivity 5 µS/cm (20 µS/cm for demineralized water)
+Liner Materials PTFE
+Electrode Material Hastelloy C (Standard), Tantal, Platinum/Gold Plated, Platinum/Rhodium
+Housing Carbon Steel/optional stainless steel
+Lay Length 1–2 in . (DN 25–50) 4 in . (100 mm)
+2-1/2–4 in . (DN 65–100) 6 in . (150 mm)
+Sensor Type III Dimensions
+Remote Version 
+in. (mm)
+Mounted Version 
+in. (mm)
+B1
+4.80 (122)
+4.72 (120)
+3.15 (80)
+DN
+M2000-5
+D
+A
+3.90 (99)7.09 (180)
+7.09 (180)
+M20 (x3)
+11.06 (281)
+2.36 (60) Ø 0.20 (5.2)
+2.56 (65)
+A
+B2
+DN
+M2000-4
+D
+7.09 (180)
+7.09 (180)
+M20 (x3)
+3.27 (83)
+in. DN A B1 B2 D
+1 25 3 .94 (100) 9 .37 (238) 7 .24 (184) 2 .91 (74)
+1-1/4 32 3 .94 (100) 9 .57 (243) 7 .44 (189) 3 .31 (84)
+1-1/2 40 3 .94 (100) 9 .76 (248) 7 .64 (194) 3 .70 (94)
+2 50 3 .94 (100) 9 .96 (253) 7 .83 (199) 4 .09 (104)
+2-1/2 65 5 .91 (150) 10 .47 (266) 8 .35 (212) 5 .08 (129)
+3 80 5 .91 (150) 10 .67 (271) 8 .54 (217) 5 .51 (140)
+4 100 5 .91 (150) 10 .98 (279) 8 .86 (225) 6 .14 (156)
+580 psi (40 bar)
+Specifications
+Page 72 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 73 ===
+Sensor with Sanitary Process Connections Specifications
+The sensor model is available with Tri-Clamp® BS4825/ISO2852, DIN11851, and more process connections . The sanitary sensor 
+is delivered in a stainless steel housing and with PTFE/PFA lining .
+Size 3/8–4 in . (DN 10–100)
+Process Connection Tri-Clamp BS4825/ISO2852, DIN 11851, customer specified, and more
+Nominal Pressure 145/230 psi (10/16 bar)
+Protection Class NEMA 4X (IP67), optional NEMA 6P (IP68)
+Minimum Conductivity 5 µS/cm (20 µS/cm for demineralized water)
+Liner Materials PTFE/PFA –40 to 302 °F (–40 to 150 °C)
+Electrode Material Standard: Hastelloy C; Optional: Tantal, Platinum / Gold plated, Platinum / Rhodium
+Measuring tube Stainless steel, lined by different materials
+Housing Standard: Carbon Steel; Optional: Stainless Steel
+Lay Length
+Tri-Clamp Connection 3/8–2 in . (DN 10–50) 5 .71 in . (145 mm)
+2-1/2–4 in . (DN 65–100) 7 .87 in . (200 mm)
+DIN 11851 Connection
+3/8–3/4 in . (DN 10–20) 6 .69 in . (170 mm)
+1–2 in . (DN 25–50) 8 .86 in . (225 mm)
+2-1/2–4 in . (DN 65–100) 11 .02 in . (280 mm)
+DIN 11851 Connection Dimensions
+Remote Version in. (mm) Mounted Version in. mm
+B1
+A
+4.72 (120)
+4.80 (122) 3.15 (80)
+D
+DN
+M2000-7
+3.90 (99)7.09 (180)
+7.09 (180)
+M20 (x3)
+11.06 (281)
+2.36 (60) Ø 0.20 (5
+.2)
+2.56 (65)
+A
+B2
+D
+DN
+M2000-9
+M20 (x3)
+3.27 (83)
+7.09 (180)
+7.09 (180)
+in. DN A B1 B2 D
+3/8 10 6 .69 (170) 9 .37 (238) 7 .24 (184) 2 .91 (74)
+1/2 15 6 .69 (170) 9 .37 (238) 7 .24 (184) 2 .91 (74)
+3/4 20 6 .69 (170) 9 .37 (238) 7 .24 (184) 2 .91 (74)
+1 25 8 .86 (225) 9 .37 (238) 7 .24 (184) 2 .91 (74)
+1-1/4 32 8 .86 (225) 9 .57 (243) 7 .44 (189) 3 .31 (84)
+1-1/2 40 8 .86 (225) 9 .76 (248) 7 .64 (194) 3 .70 (94)
+2 50 8 .86 (225) 9 .96 (253) 7 .83 (199) 4 .09 (104)
+2-1/2 65 11 .02 (280) 10 .47 (266) 8 .35 (212) 5 .08 (129)
+3 80 11 .02 (280) 10 .67 (271) 8 .54 (217) 5 .51 (140)
+4 100 11 .02 (280) 10 .98 (279) 8 .86 (225) 6 .14 (156)
+230 psi (16 bar)
+Specifications
+Page 73 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 74 ===
+Tri-Clamp Connection Dimensions
+Remote Version in. (mm) Mounted Version in. (mm)
+B1
+4.72 (120)
+4.80 (122) 3.15 (80)
+A
+D
+DN
+M2000-6
+3.90 (99)7.09 (180)
+7.09 (180)
+M20 (x3)
+11.06 (281)
+2.36 (60) Ø 0.20 (5.
+2)
+2.56 (65)
+B2
+A
+7.09 (180)
+D
+DN
+M2000-8
+M20 (x3)
+3.27 (83)7.09 (180)
+in. DN A B1 B2 D
+3/8 10 5 .71 (145) 8 .98 (228) 7 .52 (191) 2 .91 (74)
+1/2 15 5 .71 (145) 8 .98 (228) 7 .52 (191) 2 .91 (74)
+3/4 20 5 .71 (145) 8 .98 (228) 7 .52 (191) 2 .91 (74)
+1 25 5 .71 (145) 8 .98 (228) 7 .52 (191) 2 .91 (74)
+1-1/2 40 5 .71 (145) 9 .37 (238) 7 .91 (201) 3 .70 (94)
+2 50 5 .71 (145) 9 .57 (243) 8 .11 (206) 4 .09 (104)
+2-1/2 65 7 .87 (200) 10 .08 (256) 8 .62 (219) 5 .08 (129)
+3 80 7 .87 (200) 10 .28 (261) 8 .82 (224) 5 .51 (140)
+4 100 7 .87 (200) 10 .59 (269) 9 .13 (232) 6 .14 (156)
+150 psi (10 bar)
+Tri-Clamp Connection Dimensions
+OD
+ID
+BS4825 ISO2852
+Size OD ID Size OD ID
+in. in. mm in. mm DN in. mm in. mm
+— — — — — 10 0 .98 25 .0 0 .55 14 .0
+1/2 0 .98 25 .0 0 .37 9 .4 15 1 .99 50 .5 0 .71 18 .1
+3/4 0 .98 25 .0 0 .62 15 .75 20 1 .99 50 .5 0 .90 22 .9
+1 1 .99 50 .5 0 .87 22 .1 25 1 .99 50 .5 1 .13 28 .7
+— — — — — 32 2 .52 64 .0 1 .51 38 .4
+1-1/2 1 .99 50 .5 1 .37 34 .8 40 2 .52 64 .0 1 .74 44 .3
+2 2 .52 64 .0 1 .87 47 .5 50 3 .05 77 .5 2 .22 56 .3
+2-1/2 3 .05 77 .5 2 .37 60 .2 65 3 .58 91 .0 2 .84 72 .1
+3 3 .58 91 .0 2 .87 72 .9 80 4 .17 106 .0 3 .32 84 .3
+4 4 .69 119 .0 3 .83 97 .4 100 5 .12 130 .0 4 .32 109 .7
+Nominal Pressure 145 psi (10 bar)
+Specifications
+Page 74 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 75 ===
+Error Limits
+Measuring Range 0 .10–39 .37 ft/s (0 .03–12 m/s)
+Pulse Output ±0 .2% of m .v . ±1 mm/s 
+Analog Output Similar to pulse output plus ±0 .01 mA
+Reproducibility ±0 .1%
+Reference Conditions
+Ambient and Fluid Temperature 68 °F (20 °C)
+Electrical Conductivity >300 µS/cm
+Warm-up Period 60 min
+Mounting Conditions
+>3/8 in . (10 DN) inlet pipe
+>1/4 in . (5 DN) outlet pipe
+Sensor properly grounded and centered
+Specifications
+Page 75 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 76 ===
+SIZE SELECTION
+Size Estimated Weight 
+with M2000 Flow Range
+in. DN lb (kg) US Metric
+1/4 6 8 (3 .5) 0 .0134–5 .4 GPM 0 .051–20 .4 l/min
+5/16 8 8 (3 .5) 0 .0239–9 .6 GPM 0 .09–36 .2 l/min
+3/8 10 8 (3 .5) 0 .0373–14 .9 GPM 0 .141–57 l/min
+1/2 15 10 (4 .5) 0 .084–33 .6 GPM 0 .318–127 l/min
+3/4 20 10 (4 .5) 0 .149–60 GPM 0 .57–226 l/min
+1 25 11 (5) 0 .233–93 GPM 0 .88–353 l/min
+1-1/4 32 13 (6) 0 .382–153 GPM 1 .45–579 l/min
+1-1/2 40 15 .5 (7) 0 .6–239 GPM 2 .26–905 l/min
+2 50 19 (8 .5) 0 .93–373 GPM 3 .53–1,414 l/min
+2-1/2 65 27 .5 (12 .5) 1 .58–631 GPM 0 .358–143 m³/h
+3 80 31 (14) 2 .39–956 GPM 0 .54–217 m³/h
+4 100 42 (19) 3 .73–1,494 GPM 0 .85–339 m³/h
+5 125 53 (24) 5 .8–2,334 GPM 1 .33–530 m³/h
+6 150 60 .5 (27 .5) 8 .4–3,361 GPM 1 .91–763 m³/h
+8 200 87 (39 .5) 14 .9–5,975 GPM 3 .39–1,357 m³/h
+10 250 129 (58 .5) 23 .3–9,336 GPM 5 .3–2,121 m³/h
+12 300 204 (92 .5) 33 .6–13,444 GPM 7 .6–3,054 m³/h
+14 350 262 (119) 45 .7–18,299 GPM 10 .4–4,156 m³/h
+16 400 344 (156) 60–23,901 GPM 13 .6–5,429 m³/h
+18 450 397 (180) 76–30,250 GPM 17 .2–6,870 m³/h
+20 500 470 (213) 93–37,345 GPM 21 .2–8,482 m³/h
+22 550 549 (249) 113–45,188 GPM 25 .7–10,263 m³/h
+24 600 617 (280) 134–53,777 GPM 30 .5–12,214 m³/h
+28 700 — 183–73,197 GPM 41 .6–16,625 m³/h
+30 750 930 (422) 210–84,027 GPM 47 .7–19,085 m³/h
+32 800 1171 (531) 239–95,604 GPM 54 .3–21,714 m³/h
+36 900 1378 (625) 302–120,999 GPM 69–27,482 m³/h
+40 1000 — 373–149,381 GPM 85–33,928 m³/h
+48 1200 1788 (811) 538–215,109 GPM 122–48,857 m³/h
+56 1400 — 732–292,787 GPM 166–66,499 m³/h
+60 1500 2112 (958) 840–336,108 GPM 191–76,338 m³/h
+64 1600 2339 (1061) 956–382,416 GPM 217–86,856 m³/h
+72 1800 3219 (1460) 1210–483,996 GPM 275–109,927 m³/h
+78 2000 4101 (1860) 1494–597,525 GPM 339–135,713 m³/h
+Size Selection
+Page 76 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 77 ===
+OIML APPROVED METER
+The M2000 is type approved according to the international water meter standards OIML R49 . The meter is approved as Class I 
+and Class II for the detector sizes 2–28 inches (DN 50–800) .
+BA5000-28MID
+±E%
+Q1 Q2 Q3 Q4
+Cl. II = 5%
+Cl. I = 3%
+Cl. II = 2%
+Cl. I = 1%
+Q2/Q1 = 1 .6 and Q4/Q3 = 1 .25
+Meter Size Flow Rates [m³/h] Ratio Q3/Q1Q1 Q2 Q3 Q4
+DN 50 2 in . 0 .252 0 .4032 63 78 .75 250
+DN 65 2-1/2 in . 0 .4 0 .64 100 125 250
+DN 80 3 in . 0 .64 1 .024 160 200 250
+DN 100 4 in . 1 1 .6 250 312 .5 250
+DN 125 5 in . 1 .6 2 .56 400 500 250
+DN 150 6 in . 2 .52 4 .032 630 787 .5 250
+DN 200 8 in . 4 6 .4 1000 1250 250
+DN 250 10 in . 6 .4 10 .24 1600 2000 250
+DN 300 12 in . 10 16 2500 3125 250
+DN 350 14 in . 10 16 2500 3125 250
+DN 400 16 in . 16 25 .6 4000 5000 250
+DN 450 18 in . 25 .2 40 .32 6300 7875 250
+DN 500 20 in . 25 .2 40 .32 6300 7875 250
+DN 600 24 in . 25 .2 40 .32 6300 7875 250
+DN 800 28 in . 40 64 10000 12500 250
+OIML R49 Class 1 and Class 2
+OIML Approved Meter
+Page 77 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 78 ===
+MID APPROVED METER
+The M2000 is type approved according to Directive 2004/22/EC of the European Parliament and Council of March 31, 2004 
+Measuring Instruments (MID) Annex MI-001 . The meter is approved for the detector sizes 2–28 inches (DN 50–800) .
+BA5000-28MID
+±E%
+Q1 Q2 Q3 Q4
+Cl. II = 5%
+Cl. II = 2%
+Q2/Q1 = 1 .6 and Q4/Q3 = 1 .25
+Meter Size Flow Rates [m³/h] Ratio Q3/Q1Q1 Q2 Q3 Q4
+DN 50 2 in . 0 .252 0 .4032 63 78 .75 250
+DN 65 2-1/2 in . 0 .4 0 .64 100 125 250
+DN 80 3 in . 0 .64 1 .024 160 200 250
+DN 100 4 in . 1 1 .6 250 312 .5 250
+DN 125 5 in . 1 .6 2 .56 400 500 250
+DN 150 6 in . 2 .52 4 .032 630 787 .5 250
+DN 200 8 in . 4 6 .4 1000 1250 250
+DN 250 10 in . 6 .4 10 .24 1600 2000 250
+DN 300 12 in . 10 16 2500 3125 250
+DN 350 14 in . 10 16 2500 3125 250
+DN 400 16 in . 16 25 .6 4000 5000 250
+DN 450 18 in . 25 .2 40 .32 6300 7875 250
+DN 500 20 in . 25 .2 40 .32 6300 7875 250
+DN 600 24 in . 25 .2 40 .32 6300 7875 250
+DN 800 28 in . 40 64 10000 12500 250
+MID MI-001
+The conformity declaration of above certificate is according to module B (type approval) and D (quality insurance 
+of production) .
+MID Approved Meter
+Page 78 August 2026MAG-UM-01272-EN-43
+
+=== PDF PAGE 79 ===
+SPARE PARTS
+Item Description Part Number
+1 Amplifier assembly, complete (100–240V AC) 66815-008
+Amplifier assembly, complete (12–32V DC) 66815-009
+2 Remote mounting kit less cable (includes wall mount bracket) (not shown) 63384-035
+3 Cable gland 66796-001
+4 LCD display kit 66815-001
+5 Cover (includes cover, lens, buttons) 66815-003
+6 Ball screw 66312-001
+7
+Cable, 15 feet 64574-002
+Cable, 30 feet 64574-003
+Cable, 50 feet 64574-004
+Cable, 100 feet 64574-005
+Cable, 150 feet 64574-006
+Cable, 200 feet 64785-006
+Cable, 250 feet 64785-007
+Cable, 300 feet 64785-002
+Cable, 350 feet 64785-003
+Cable, 400 feet 64785-004
+Cable, 500 feet 64785-005
+8 Printed circuit board assembly 100–240V AC / 12-pin (not shown) 66815-010
+Printed circuit board assembly 12–32V DC / 12-pin (not shown) 66815-011
+9 2 Amp slow blow fuse (not shown) 66815-007
+Daughterboard Kits
+HART 67079-001
+PROFIBUS 67079-002
+RS485 Modbus RTU 67079-003
+BACnet/IP 67079-012
+BACnet MS/TP 67079-008
+EtherNet/IP 67079-014
+Modbus TCP/IP 67079-010
+Token Feature Kits
+Firmware upgrade (black token) 67354-003
+Store/restore (red token) 67354-006
+Data logging (blue token) 67354-007
+Verification Device — 66849-001
+Grounding Ring Kits
+For specific grounding ring part numbers by size, refer 
+to the parts price list or contact your customer service 
+account representative
+63528-xxx
+Spare Parts
+Page 79 August 2026 MAG-UM-01272-EN-43
+
+=== PDF PAGE 80 ===
+ 
+www.badgermeter.com
+ModMAG is a registered trademark of Badger Meter, Inc . Other trademarks appearing in this document are the property of their respective entities . Due to continuous research, 
+product improvements and enhancements, Badger Meter reserves the right to change product or system specifications without notice, except to the extent an outstanding 
+contractual obligation exists . © 2026 Badger Meter, Inc . All rights reserved . 
+Electromagnetic Flow Meter M2000
+Translations: MAG-UM-03668-DE; MAG-UM-01897-ES; MAG-UM-03669-FR

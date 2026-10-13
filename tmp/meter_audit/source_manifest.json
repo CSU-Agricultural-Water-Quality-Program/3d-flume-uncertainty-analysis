@@ -1,0 +1,27 @@
+[
+  {
+    "name": "modmag",
+    "path": "D:\\OneDrive - Colostate\\Cabot,Perry's files - 3D Printing Flumes\\ModMag Manual.pdf",
+    "sha256": "6294e33b1b10d86e8dd879f090d70a7f551440f08c0e936f737f7fc1e2f72cb2"
+  },
+  {
+    "name": "modmag_reference",
+    "path": "D:\\OneDrive - Colostate\\Cabot,Perry's files - 3D Printing Flumes\\REFERENCES\\MAG-UM-01272-EN_M2000.pdf",
+    "sha256": "6294e33b1b10d86e8dd879f090d70a7f551440f08c0e936f737f7fc1e2f72cb2"
+  },
+  {
+    "name": "promag",
+    "path": "D:\\OneDrive - Colostate\\Cabot,Perry's files - 3D Printing Flumes\\REFERENCES\\Promag Manual (1).pdf",
+    "sha256": "37eae1df66020b63be9a82d0cbc6678b7859be6545c65f60555ff1a848c1eeda"
+  },
+  {
+    "name": "oct_workbook",
+    "path": "C:\\Users\\ansle\\OneDrive\\Documents\\GitHub\\3d-flume-uncertainty-analysis\\data\\New Data Oct 2026\\Oct 2026 Trapezoidal Flume Calibration Final.xlsx",
+    "sha256": "a158413ccd87703331e296a078727d3606ca9b46dad196d13d6a03dc6cc9ffba"
+  },
+  {
+    "name": "ben_workbook",
+    "path": "D:\\OneDrive - Colostate\\Cabot,Perry's files - 3D Printing Flumes\\Flume Calibration Report\\bms 9_17 calibration_BenS.xlsx",
+    "sha256": "8db8b35b0ce09089d1db62984617cb871f684c8c8b2799047c68ee7e128c0f9e"
+  }
+]

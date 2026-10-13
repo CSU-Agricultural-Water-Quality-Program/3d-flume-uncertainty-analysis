@@ -1,0 +1,10 @@
+"name","first","last"
+"metric_precis",24,45
+"write_metric_precis",47,55
+"dashboard_flume",61,76
+"save_dashboard",80,85
+"export_stan_diagnostics",91,171
+"plot_flume_posterior",466,697
+"generate_flume_table",776,892
+"generate_manuscript_table4",924,979
+"write_manuscript_csv",983,988
