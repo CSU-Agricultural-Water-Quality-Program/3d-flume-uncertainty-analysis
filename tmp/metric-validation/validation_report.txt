@@ -1,6 +1,0 @@
-PASS: 30 metric inputs round-trip; source CSV unchanged.
-PASS: fixed metric prior centers/scales; no prior hyperparameters estimated.
-PASS: active model C++ compilation; alternate commented model Stan semantics.
-PASS: draw-level physical equivalence; native table/plot values; 15 Table 4 summaries.
-PASS: metric axes/captions; component variances; historical output hashes unchanged.
-No posterior sampling. Validation previews use converted historical draws.

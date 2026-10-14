@@ -41,6 +41,8 @@ automatically when run from the top.
 The result filenames retain `flume_model_3` for compatibility with the existing
 reporting helpers. This is the single model fitted in the main script.
 
-The archived `base_flume.R` is unchanged. The new main script preserves its
-active likelihood, priors, sampling settings, and reporting functions; models
-1, 2, and 4 are omitted. The native metric model has not yet been sampled.
+The archived `base_flume.R` retains earlier settings and alternative models.
+Models 1, 2, and 4 are omitted from the current main script. The current
+proportional-SD prior median is 0.015 (1.5%). A native metric fit is included in
+`output/bayes/oct2026_metric/`; its metadata and chain diagnostics document the
+run. See `../docs/REPRODUCIBILITY.md` for environment and interpretation limits.

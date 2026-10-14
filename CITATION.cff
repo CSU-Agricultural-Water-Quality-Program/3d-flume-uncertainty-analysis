@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+type: software
+title: "3D-Printed Trapezoidal Flume Calibration and Bayesian Uncertainty Analysis"
+message: >-
+  If you use these analysis scripts, cite the version-specific Zenodo record
+  for the release you used. Until a DOI is assigned, cite this repository and
+  identify the version or commit. See RELEASING.md for publication instructions.
+authors:
+  - family-names: "Deleon"
+    given-names: "Emmanuel"
+    affiliation: "Agricultural Water Quality Program, Colorado State University"
+  - family-names: "Cabot"
+    given-names: "Perry"
+    affiliation: "Colorado Water Center, Agricultural Experiment Station, Colorado State University"
+  - family-names: "Brown"
+    given-names: "A. J."
+    affiliation: "Agricultural Water Quality Program, Colorado State University"
+  - family-names: "Ladow"
+    given-names: "Jakob F."
+    affiliation: "Agricultural Water Quality Program, Colorado State University"
+  - family-names: "White"
+    given-names: "Daniel C."
+    affiliation: "Department of Civil and Environmental Engineering, Colorado State University"
+  - family-names: "Schlatter"
+    given-names: "Karen"
+    affiliation: "Colorado Water Center, Colorado State University"
+  - family-names: "Wardle"
+    given-names: "Erik"
+    affiliation: "Agricultural Water Quality Program, Colorado State University"
+version: "1.0.0"
+license: GPL-2.0-only
+repository-code: "https://github.com/CSU-Agricultural-Water-Quality-Program/3d-flume-uncertainty-analysis"
+url: "https://github.com/CSU-Agricultural-Water-Quality-Program/3d-flume-uncertainty-analysis"
+abstract: >-
+  R scripts and calibration data for hierarchical Bayesian estimation of
+  stage-discharge relationships for two 3D-printed trapezoidal flumes and a
+  fiberglass reference flume. The main workflow uses stage in meters and
+  discharge in liters per second, propagates point-gauge uncertainty through
+  latent stage, and estimates proportional and additive discharge uncertainty.
+  Supporting scripts generate sampler diagnostics, rating-curve figures,
+  uncertainty-component plots, prediction tables, and manuscript summaries.
+  Historical scripts and calibration outputs are retained separately.
+keywords:
+  - Bayesian calibration
+  - stage-discharge relationship
+  - trapezoidal flume
+  - agricultural water measurement
+  - measurement uncertainty
+  - 3D printing
+  - R

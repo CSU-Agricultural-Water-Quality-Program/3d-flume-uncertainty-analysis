@@ -79,11 +79,11 @@ dat <- list(
   # FLOW METER: Badger Meter ModMAG M2000 User Manual, MAG-UM-01272-EN-43
   # (August 2026), pp. 66 and 75: +/-0.2% of reading plus +/-1 mm/s,
   # under the stated reference/installation conditions.
-  # Model choice: use 0.2% as the empirical proportional-SD prior median.
+  # Model choice: the current empirical proportional-SD prior median is 1.5%.
   # The manual does not identify this accuracy limit as 1 SD. Its velocity
   # term is not modeled explicitly in this empirical error specification.
   # cv_Q_prior_median = 0.002,                      # SD/flow fraction; 0.2% = 0.002
-  cv_Q_prior_median = 0.015,                        # SD/flow fraction; 1.5% = 0.15
+  cv_Q_prior_median = 0.015,                        # SD/flow fraction; 1.5% = 0.015
   cv_Q_prior_log_sd = 0.5,                          # dimensionless; chosen prior width
 
   # FLUME INFILTRATION: CSU Hydraulics Laboratory allowance reported by the

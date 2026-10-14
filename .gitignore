@@ -1,3 +1,11 @@
+# Local research preparation and R session state (retain on disk).
+/tmp/
+/release/
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

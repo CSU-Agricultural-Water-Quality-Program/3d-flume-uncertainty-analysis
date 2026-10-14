@@ -10,8 +10,11 @@ is `Q (L/s) = 941.2 * H (m)^2.58`. These coefficient values are fixed prior
 medians, with the retained log-scale SD of 0.5. Prior settings are data constants,
 not estimated hyperparameters.
 
-A future explicitly authorized fit writes to `bayes/oct2026_metric/`. No native
-metric fit has been sampled. Tables report `Depth_m`; point and component data
+The saved native metric fit is in `bayes/oct2026_metric/`, with its run metadata
+and chain diagnostics. Running the main script fits again into this folder.
+The included run has 623 divergences, 7,201 maximum-treedepth hits, and E-BFMI
+below 0.3 in three chains; its posterior outputs remain provisional. Tables
+report `Depth_m`; point and component data
 report `stage_m`; stage axes and captions report m. Prediction grids retain
 the previous physical extent at 0.01-m intervals from 0 to 0.24 m. Reporting
 does not convert native posterior draws again. Additive/process SDs are L/s;
@@ -19,17 +22,17 @@ the coefficient `a` has units `(L/s)/m^b`, while `b` and proportional fractions
 are dimensionless. Displaying `cv_Q` as percent still multiplies its fraction by 100.
 
 The stage bound is +/-0.0015 m and enters the calibration through latent stage.
-The empirical proportional-SD prior median is 0.002. The additive-SD prior
+The empirical proportional-SD prior median is 0.015 (1.5%). The additive-SD prior
 median is 0.56633693184 L/s, retaining the existing interpretation of the lab
 allowance. The process prior rate is 0.0353146667214886 per L/s, retaining the
 physical scale of the former imperial exponential prior. These error assumptions
 do not reproduce the complete manufacturer's velocity-error specification.
 
 `code/tools/validate-flume-metric.R` checks conversion, active-model compilation,
-the commented alternate model's Stan semantics, native table/figure values,
+native table/figure values,
 and preservation of historical products without sampling. Its temporary
 previews use converted historical draws solely as reporting fixtures.
-Saved-fit regeneration defaults to the future native metric fit. It can also
+Saved-fit regeneration defaults to the included native metric fit. It can also
 inspect historical imperial fits with explicit arguments and a separate output
 folder; those draws are converted at the driver boundary, preserving paired
 scale/exponent draws. Historical fits cannot be relabeled as native metric fits.
@@ -38,8 +41,8 @@ scale/exponent draws. Historical fits cannot be relabeled as native metric fits.
 
 The saved October calibration outputs are in `bayes/oct2026/` with the
 `oct2026_` prefix. The existing files below describe the earlier fixed-stage fit
-with ft/cfs calibration and cm/L/s reporting. September input,
-output-folder, and prefix settings remain commented in the analysis script.
+with ft/cfs calibration and cm/L/s reporting. September settings are retained
+in historical scripts and run metadata.
 The existing October files have also been renamed to match. The figures use
 the saved model 3 posterior without refitting or changing the model or tables:
 

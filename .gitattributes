@@ -1,2 +1,10 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Keep local scratch/session files out of Git source archives.
+/tmp export-ignore
+/release export-ignore
+**/.Rhistory export-ignore
+**/.RData export-ignore
+**/.Ruserdata export-ignore
+**/.Rproj.user export-ignore
