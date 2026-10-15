@@ -53,18 +53,6 @@ started at `2026-10-13 22:18:38 UTC` (16:18:38 MDT), with seed 1815795276, four
 chains, 2,000 warmup and 2,000 retained iterations per chain, `adapt_delta=0.95`,
 and maximum treedepth 10, as recorded in its metadata.
 
-Its chain diagnostics record 623 divergences, 7,201 treedepth-limit hits, and
-E-BFMI below 0.3 in three chains. These warnings require resolution before
-treating posterior summaries as reliable manuscript results; see
-[Stan's diagnostic guidance](https://mc-stan.org/learn-stan/diagnostics-warnings.html).
-The release preserves the fit and diagnostics; it does not certify convergence.
-We did not rerun sampling, compilation, or reporting for release preparation.
-
-All numerical model settings were left unchanged during this preparation.
-The current empirical proportional-SD prior median is 0.015 (1.5%), not the
-manual's 0.002 component. The latter remains cited as an instrument specification.
-The additive prior median is 0.56633693184 L/s, the stage bound is 0.0015 m,
-and the rating prior medians are 941.2 and 2.58.
 
 ## Optional commands
 

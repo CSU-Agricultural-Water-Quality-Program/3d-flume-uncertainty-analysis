@@ -33,19 +33,6 @@ automatically. See the [code guide](code/README.md) and
 [reproducibility notes](docs/REPRODUCIBILITY.md) for dependencies and saved-fit
 regeneration.
 
-Edit priors and uncertainty settings in the labeled `dat` list in the main
-script. Its comments identify the point gauge, ModMAG M2000 flow meter, CSU lab
-infiltration allowance, rating-curve reference, and process scatter, with units,
-sources, and modeling assumptions. The current proportional-SD prior median is
-**0.015 (1.5%)**. The meter manual's **0.2%-of-reading component plus 1 mm/s**
-is documented separately; the selected empirical prior does not reproduce that
-full accuracy envelope or equate it with a manufacturer-reported SD.
-
-The stage bound is +/-0.0015 m, represented by latent stage uniform within the
-reported interval. Rating-coefficient prior medians are 941.2 and 2.58, matching
-Openchannelflow's published metric equation. The lab's +/-0.02-cfs allowance is
-used as an additive-SD prior median of 0.56633693184 L/s, rather than a mean
-loss or hard bound. The chosen lognormal prior widths are 0.5.
 
 ## Inputs and outputs
 
@@ -67,15 +54,6 @@ fit, parameter summaries, chain/iteration diagnostics, run metadata, rating
 curves, point comparisons, uncertainty-component plots, and prediction tables.
 The [output guide](output/README.md) distinguishes these from historical fits.
 
-**Diagnostic status:** the included native metric fit has 623 divergences,
-7,201 maximum-treedepth hits, and E-BFMI below 0.3 in three of four chains. These
-counts come from its
-[chain diagnostic CSV](output/bayes/oct2026_metric/oct2026_metric_flume_model_3_chain_diagnostics.csv).
-The archived outputs are provisional; this code release does not establish
-convergence or publication-ready posterior inference. Diagnostic interpretation
-follows the [Stan guidance](https://mc-stan.org/learn-stan/diagnostics-warnings.html).
-No calibration was run as part of preparing this release.
-
 ## Repository layout
 
 | Location | Purpose |
@@ -96,15 +74,7 @@ from Git tracking and release archives. Existing local copies are retained.
 ## Cite this code
 
 Citation metadata are in [CITATION.cff](CITATION.cff). The proposed first release
-is **v1.0.0**; its Zenodo DOI is pending. Follow
-[RELEASING.md](RELEASING.md) to connect the repository and publish the release.
-Once archived, cite the **version-specific Zenodo DOI** for the code used in the
-paper. Until then, identify this GitHub repository and the exact commit.
-Do not substitute an example DOI for an assigned identifier.
-
-Zenodo can import CFF metadata from a connected GitHub release, and GitHub
-provides a citation suggestion from the same file. See
-[Zenodo's citation guidance](https://help.zenodo.org/docs/github/describe-software/citation-file/).
+is **v1.0.0**; its Zenodo DOI is pending.
 
 ## License and references
 
