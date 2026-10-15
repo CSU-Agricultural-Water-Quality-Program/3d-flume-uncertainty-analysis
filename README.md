@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23382412.svg)](https://doi.org/10.5281/zenodo.23382412)
 
-**Authors (manuscript order):** Emmanuel Deleon, Perry Cabot, A. J. Brown,
+**Software authors:** A. J. Brown, Emmanuel Deleon, Perry Cabot,
 Jakob F. Ladow, Daniel C. White, Karen Schlatter, and Erik Wardle.
 All authors are affiliated with Colorado State University; specific affiliations
 are recorded in `CITATION.cff`.
@@ -79,10 +79,10 @@ Cite the archived version used in your analysis. Machine-readable citation
 metadata are in [CITATION.cff](CITATION.cff).
 
 ```bibtex
-@software{deleon_2026_23382412,
-  author       = {Deleon, Emmanuel and
+@software{brown_2026_23382412,
+  author       = {Brown, A. J. and
+                  Deleon, Emmanuel and
                   Cabot, Perry and
-                  Brown, A. J. and
                   Ladow, Jakob F. and
                   White, Daniel C. and
                   Schlatter, Karen and

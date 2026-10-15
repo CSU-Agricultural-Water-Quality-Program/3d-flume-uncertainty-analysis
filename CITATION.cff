@@ -6,15 +6,15 @@ message: >-
   for the release you used. Release V1.0.0 is archived at
   https://doi.org/10.5281/zenodo.23382412.
 authors:
+  - family-names: "Brown"
+    given-names: "A. J."
+    affiliation: "Agricultural Water Quality Program, Colorado State University"
   - family-names: "Deleon"
     given-names: "Emmanuel"
     affiliation: "Agricultural Water Quality Program, Colorado State University"
   - family-names: "Cabot"
     given-names: "Perry"
     affiliation: "Colorado Water Center, Agricultural Experiment Station, Colorado State University"
-  - family-names: "Brown"
-    given-names: "A. J."
-    affiliation: "Agricultural Water Quality Program, Colorado State University"
   - family-names: "Ladow"
     given-names: "Jakob F."
     affiliation: "Agricultural Water Quality Program, Colorado State University"
