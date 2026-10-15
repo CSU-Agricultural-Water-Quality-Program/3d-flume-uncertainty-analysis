@@ -1,5 +1,7 @@
 # 3D-Printed Trapezoidal Flume Calibration and Bayesian Uncertainty Analysis
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23382412.svg)](https://doi.org/10.5281/zenodo.23382412)
+
 **Authors (manuscript order):** Emmanuel Deleon, Perry Cabot, A. J. Brown,
 Jakob F. Ladow, Daniel C. White, Karen Schlatter, and Erik Wardle.
 All authors are affiliated with Colorado State University; specific affiliations
@@ -66,15 +68,35 @@ The [output guide](output/README.md) distinguishes these from historical fits.
 | `docs/` | Reference documents and reproducibility notes |
 | `output/` | Current and historical saved fits, diagnostics, figures, and tables |
 | `CITATION.cff` | Citation metadata for the complete multi-script analysis |
-| `RELEASING.md` | GitHub–Zenodo publication instructions |
 
 `tmp/` and R session history are local preparation artifacts and are excluded
 from Git tracking and release archives. Existing local copies are retained.
 
 ## Cite this code
 
-Citation metadata are in [CITATION.cff](CITATION.cff). The proposed first release
-is **v1.0.0**; its Zenodo DOI is pending.
+Release **V1.0.0** is archived on [Zenodo](https://doi.org/10.5281/zenodo.23382412).
+Cite the archived version used in your analysis. Machine-readable citation
+metadata are in [CITATION.cff](CITATION.cff).
+
+```bibtex
+@software{deleon_2026_23382412,
+  author       = {Deleon, Emmanuel and
+                  Cabot, Perry and
+                  Brown, A. J. and
+                  Ladow, Jakob F. and
+                  White, Daniel C. and
+                  Schlatter, Karen and
+                  Wardle, Erik},
+  title        = {3D-Printed Trapezoidal Flume Calibration and
+                  Bayesian Uncertainty Analysis},
+  month        = oct,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {V1.0.0},
+  doi          = {10.5281/zenodo.23382412},
+  url          = {https://doi.org/10.5281/zenodo.23382412},
+}
+```
 
 ## License and references
 

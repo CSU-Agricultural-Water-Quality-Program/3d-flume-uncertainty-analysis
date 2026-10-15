@@ -1,5 +1,13 @@
 # Reproducing the analysis
 
+## Archived release
+
+Release **V1.0.0** is preserved on
+[Zenodo](https://doi.org/10.5281/zenodo.23382412). Use that archive to reproduce
+the released code, inputs, and saved outputs; the GitHub repository may contain
+subsequent changes. See the [citation section](../README.md#cite-this-code) for
+BibTeX and [CITATION.cff](../CITATION.cff) for citation metadata.
+
 ## Entry point and data
 
 Run `code/bayes_flume.R`, which imports the four reporting/unit modules and the

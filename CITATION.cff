@@ -3,8 +3,8 @@ type: software
 title: "3D-Printed Trapezoidal Flume Calibration and Bayesian Uncertainty Analysis"
 message: >-
   If you use these analysis scripts, cite the version-specific Zenodo record
-  for the release you used. Until a DOI is assigned, cite this repository and
-  identify the version or commit. See RELEASING.md for publication instructions.
+  for the release you used. Release V1.0.0 is archived at
+  https://doi.org/10.5281/zenodo.23382412.
 authors:
   - family-names: "Deleon"
     given-names: "Emmanuel"
@@ -27,7 +27,9 @@ authors:
   - family-names: "Wardle"
     given-names: "Erik"
     affiliation: "Agricultural Water Quality Program, Colorado State University"
-version: "1.0.0"
+version: "V1.0.0"
+doi: "10.5281/zenodo.23382412"
+date-released: "2026-10-15"
 license: GPL-2.0-only
 repository-code: "https://github.com/CSU-Agricultural-Water-Quality-Program/3d-flume-uncertainty-analysis"
 url: "https://github.com/CSU-Agricultural-Water-Quality-Program/3d-flume-uncertainty-analysis"
